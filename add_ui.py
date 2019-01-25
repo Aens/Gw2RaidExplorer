@@ -3,8 +3,8 @@
 # Form implementation generated from reading ui file 'add.ui',
 # licensing of 'add.ui' applies.
 #
-# Created: Mon Jan 21 18:47:02 2019
-#      by: pyside2-uic  running on PySide2 5.11.2
+# Created: Fri Jan 25 02:34:09 2019
+#      by: pyside2-uic  running on PySide2 5.12.0
 #
 # WARNING! All changes made in this file will be lost!
 

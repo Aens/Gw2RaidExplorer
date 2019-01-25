@@ -3,6 +3,9 @@ import urllib.request
 import urllib.parse
 import webbrowser
 import hashlib
+import sys
+import psutil
+from os import startfile
 from pathlib import Path
 from PySide2 import QtWidgets
 from PySide2.QtGui import QColor, QIcon
@@ -26,7 +29,7 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
         self.setupUi(self)
         self.setWindowIcon(QIcon("images\\Main.ico"))
         # Initial window size/pos last saved. Use default values for first time
-        self.setFixedSize(QSize(1050, 560))
+        self.setFixedSize(QSize(1050, 740))
         self.move(ini_options.value("menu_position", QPoint(350, 250)))
         self.lineInstallationFolder.setText((ini_options.value("installation_folder", "")))
         # Buttons
@@ -39,6 +42,8 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
         self.botonArcDps_mechanics.clicked.connect(self.update_arcdps_mechanics)
         self.botonWebsite_arcdps.clicked.connect(self.open_web_arcdps)
         self.botonWebsite_arcdpsmechanics.clicked.connect(self.open_web_arcdpsmechanics)
+        self.botonLaunchgame.clicked.connect(self.launch_game)
+        self.botonClosegame.clicked.connect(self.close_game)
         self.botonWebsite_dulfy.clicked.connect(self.open_web_dulfy)
         self.botonWebsite_builds.clicked.connect(self.open_web_builds)
         self.botonWebsite_builds_alternative.clicked.connect(self.open_web_builds_alternative)
@@ -99,9 +104,13 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
         """Make sure we are ready to work."""
         self.change_statusbar("wait", "Checking if everything is fine...")
         warning = []
-        # Check if there is something stored
         self.fill_combo_selectapi()
-        if self.stored_keys == []:
+        # Check if we are in the last version
+        online_version = self.check_online_version()
+        if int(PROGRAM_VERSION) < int(online_version):
+            warning.append("There is a new version availible, you should download it.")
+        # Check if there is something stored
+        elif self.stored_keys == []:
             warning.append("There is no API keys yet, add one.")
         # Check if there is warnings
         if len(warning) >= 1:
@@ -110,6 +119,13 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
         else:
             self.change_statusbar("ready", "Everything seems fine. Program ready.")
             return True
+
+    def check_online_version(self):
+        """Check if we need an update."""
+        version_file = "https://raw.githubusercontent.com/Aens/Gw2RaidExplorer/master/version.txt"
+        address = urllib.parse.quote(version_file, safe='/:=', encoding="utf-8", errors="strict")
+        address = urllib.request.urlopen(address).read().decode('utf8')
+        return address
 
     #######################################################
     ################## BUTTONS and EVENTS #################
@@ -205,16 +221,17 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
     def set_installation_folder(self):
         """Set the installation folder"""
         folderpath = QtWidgets.QFileDialog.getExistingDirectory()
-        self.lineInstallationFolder.setText(folderpath)
-        ini_options.setValue("installation_folder", folderpath)
+        if not folderpath == "":
+            self.lineInstallationFolder.setText(folderpath)
+            ini_options.setValue("installation_folder", folderpath)
 
     def check_folder_is_right(self):
         """Check that there is no issues with that folder"""
         folder = self.lineInstallationFolder.text()
         if folder == "":
             self.change_statusbar("error", "You need to set your GW2 installation folder above.")
-        elif not "Guild Wars 2" in folder and not "bin64" in folder:
-            self.change_statusbar("error", "You didn't set the folder bin64 of Guild Wars 2")
+        elif not "Guild Wars 2" in folder:
+            self.change_statusbar("error", "You didn't set the folder for Guild Wars 2")
         else:
             self.change_statusbar("ready", "Installation folder verified.")
             return True
@@ -241,8 +258,9 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
         if self.check_folder_is_right():
             self.change_statusbar("wait", "Verifying hash files of ArcDps...")
             # Files
-            local_file = '{0}/d3d9.dll'.format(self.lineInstallationFolder.text())
-            local_file_bt = '{0}/d3d9_arcdps_buildtemplates.dll'.format(self.lineInstallationFolder.text())
+            bin_folder = self.lineInstallationFolder.text() + "/bin64"
+            local_file = '{0}/d3d9.dll'.format(bin_folder)
+            local_file_bt = '{0}/d3d9_arcdps_buildtemplates.dll'.format(bin_folder)
             online_file = "https://www.deltaconnected.com/arcdps/x64/d3d9.dll"
             online_file_bt = "https://www.deltaconnected.com/arcdps/x64/buildtemplates/d3d9_arcdps_buildtemplates.dll"
             online_file_md5 = "https://www.deltaconnected.com/arcdps/x64/d3d9.dll.md5sum"
@@ -264,17 +282,21 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
                     self.change_statusbar("ready", "ArcDps has been updated.")
             else:
                 # Download files
-                self.change_statusbar("wait", "ArcDps is not installed, downloading...")
-                urllib.request.urlretrieve(online_file, local_file)
-                urllib.request.urlretrieve(online_file_bt, local_file_bt)
-                self.change_statusbar("ready", "ArcDps has been Installed.")
+                try:
+                    self.change_statusbar("wait", "ArcDps is not installed, downloading...")
+                    urllib.request.urlretrieve(online_file, local_file)
+                    urllib.request.urlretrieve(online_file_bt, local_file_bt)
+                    self.change_statusbar("ready", "ArcDps has been Installed.")
+                except Exception as e:
+                    self.change_statusbar("error", "Unexpected error: {0}".format(str(e)))
 
     def update_arcdps_mechanics(self):
         """Install or update ArcDps Mechanics plugin."""
         if self.check_folder_is_right():
             self.change_statusbar("wait", "Verifying hash file of ArcDps Mechanics Addon...")
             # Files
-            local_file = '{0}/d3d9_arcdps_mechanics.dll'.format(self.lineInstallationFolder.text())
+            bin_folder = self.lineInstallationFolder.text() + "/bin64"
+            local_file = '{0}/d3d9_arcdps_mechanics.dll'.format(bin_folder)
             online_file = "http://martionlabs.com/wp-content/uploads/d3d9_arcdps_mechanics.dll"
             online_file_md5 = "http://martionlabs.com/wp-content/uploads/d3d9_arcdps_mechanics.dll.md5sum"
             # Check if exists
@@ -294,9 +316,50 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
                     self.change_statusbar("ready", "ArcDps Mechanics Addon has been updated.")
             else:
                 # Download files
-                self.change_statusbar("wait", "ArcDps Mechanics Addon is not installed, downloading...")
-                urllib.request.urlretrieve(online_file, local_file)
-                self.change_statusbar("ready", "ArcDps Mechanics Addon has been Installed.")
+                try:
+                    self.change_statusbar("wait", "ArcDps Mechanics Addon is not installed, downloading...")
+                    urllib.request.urlretrieve(online_file, local_file)
+                    self.change_statusbar("ready", "ArcDps Mechanics Addon has been Installed.")
+                except Exception as e:
+                    self.change_statusbar("error", "Unexpected error: {0}".format(str(e)))
+
+    #######################################################
+    ################## GUILD WARS 2 #######################
+    #######################################################
+
+    def game_is_running(self):
+        """Check if game is running."""
+        game_names = ["Gw2-64.exe", "Gw2.exe"]
+        for process in psutil.process_iter():
+            for name in game_names:
+                if process.name() == name:
+                    return True, process
+        return False, None
+
+    def launch_game(self):
+        """Launch the game."""
+        if self.check_folder_is_right():
+            if self.game_is_running()[0]:
+                self.change_statusbar("error", "Guild Wars 2 is already running.")
+            else:
+                filepath = self.lineInstallationFolder.text()
+                game_paths = ["{0}/Gw2-64.exe".format(filepath), "{0}/Gw2.exe".format(filepath)]
+                for file in game_paths:
+                    if self.file_exists(file):
+                        startfile(file)
+                        self.change_statusbar("ready", "Guild Wars 2 started.")
+                        return
+                self.change_statusbar("error", "Executable file could not be found.")
+
+    def close_game(self):
+        """Close the game."""
+        if self.check_folder_is_right():
+            running, game_proccess = self.game_is_running()
+            if running:
+                game_proccess.kill()
+                self.change_statusbar("ready", "Guild Wars 2 has been forced to be closed.")
+            else:
+                self.change_statusbar("error", "Guild Wars 2 is not running.")
 
     ###############################################################
     ################### MAIN LOADING API CODE #####################
@@ -318,20 +381,31 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
                 try:
                     permissions = api_open("tokeninfo", token=api_key)['permissions']
                     self.fill_permissions(permissions)
+                    # Get all the data
+                    self.change_statusbar("wait", "Loading API data...")
+                    if self.linePermission_Characters.text() == "YES":
+                        api_characters_names = api_open("characters", token=api_key)
+                        api_characters = api_open("characters", ids=api_characters_names, token=api_key)
+                    if self.linePermission_Inventories.text() == "YES":
+                        api_shared_inventory = api_open("account/inventory", token=api_key)
+                        api_materials = api_open("account/materials", token=api_key)
+                        api_bank = api_open("account/bank", token=api_key)
+                    if self.linePermission_Progression.text() == "YES":
+                        api_achievs = api_open("account/achievements", token=api_key)
+                    if self.linePermission_Wallet.text() == "YES":
+                        api_wallet = api_open("account", ids=["wallet"], token=api_key)
                     # Fill each section now
-                    self.change_statusbar("wait", "Loading weekly bosses...")
+                    self.change_statusbar("wait", "Loading values into program...")
                     self.fill_raid_bosses(api_key)
-                    self.change_statusbar("wait", "Loading currencies...")
-                    self.fill_wallet_currencies(api_key)
-                    self.change_statusbar("wait", "Loading challenge modes...")
-                    self.fill_achievements(api_key)
+                    self.fill_raid_currencies(api_wallet, api_characters, api_shared_inventory, api_materials, api_bank)
+                    self.fill_achievements(api_achievs)
                     self.change_statusbar("ready", "API data loaded.")
                 except Exception as e:
                     if "HTTP Error 400" in str(e) :
                         self.change_statusbar("error", "Your API key is not valid.")
                         self.reset_permissions()
                         self.reset_raidstuff()
-                        self.reset_walletstuff()
+                        self.reset_currencystuff()
                         self.reset_achievementsstuff()
                     else:
                         self.change_statusbar("error", str(e))
@@ -397,23 +471,63 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
                     i['uiitem'].setText("NO")
                     i['uiitem'].setStyleSheet("background-color: rgb(200, 0, 0);")
 
-    def fill_wallet_currencies(self, api_key):
+    def fill_raid_currencies(self, api_wallet, api_characters, api_shared_inventory, api_materials, api_bank):
         """Reset values and set new ones."""
-        self.reset_walletstuff()
-        if self.linePermission_Wallet.text() == "YES":
-            api_wallet = api_open("account", ids=["wallet"], token=api_key)
-            for i in api_wallet:
-                if i['id'] == 28: # ID for magnetites is 28
-                    self.lineWallet_Magnetiteshards.setText(str(i['value']))
-                    self.lineWallet_Magnetiteshards.setStyleSheet("background-color: rgb(190, 120, 50);")
-                if i['id'] == 39:  # ID for gaeting is 39
-                    self.lineWallet_Gaetingcrystals.setText(str(i['value']))
-                    self.lineWallet_Gaetingcrystals.setStyleSheet("background-color: rgb(190, 120, 50);")
+        self.reset_currencystuff()
+        # Wallet stuff
+        for i in api_wallet:
+            wallet_items = [{"name": "magnetite_shards", "id": 28, "uiitem": self.lineCurrency_Magnetiteshards},
+                             {"name": "gaeting_crystals", "id": 39, "uiitem": self.lineCurrency_Gaetingcrystals}]
+            for item in wallet_items:
+                if i['id'] == item['id']:
+                    item['uiitem'].setText(str(i['value']))
+                    item['uiitem'].setStyleSheet("background-color: rgb(160, 200, 90);")
+        # Find items everywhere
+        items_to_find = [{"name": "legendary_insight", "id": 77302, "uiitem": self.lineCurrency_Legend_insights},
+                         {"name": "legendary_divination", "id": 88485, "uiitem": self.lineCurrency_Legend_divinations}]
+        for item in items_to_find:
+            total = 0
+            # Each character
+            for char in api_characters:
+                char_items = 0
+                # Equipped items
+                for equipped in char['equipment']:
+                    if equipped['id'] == item['id']:
+                        char_items += item['value']
+                        break
+                # Inventories
+                for bag in char['bags']:
+                    if bag is not None:
+                        for slot in bag['inventory']:
+                            if slot is not None:
+                                if slot['id'] == item['id']:
+                                    char_items += item['value'] * slot['count']
+                                    break
+                total += char_items
+            # Shared inventory
+            for slot in api_shared_inventory:
+                if slot is not None:
+                    if slot['id'] == item['id']:
+                        total += item['value'] * slot['count']
+            # Materials bank
+            for mat in api_materials:
+                if mat['id'] == item['id']:
+                    total += mat['count']
+                    break
+            # Bank tabs
+            for slot in api_bank:
+                if slot is not None:
+                    if slot['id'] == item['id']:
+                        total += item['value'] * slot['count']
+            # Set the UI
+            item['uiitem'].setText(str(total))
+            item['uiitem'].setStyleSheet("background-color: rgb(160, 200, 90);")
 
-    def fill_achievements(self, api_key):
+    def fill_achievements(self, api_achievs):
         """Reset values and set yes or no for each item."""
         self.reset_achievementsstuff()
         if self.linePermission_Progression.text() == "YES":
+            # Challenge Modes
             challenges = [{"id": 3019, "flag": 0, "uiitem": self.lineRaidboss_keepconstruct_cm},
                           {"id": 3334, "flag": 0, "uiitem": self.lineRaidboss_cairn_cm},
                           {"id": 3287, "flag": 0, "uiitem": self.lineRaidboss_mursaat_cm},
@@ -423,14 +537,14 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
                           {"id": 3979, "flag": 0, "uiitem": self.lineRaidboss_dhuum_cm},
                           {"id": 4416, "flag": 0, "uiitem": self.lineRaidboss_conjureda_cm},
                           {"id": 4429, "flag": 0, "uiitem": self.lineRaidboss_twinlargos_cm},
-                          {"id": 4355, "flag": 0, "uiitem": self.lineRaidboss_qadim_cm},
-                      ]
-            account_achievs = api_open("account", ids=["achievements"], token=api_key)
-            for achiev in account_achievs:
+                          {"id": 4355, "flag": 0, "uiitem": self.lineRaidboss_qadim_cm}]
+            # Flag the ones done
+            for achiev in api_achievs:
                 for challenge in challenges:
                     if achiev['id'] == challenge['id']:
                         if achiev['done']:
                             challenge['flag'] = 1
+            # Set the UI
             for challenge in challenges:
                 if challenge['flag'] == 1:
                     challenge['uiitem'].setText("YES")
@@ -467,10 +581,11 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
             i.setText("")
             i.setStyleSheet("background-color: rgb(150, 150, 150);")
 
-    def reset_walletstuff(self):
-        """Clean all wallet stuff"""
-        wallet_fields = (self.lineWallet_Magnetiteshards, self.lineWallet_Gaetingcrystals)
-        for i in wallet_fields:
+    def reset_currencystuff(self):
+        """Clean all currency stuff"""
+        currency_fields = (self.lineCurrency_Magnetiteshards, self.lineCurrency_Gaetingcrystals,
+                           self.lineCurrency_Legend_insights, self.lineCurrency_Legend_divinations,)
+        for i in currency_fields:
             i.setText("")
             i.setStyleSheet("background-color: rgb(150, 150, 150);")
 
@@ -506,8 +621,10 @@ class AddNewApi(QtWidgets.QDialog, Ui_Dialog):
         """Validate the data. Get old keys. Add the new one. Store them."""
         # Validate the data
         if not len(self.lineKey.text()) == 72:
+            self.labelInfo.setStyleSheet("color: rgb(250, 0, 0);")
             self.labelInfo.setText("Error: The provided Key doesn't fits 72 characters.")
         elif self.lineName.text() == "":
+            self.labelInfo.setStyleSheet("color: rgb(250, 0, 0);")
             self.labelInfo.setText("Error: You must provide a name for that key.")
         else:
             self.labelInfo.clear()
@@ -517,7 +634,8 @@ class AddNewApi(QtWidgets.QDialog, Ui_Dialog):
             keys.append({'name': self.lineName.text(), 'key': self.lineKey.text()})
             # Save them into file
             ini_options.setValue("api_keys", keys)
-            self.labelInfo.setText("Success: Key stored.") #TBD green color
+            self.labelInfo.setStyleSheet("color: rgb(0, 190, 0);")
+            self.labelInfo.setText("Success: Key stored.")
 
     def closeEvent(self, event):
         """Write window position to config file"""
@@ -580,10 +698,15 @@ def popup_delete():
 ######################################################
 
 if __name__ == '__main__':
-    import sys
+    PROGRAM_VERSION = "071"
+    PROGRAM_AUTHOR = "Aens (Elrey.5472)"
+    # Get options file and main app pointer
     ini_options = QSettings("options.ini", QSettings.IniFormat)
     app = QtWidgets.QApplication(sys.argv)
+    # Make sure you scale for high DPI
+    app.setAttribute(Qt.AA_EnableHighDpiScaling)
+    app.setAttribute(Qt.AA_UseHighDpiPixmaps)
+    # Launch the window
     window = MainForm()
     window.show()
     sys.exit(app.exec_())
-

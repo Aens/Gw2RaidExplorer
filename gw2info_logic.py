@@ -92,7 +92,7 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
             self.statusbar.setStyleSheet("background-color: rgb(234, 140, 6);color: rgb(0, 0, 0);")
             self.statusbar.showMessage("WAIT: " + message)
         elif statusmode == "ready":
-            self.statusbar.setStyleSheet("background-color: rgb{0};color: rgb(0, 0, 0);".format(self.style_background))
+            self.statusbar.setStyleSheet(self.style_background)
             self.statusbar.showMessage("READY: " + message)
         elif statusmode == "error":
             self.statusbar.setStyleSheet("background-color: rgb(200, 0, 0);color: rgb(255, 255, 255);")

@@ -4,7 +4,7 @@ A tool to check raid-based stuff of Guild Wars 2.
 **UPDATING**  
 If you need to update this program, make sure to backup your options.ini, that's where your API keys are stored. It's safe to delete/replace everything else.
 
---------Version 0.8--------
+--------Version 0.8--------  
 -Changed: Installation path changed for base folder, not bin64.  
 -Fixed: Fixed a crash if installation folder was wrong.  
 -Fixed: Don't clear installation path if selection is cancelled.  

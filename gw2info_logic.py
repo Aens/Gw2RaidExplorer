@@ -5,13 +5,17 @@ import webbrowser
 import hashlib
 import sys
 import psutil
-from os import startfile
+import subprocess
 from pathlib import Path
 from PySide2 import QtWidgets
 from PySide2.QtGui import QIcon
 from PySide2.QtCore import Qt, QEvent, QPoint, QSize, QSettings
 from gw2info_ui import Ui_MainWindow
 from add_ui import Ui_Dialog
+
+PROGRAM_VERSION = "080"
+PROGRAM_AUTHOR = "https://github.com/Aens (Elrey.5472)"
+ini_options = QSettings("options.ini", QSettings.IniFormat)
 
 
 ########################################################
@@ -508,11 +512,12 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
             if self.game_is_running()[0]:
                 self.change_statusbar("error", "Guild Wars 2 is already running.")
             else:
+                self.change_statusbar("wait", "Launching Guild Wars 2...")
                 filepath = self.lineInstallationFolder.text()
                 game_paths = ["{0}/Gw2-64.exe".format(filepath), "{0}/Gw2.exe".format(filepath)]
                 for file in game_paths:
                     if self.file_exists(file):
-                        startfile(file + " -maploadinfo")
+                        subprocess.call(file + " -maploadinfo")
                         self.change_statusbar("ready", "Guild Wars 2 started.")
                         return
                 self.change_statusbar("error", "Executable file could not be found.")
@@ -929,10 +934,6 @@ def popup_delete():
 
 
 if __name__ == '__main__':
-    PROGRAM_VERSION = "080"
-    PROGRAM_AUTHOR = "https://github.com/Aens (Elrey.5472)"
-    # Get options file and main app pointer
-    ini_options = QSettings("options.ini", QSettings.IniFormat)
     app = QtWidgets.QApplication(sys.argv)
     # Make sure you scale for high DPI
     app.setAttribute(Qt.AA_EnableHighDpiScaling)

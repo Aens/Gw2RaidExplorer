@@ -8,14 +8,14 @@ import psutil
 import subprocess
 from pathlib import Path
 from PySide2 import QtWidgets
-from PySide2.QtGui import QIcon
+from PySide2.QtGui import QIcon, QColor
 from PySide2.QtCore import Qt, QEvent, QPoint, QSize, QSettings
 from gw2info_ui import Ui_MainWindow
 from add_ui import Ui_Dialog
 
-PROGRAM_VERSION = "080"
-PROGRAM_AUTHOR = "https://github.com/Aens (Elrey.5472)"
-ini_options = QSettings("options.ini", QSettings.IniFormat)
+PROGRAM_VERSION = "090"
+PROGRAM_AUTHOR = "(Made by Elrey.5472) https://github.com/Aens"
+INI_OPTIONS = QSettings("options.ini", QSettings.IniFormat)
 
 
 ########################################################
@@ -33,12 +33,12 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
         And fire up initial functions."""
         QtWidgets.QMainWindow.__init__(self, parent)
         self.setupUi(self)
-        self.setWindowIcon(QIcon("images\\Main.ico"))
-        self.setWindowTitle("Gw2 API Raid Explorer (Made by Elrey.5472)")
+        self.setWindowIcon(QIcon(":/images/Images/Main.ico"))
+        self.setWindowTitle("Gw2 API Raid Explorer {0}".format(PROGRAM_AUTHOR))
         # Initial window size/pos last saved. Use default values for first time
-        self.setFixedSize(QSize(1030, 760))
-        self.move(ini_options.value("menu_position", QPoint(350, 250)))
-        self.lineInstallationFolder.setText((ini_options.value("installation_folder", "")))
+        self.setFixedSize(QSize(1030, 840))
+        self.move(INI_OPTIONS.value("menu_position", QPoint(350, 250)))
+        self.lineInstallationFolder.setText((INI_OPTIONS.value("installation_folder", "")))
         # Left side Buttons
         self.botonThemeLight.clicked.connect(lambda: self.initialize_colors("light"))
         self.botonThemeDark.clicked.connect(lambda: self.initialize_colors("dark"))
@@ -80,7 +80,7 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def closeEvent(self, event):
         """Write window position to config file"""
-        ini_options.setValue("menu_position", self.pos())
+        INI_OPTIONS.setValue("menu_position", self.pos())
         event.accept()
 
     def eventFilter(self, target, event):
@@ -114,9 +114,9 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
         self.change_statusbar("wait", "Checking if everything is fine...")
         warning = []
         # Theme and colors
-        self.initialize_colors(ini_options.value("theme", "default"))
+        self.initialize_colors(INI_OPTIONS.value("theme", "default"))
         # Languages
-        self.initialize_language(ini_options.value("language", "en"))
+        self.initialize_language(INI_OPTIONS.value("language", "en"))
         # Load checkboxes status
         for checkbox in [self.checkBosses, self.checkCurrency, self.checkChallenges, self.checkMinis]:
             if self.load_checkboxes_status(checkbox) == "true":
@@ -140,12 +140,12 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
     @staticmethod
     def load_checkboxes_status(checkbox):
         """Load the status of the checkbox."""
-        return ini_options.value(checkbox.objectName(), "false")
+        return INI_OPTIONS.value(checkbox.objectName(), "false")
 
     @staticmethod
     def save_checkboxes_status(checkbox):
         """Save the status of the checkbox."""
-        ini_options.setValue(checkbox.objectName(), checkbox.isChecked())
+        INI_OPTIONS.setValue(checkbox.objectName(), checkbox.isChecked())
 
     @staticmethod
     def default_theme():
@@ -226,13 +226,13 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
         """Iterate over every widget to paint them."""
         if theme == "dark":
             colors = self.dark_theme()
-            ini_options.setValue("theme", "dark")
+            INI_OPTIONS.setValue("theme", "dark")
         elif theme == "light":
             colors = self.light_theme()
-            ini_options.setValue("theme", "light")
+            INI_OPTIONS.setValue("theme", "light")
         else:
             colors = self.default_theme()
-            ini_options.setValue("theme", "default")
+            INI_OPTIONS.setValue("theme", "default")
         # Let's paint them
         for widget in app.topLevelWidgets():
             if widget.isWindow():
@@ -274,10 +274,10 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
         """Iterate over every widget to paint them."""
         if lang == "en":
             self.change_statusbar("special", "Languages are not programmed yet.")
-            ini_options.setValue("lang", "en")
+            INI_OPTIONS.setValue("lang", "en")
         elif lang == "es":
             self.change_statusbar("special", "Languages are not programmed yet.")
-            ini_options.setValue("lang", "es")
+            INI_OPTIONS.setValue("lang", "es")
 
     @staticmethod
     def check_online_version():
@@ -318,7 +318,7 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
                 # update new keys
                 self.stored_keys = keys
                 # Save them into file
-                ini_options.setValue("api_keys", keys)
+                INI_OPTIONS.setValue("api_keys", keys)
                 # Clean it up
                 self.comboSelectAPI.clear()
                 self.change_statusbar("ready", "API key deleted from local database.")
@@ -390,7 +390,7 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
         folderpath = QtWidgets.QFileDialog.getExistingDirectory()
         if not folderpath == "":
             self.lineInstallationFolder.setText(folderpath)
-            ini_options.setValue("installation_folder", folderpath)
+            INI_OPTIONS.setValue("installation_folder", folderpath)
 
     def check_folder_is_right(self):
         """Check that there is no issues with that folder"""
@@ -514,7 +514,8 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
             else:
                 self.change_statusbar("wait", "Launching Guild Wars 2...")
                 filepath = self.lineInstallationFolder.text()
-                game_paths = ["{0}/Gw2-64.exe".format(filepath), "{0}/Gw2.exe".format(filepath)]
+                game_paths = ["{0}/Gw2-64.exe".format(filepath), "{0}/Gw2.exe".format(filepath),
+                              "{0}/gw2-64.exe".format(filepath), "{0}/gw2.exe".format(filepath)]
                 for file in game_paths:
                     if self.file_exists(file):
                         subprocess.call(file + " -maploadinfo")
@@ -581,6 +582,13 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
                         self.fill_achievements(api_achievs)
                     else:
                         self.reset_achievementsstuff()
+                    # Fill Minis section
+                    self.change_statusbar("wait", "Loading Minis section...")
+                    if self.checkMinis.isChecked() and self.linePermission_Unlocks.text() == "YES":
+                        api_minis = api_open("account/minis", token=api_key)
+                        self.fill_minis(api_minis)
+                    else:
+                        self.reset_minisstuff()
                     # Final message
                     self.change_statusbar("ready", "API data loaded.")
                 except Exception as e:
@@ -590,6 +598,7 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
                         self.reset_bossesstuff()
                         self.reset_currencystuff()
                         self.reset_achievementsstuff()
+                        self.reset_minisstuff()
                     else:
                         self.change_statusbar("error", str(e))
             else:
@@ -648,41 +657,40 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
         no_style = self.adapt_line_theme("no")
         # Reload everything
         self.reset_bossesstuff()
-        if self.linePermission_Progression.text() == "YES":
-            bosses = [{"name": "vale_guardian", "flag": 0, "uiitem": self.lineRaidboss_valeguardian},
-                      {"name": "spirit_woods", "flag": 0, "uiitem": self.lineRaidboss_spiritwoods},
-                      {"name": "gorseval", "flag": 0, "uiitem": self.lineRaidboss_gorseval},
-                      {"name": "sabetha", "flag": 0, "uiitem": self.lineRaidboss_sabetha},
-                      {"name": "slothasor", "flag": 0, "uiitem": self.lineRaidboss_slothasor},
-                      {"name": "bandit_trio", "flag": 0, "uiitem": self.lineRaidboss_trio},
-                      {"name": "matthias", "flag": 0, "uiitem": self.lineRaidboss_matthias},
-                      {"name": "escort", "flag": 0, "uiitem": self.lineRaidboss_glenna},
-                      {"name": "keep_construct", "flag": 0, "uiitem": self.lineRaidboss_keepconstruct},
-                      {"name": "twisted_castle", "flag": 0, "uiitem": self.lineRaidboss_twistedcastle},
-                      {"name": "xera", "flag": 0, "uiitem": self.lineRaidboss_xera},
-                      {"name": "cairn", "flag": 0, "uiitem": self.lineRaidboss_cairn},
-                      {"name": "mursaat_overseer", "flag": 0, "uiitem": self.lineRaidboss_mursaat},
-                      {"name": "samarog", "flag": 0, "uiitem": self.lineRaidboss_samarog},
-                      {"name": "deimos", "flag": 0, "uiitem": self.lineRaidboss_deimos},
-                      {"name": "soulless_horror", "flag": 0, "uiitem": self.lineRaidboss_desmina},
-                      {"name": "river_of_souls", "flag": 0, "uiitem": self.lineRaidboss_riverofsouls},
-                      {"name": "statues_of_grenth", "flag": 0, "uiitem": self.lineRaidboss_statues},
-                      {"name": "voice_in_the_void", "flag": 0, "uiitem": self.lineRaidboss_dhuum},
-                      {"name": "conjured_amalgamate", "flag": 0, "uiitem": self.lineRaidboss_conjureda},
-                      {"name": "twin_largos", "flag": 0, "uiitem": self.lineRaidboss_twinlargos},
-                      {"name": "qadim", "flag": 0, "uiitem": self.lineRaidboss_qadim},
-                      ]
-            bosses_killed = api_open("account", ids=["raids"], token=api_key)
-            for i in bosses:
-                for j in bosses_killed:
-                    if j == i['name']:
-                        i['flag'] = 1
-                if i['flag'] == 1:
-                    i['uiitem'].setText("YES")
-                    i['uiitem'].setStyleSheet(yes_style)
-                else:
-                    i['uiitem'].setText("NO")
-                    i['uiitem'].setStyleSheet(no_style)
+        bosses = [{"name": "vale_guardian", "flag": 0, "uiitem": self.lineRaidboss_valeguardian},
+                  {"name": "spirit_woods", "flag": 0, "uiitem": self.lineRaidboss_spiritwoods},
+                  {"name": "gorseval", "flag": 0, "uiitem": self.lineRaidboss_gorseval},
+                  {"name": "sabetha", "flag": 0, "uiitem": self.lineRaidboss_sabetha},
+                  {"name": "slothasor", "flag": 0, "uiitem": self.lineRaidboss_slothasor},
+                  {"name": "bandit_trio", "flag": 0, "uiitem": self.lineRaidboss_trio},
+                  {"name": "matthias", "flag": 0, "uiitem": self.lineRaidboss_matthias},
+                  {"name": "escort", "flag": 0, "uiitem": self.lineRaidboss_glenna},
+                  {"name": "keep_construct", "flag": 0, "uiitem": self.lineRaidboss_keepconstruct},
+                  {"name": "twisted_castle", "flag": 0, "uiitem": self.lineRaidboss_twistedcastle},
+                  {"name": "xera", "flag": 0, "uiitem": self.lineRaidboss_xera},
+                  {"name": "cairn", "flag": 0, "uiitem": self.lineRaidboss_cairn},
+                  {"name": "mursaat_overseer", "flag": 0, "uiitem": self.lineRaidboss_mursaat},
+                  {"name": "samarog", "flag": 0, "uiitem": self.lineRaidboss_samarog},
+                  {"name": "deimos", "flag": 0, "uiitem": self.lineRaidboss_deimos},
+                  {"name": "soulless_horror", "flag": 0, "uiitem": self.lineRaidboss_desmina},
+                  {"name": "river_of_souls", "flag": 0, "uiitem": self.lineRaidboss_riverofsouls},
+                  {"name": "statues_of_grenth", "flag": 0, "uiitem": self.lineRaidboss_statues},
+                  {"name": "voice_in_the_void", "flag": 0, "uiitem": self.lineRaidboss_dhuum},
+                  {"name": "conjured_amalgamate", "flag": 0, "uiitem": self.lineRaidboss_conjureda},
+                  {"name": "twin_largos", "flag": 0, "uiitem": self.lineRaidboss_twinlargos},
+                  {"name": "qadim", "flag": 0, "uiitem": self.lineRaidboss_qadim},
+                  ]
+        bosses_killed = api_open("account", ids=["raids"], token=api_key)
+        for i in bosses:
+            for j in bosses_killed:
+                if j == i['name']:
+                    i['flag'] = 1
+            if i['flag'] == 1:
+                i['uiitem'].setText("YES")
+                i['uiitem'].setStyleSheet(yes_style)
+            else:
+                i['uiitem'].setText("NO")
+                i['uiitem'].setStyleSheet(no_style)
 
     def fill_raid_currencies(self, api_wallet, api_characters, api_shared_inventory, api_materials, api_bank):
         """Reset values and set new ones."""
@@ -746,32 +754,92 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
         no_style = self.adapt_line_theme("no")
         # Reload everything
         self.reset_achievementsstuff()
-        if self.linePermission_Progression.text() == "YES":
-            # Challenge Modes
-            challenges = [{"id": 3019, "flag": 0, "uiitem": self.lineRaidboss_keepconstruct_cm},
-                          {"id": 3334, "flag": 0, "uiitem": self.lineRaidboss_cairn_cm},
-                          {"id": 3287, "flag": 0, "uiitem": self.lineRaidboss_mursaat_cm},
-                          {"id": 3342, "flag": 0, "uiitem": self.lineRaidboss_samarog_cm},
-                          {"id": 3292, "flag": 0, "uiitem": self.lineRaidboss_deimos_cm},
-                          {"id": 3993, "flag": 0, "uiitem": self.lineRaidboss_desmina_cm},
-                          {"id": 3979, "flag": 0, "uiitem": self.lineRaidboss_dhuum_cm},
-                          {"id": 4416, "flag": 0, "uiitem": self.lineRaidboss_conjureda_cm},
-                          {"id": 4429, "flag": 0, "uiitem": self.lineRaidboss_twinlargos_cm},
-                          {"id": 4355, "flag": 0, "uiitem": self.lineRaidboss_qadim_cm}]
-            # Flag the ones done
-            for achiev in api_achievs:
-                for challenge in challenges:
-                    if achiev['id'] == challenge['id']:
-                        if achiev['done']:
-                            challenge['flag'] = 1
-            # Set the UI
+        # Challenge Modes
+        challenges = [{"id": 3019, "flag": 0, "uiitem": self.lineRaidboss_keepconstruct_cm},
+                      {"id": 3334, "flag": 0, "uiitem": self.lineRaidboss_cairn_cm},
+                      {"id": 3287, "flag": 0, "uiitem": self.lineRaidboss_mursaat_cm},
+                      {"id": 3342, "flag": 0, "uiitem": self.lineRaidboss_samarog_cm},
+                      {"id": 3292, "flag": 0, "uiitem": self.lineRaidboss_deimos_cm},
+                      {"id": 3993, "flag": 0, "uiitem": self.lineRaidboss_desmina_cm},
+                      {"id": 3979, "flag": 0, "uiitem": self.lineRaidboss_dhuum_cm},
+                      {"id": 4416, "flag": 0, "uiitem": self.lineRaidboss_conjureda_cm},
+                      {"id": 4429, "flag": 0, "uiitem": self.lineRaidboss_twinlargos_cm},
+                      {"id": 4355, "flag": 0, "uiitem": self.lineRaidboss_qadim_cm}]
+        # Flag the ones done
+        for achiev in api_achievs:
             for challenge in challenges:
-                if challenge['flag'] == 1:
-                    challenge['uiitem'].setText("YES")
-                    challenge['uiitem'].setStyleSheet(yes_style)
-                else:
-                    challenge['uiitem'].setText("NO")
-                    challenge['uiitem'].setStyleSheet(no_style)
+                if achiev['id'] == challenge['id']:
+                    if achiev['done']:
+                        challenge['flag'] = 1
+        # Set the UI
+        for challenge in challenges:
+            if challenge['flag'] == 1:
+                challenge['uiitem'].setText("YES")
+                challenge['uiitem'].setStyleSheet(yes_style)
+            else:
+                challenge['uiitem'].setText("NO")
+                challenge['uiitem'].setStyleSheet(no_style)
+
+    def fill_minis(self, api_minis):
+        """Reset values and set yes or no for each item."""
+        # Reload everything
+        self.reset_minisstuff()
+        # Minis IDs
+        raid_minis = [{"id": 371, "flag": 0, "uiitem": self.label_Mini_redguardian},
+                      {"id": 376, "flag": 0, "uiitem": self.label_Mini_greenguardian},
+                      {"id": 373, "flag": 0, "uiitem": self.label_Mini_blueguardian},
+                      {"id": 368, "flag": 0, "uiitem": self.label_Mini_valeguardian},
+                      {"id": 372, "flag": 0, "uiitem": self.label_Mini_gorseval},
+                      {"id": 377, "flag": 0, "uiitem": self.label_Mini_knuckles},
+                      {"id": 375, "flag": 0, "uiitem": self.label_Mini_kernan},
+                      {"id": 370, "flag": 0, "uiitem": self.label_Mini_karde},
+                      {"id": 390, "flag": 0, "uiitem": self.label_Mini_slubling},
+                      {"id": 389, "flag": 0, "uiitem": self.label_Mini_slothasor},
+                      {"id": 393, "flag": 0, "uiitem": self.label_Mini_berg},
+                      {"id": 394, "flag": 0, "uiitem": self.label_Mini_zane},
+                      {"id": 392, "flag": 0, "uiitem": self.label_Mini_narella},
+                      {"id": 391, "flag": 0, "uiitem": self.label_Mini_matthias},
+                      {"id": 402, "flag": 0, "uiitem": self.label_Mini_mcleod},
+                      {"id": 403, "flag": 0, "uiitem": self.label_Mini_keepconstruct},
+                      {"id": 401, "flag": 0, "uiitem": self.label_Mini_xera},
+                      {"id": 441, "flag": 0, "uiitem": self.label_Mini_cairn},
+                      {"id": 438, "flag": 0, "uiitem": self.label_Mini_mursaat},
+                      {"id": 447, "flag": 0, "uiitem": self.label_Mini_eyeofjanthir},
+                      {"id": 442, "flag": 0, "uiitem": self.label_Mini_samarog},
+                      {"id": 440, "flag": 0, "uiitem": self.label_Mini_whitemantle},
+                      {"id": 436, "flag": 0, "uiitem": self.label_Mini_ragged_whitemantle},
+                      {"id": 622, "flag": 0, "uiitem": self.label_Mini_desmina},
+                      {"id": 621, "flag": 0, "uiitem": self.label_Mini_brokenking},
+                      {"id": 623, "flag": 0, "uiitem": self.label_Mini_dhuum},
+                      {"id": 722, "flag": 0, "uiitem": self.label_Mini_zommoros},
+                      {"id": 721, "flag": 0, "uiitem": self.label_Mini_kenut},
+                      {"id": 725, "flag": 0, "uiitem": self.label_Mini_nikare},
+                      {"id": 723, "flag": 0, "uiitem": self.label_Mini_qadim}]
+        # Flag the ones done
+        for your_mini in api_minis:
+            for mini in raid_minis:
+                if mini['id'] == your_mini:
+                    mini['flag'] = 1
+        # Set the UI
+        for mini in raid_minis:
+            if mini['flag'] == 1:
+                yes_style = QtWidgets.QGraphicsColorizeEffect(self)
+                yes_style.setColor(QColor(0, 150, 0))
+                mini['uiitem'].setGraphicsEffect(yes_style)
+            else:
+                no_style = QtWidgets.QGraphicsColorizeEffect(self)
+                no_style.setColor(QColor(150, 0, 0))
+                mini['uiitem'].setGraphicsEffect(no_style)
+
+    def reset_minisstuff(self):
+        """Clean all minis stuff"""
+        # Get new color to paint based on theme
+        reset_style = self.adapt_line_theme("reset")
+        # Clean everything
+        minis_fields = (self.lineRaidboss_keepconstruct_cm, self.lineRaidboss_trio) #TBD THIS
+        for i in minis_fields:
+            i.clear()
+            i.setStyleSheet(reset_style)
 
     def reset_permissions(self):
         """Clean all permissions stuff"""
@@ -832,10 +900,10 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
             i.clear()
             i.setStyleSheet(reset_style)
 
-
 #########################################################
 ################### WINDOW ADD API ######################
 #########################################################
+
 
 class AddNewApi(QtWidgets.QDialog, Ui_Dialog):
     """Class for the Add New Api window"""
@@ -846,7 +914,7 @@ class AddNewApi(QtWidgets.QDialog, Ui_Dialog):
         self.setupUi(self)
         # self.setAttribute(Qt.WA_DeleteOnClose)
         self.setFixedSize(QSize(595, 100))
-        self.move(ini_options.value("add_position", QPoint(360, 325)))
+        self.move(INI_OPTIONS.value("add_position", QPoint(360, 325)))
         self.botonSave.clicked.connect(self.save_new_api)
 
     def save_new_api(self):
@@ -865,13 +933,13 @@ class AddNewApi(QtWidgets.QDialog, Ui_Dialog):
             # Add the new key
             keys.append({'name': self.lineName.text(), 'key': self.lineKey.text()})
             # Save them into file
-            ini_options.setValue("api_keys", keys)
+            INI_OPTIONS.setValue("api_keys", keys)
             self.labelInfo.setStyleSheet("color: rgb(0, 190, 0);")
             self.labelInfo.setText("Success: Key stored.")
 
     def closeEvent(self, event):
         """Write window position to config file"""
-        ini_options.setValue("add_position", self.pos())
+        INI_OPTIONS.setValue("add_position", self.pos())
         event.accept()
 
 #################################################
@@ -882,7 +950,7 @@ class AddNewApi(QtWidgets.QDialog, Ui_Dialog):
 def get_stored_keys():
     """Get stored APIs from database, which is a list of dicts."""
     stored_keys = []
-    for key in ini_options.value("api_keys", []):
+    for key in INI_OPTIONS.value("api_keys", []):
         stored_keys.append(key)
     return stored_keys
 

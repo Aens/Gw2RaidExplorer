@@ -555,7 +555,7 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
                     self.fill_permissions(permissions)
                     # Fill Bosses section
                     self.change_statusbar("wait", "Loading Bosses section...")
-                    if self.checkBosses.isChecked():
+                    if self.checkBosses.isChecked() and self.linePermission_Progression.text() == "YES":
                         self.fill_raid_bosses(api_key)
                     else:
                         self.reset_bossesstuff()
@@ -599,6 +599,8 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
                         self.reset_currencystuff()
                         self.reset_achievementsstuff()
                         self.reset_minisstuff()
+                    elif "HTTP Error 403" in str(e):
+                        self.change_statusbar("error", "Your API does not have the permissions to do that.")
                     else:
                         self.change_statusbar("error", str(e))
             else:
@@ -717,7 +719,7 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
                 # Equipped items
                 for equipped in char['equipment']:
                     if equipped['id'] == item['id']:
-                        char_items += item['value']
+                        char_items += 1
                         break
                 # Inventories
                 for bag in char['bags']:
@@ -725,14 +727,14 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
                         for slot in bag['inventory']:
                             if slot is not None:
                                 if slot['id'] == item['id']:
-                                    char_items += item['value'] * slot['count']
+                                    char_items += slot['count']
                                     break
                 total += char_items
             # Shared inventory
             for slot in api_shared_inventory:
                 if slot is not None:
                     if slot['id'] == item['id']:
-                        total += item['value'] * slot['count']
+                        total += slot['count']
             # Materials bank
             for mat in api_materials:
                 if mat['id'] == item['id']:
@@ -742,7 +744,7 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
             for slot in api_bank:
                 if slot is not None:
                     if slot['id'] == item['id']:
-                        total += item['value'] * slot['count']
+                        total += slot['count']
             # Set the UI
             item['uiitem'].setText(str(total))
             item['uiitem'].setStyleSheet(yes_style)
@@ -833,13 +835,19 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def reset_minisstuff(self):
         """Clean all minis stuff"""
-        # Get new color to paint based on theme
-        reset_style = self.adapt_line_theme("reset")
         # Clean everything
-        minis_fields = (self.lineRaidboss_keepconstruct_cm, self.lineRaidboss_trio) #TBD THIS
+        minis_fields = (self.label_Mini_redguardian, self.label_Mini_greenguardian, self.label_Mini_blueguardian,
+                        self.label_Mini_valeguardian, self.label_Mini_gorseval, self.label_Mini_knuckles,
+                        self.label_Mini_kernan, self.label_Mini_karde, self.label_Mini_slubling,
+                        self.label_Mini_slothasor, self.label_Mini_berg, self.label_Mini_zane,
+                        self.label_Mini_narella, self.label_Mini_matthias, self.label_Mini_mcleod,
+                        self.label_Mini_keepconstruct, self.label_Mini_xera, self.label_Mini_cairn,
+                        self.label_Mini_mursaat, self.label_Mini_eyeofjanthir, self.label_Mini_samarog,
+                        self.label_Mini_whitemantle, self.label_Mini_ragged_whitemantle, self.label_Mini_desmina,
+                        self.label_Mini_brokenking, self.label_Mini_dhuum, self.label_Mini_zommoros,
+                        self.label_Mini_kenut, self.label_Mini_nikare, self.label_Mini_qadim)
         for i in minis_fields:
-            i.clear()
-            i.setStyleSheet(reset_style)
+            i.setGraphicsEffect(None)
 
     def reset_permissions(self):
         """Clean all permissions stuff"""

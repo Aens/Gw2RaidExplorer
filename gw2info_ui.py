@@ -3,7 +3,7 @@
 # Form implementation generated from reading ui file 'gw2info.ui',
 # licensing of 'gw2info.ui' applies.
 #
-# Created: Tue Jan 29 05:15:08 2019
+# Created: Tue Jan 29 23:57:10 2019
 #      by: pyside2-uic  running on PySide2 5.12.0
 #
 # WARNING! All changes made in this file will be lost!
@@ -1466,7 +1466,7 @@ class Ui_MainWindow(object):
         self.botonWebsite_dulfy.setText(QtWidgets.QApplication.translate("MainWindow", "Dulfy Boss Guides", None, -1))
         self.botonWebsite_builds_alternative.setText(QtWidgets.QApplication.translate("MainWindow", "Metabattle Raid Builds", None, -1))
         self.label_54.setText(QtWidgets.QApplication.translate("MainWindow", "<html><head/><body><p>If you want your website here or want to report a bug, please send an in-game mail to the account <span style=\" font-weight:600;\">Elrey.5472</span> and I will look into it for the next release of this tool.</p></body></html>", None, -1))
-        self.label_60.setText(QtWidgets.QApplication.translate("MainWindow", "<html><head/><body><p>TO BE DONE: MINIS, LANGUAGES, TITLES, ACHIEVEMENTS, SKINS, <br/>Currency earned &quot;this week&quot;, </p></body></html>", None, -1))
+        self.label_60.setText(QtWidgets.QApplication.translate("MainWindow", "<html><head/><body><p>TO BE DONE: LANGUAGES, TITLES, ACHIEVEMENTS, SKINS, <br/>Currency earned &quot;this week&quot;, </p></body></html>", None, -1))
         self.groupCurrency.setTitle(QtWidgets.QApplication.translate("MainWindow", "RAID CURRENCY", None, -1))
         self.label_93.setText(QtWidgets.QApplication.translate("MainWindow", "PATH OF FIRE", None, -1))
         self.label_94.setText(QtWidgets.QApplication.translate("MainWindow", "HEART OF THORNS", None, -1))

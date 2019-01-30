@@ -65,12 +65,16 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
         self.botonWebsite_raidar.clicked.connect(self.open_web_raidar)
         # Events
         self.comboSelectAPI.installEventFilter(self)
+        self.comboSelectAPI.activated.connect(self.load_combo_stuff)
         self.checkBosses.stateChanged.connect(lambda: self.save_checkboxes_status(self.checkBosses))
         self.checkMinis.stateChanged.connect(lambda: self.save_checkboxes_status(self.checkMinis))
         self.checkChallenges.stateChanged.connect(lambda: self.save_checkboxes_status(self.checkChallenges))
         self.checkCurrency.stateChanged.connect(lambda: self.save_checkboxes_status(self.checkCurrency))
         # Check if we are ready to work
+        self.debug_mode = True
         self.stored_keys = []
+        self.api_key = None
+        self.api_permissions = None
         self.style_background = ""
         self.check_if_ready()
 
@@ -105,6 +109,28 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
             self.statusbar.setStyleSheet("background-color: rgb(190, 1, 190);color: rgb(255, 255, 255);")
             self.statusbar.showMessage("SPECIAL: " + message)
 
+    def api_open(self, section, **keyarguments):
+        """Build the right address"""
+        address = "https://api.guildwars2.com/v2/"+section
+        separator = "?"
+        if 'ids' in keyarguments:
+            if len(keyarguments['ids']) > 1:
+                address = address+"?ids="+",".join(keyarguments['ids'])
+                separator = "&"
+            else:
+                address = address+"/"+keyarguments['ids'][0]
+        # Check for special parameters
+        if 'token' in keyarguments:
+            address = address+separator+"access_token="+keyarguments['token']
+        elif 'lang' in keyarguments:
+            address = address+separator+"lang="+keyarguments['lang']
+        # Now encode, debug and open it
+        address = urllib.parse.quote(address, safe='/:=', encoding="utf-8", errors="strict")
+        if self.debug_mode:
+            print(address)
+        address = urllib.request.urlopen(address).read().decode('utf8')
+        return json.loads(address)
+
     ###############################################
     ################### ON LOAD ###################
     ###############################################
@@ -125,6 +151,8 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
         self.fill_combo_selectapi()
         if not self.stored_keys:
             warning.append("There is no API keys yet, add one.")
+        else:
+            self.load_permissions()
         # Check if there is warnings
         if len(warning) >= 1:
             self.change_statusbar("error", ",".join(warning))
@@ -168,7 +196,16 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
                                 "margin-top: 5px; /* leave space at the top for the title */}"
                                 "QGroupBox::title {subcontrol-origin: margin;"
                                 "subcontrol-position: top center; /* position at the top center */"
-                                "padding: 0 3px;  /* empty space at each side of title */}"
+                                "padding: 0 3px;  /* empty space at each side of title */}",
+                  "tabstyle": "/* The tab menu buttons */"
+                               "QTabBar::tab {border: 2px solid gray;border-bottom: 0px;"
+                               "border-top-left-radius: 6px;border-top-right-radius: 6px;"
+                               "padding: 2px;}"
+                               " /* The tab specific buttons */"
+                               "QTabBar::tab:selected {border-color: black;background-color: gray;}"
+                               "QTabBar::tab:hover {background-color: gray;}"
+                               " /* The tab widget frame */"
+                               "QTabWidget::pane {border-radius: 5px;border: 2px solid gray;}"
                   }
         return colors
 
@@ -193,7 +230,16 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
                                 "margin-top: 5px; /* leave space at the top for the title */}"
                                 "QGroupBox::title {subcontrol-origin: margin;"
                                 "subcontrol-position: top center; /* position at the top center */"
-                                "padding: 0 3px;  /* empty space at each side of title */}"
+                                "padding: 0 3px;  /* empty space at each side of title */}",
+                  "tabstyle": "/* The tab menu buttons */"
+                              "QTabBar::tab {border: 2px solid gray;border-bottom: 0px;"
+                              "border-top-left-radius: 6px;border-top-right-radius: 6px;"
+                              "padding: 2px;}"
+                              " /* The tab specific buttons */"
+                              "QTabBar::tab:selected {border-color: black;background-color: gray;}"
+                              "QTabBar::tab:hover {background-color: gray;}"
+                              " /* The tab widget frame */"
+                              "QTabWidget::pane {border-radius: 5px;border: 2px solid gray;}"
                   }
         return colors
 
@@ -218,7 +264,16 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
                                 "margin-top: 5px; /* leave space at the top for the title */}"
                                 "QGroupBox::title {subcontrol-origin: margin;"
                                 "subcontrol-position: top center; /* position at the top center */"
-                                "padding: 0 3px;  /* empty space at each side of title */}"
+                                "padding: 0 3px;  /* empty space at each side of title */}",
+                  "tabstyle": "/* The tab menu buttons */"
+                              "QTabBar::tab {border: 2px solid gray;border-bottom: 0px;"
+                              "border-top-left-radius: 6px;border-top-right-radius: 6px;"
+                              "padding: 2px;}"
+                              " /* The tab specific buttons */"
+                              "QTabBar::tab:selected {border-color: black;background-color: gray;}"
+                              "QTabBar::tab:hover {background-color: gray;}"
+                              " /* The tab widget frame */"
+                              "QTabWidget::pane {border-radius: 5px;border: 2px solid gray;}"
                   }
         return colors
 
@@ -267,6 +322,9 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
             elif item_type == "QGroupBox":
                 item.setStyleSheet(colors['groupstyle'])
                 self.set_colors(item, colors)
+            elif item_type == "QTabWidget":
+                item.setStyleSheet(colors['tabstyle'])
+                self.set_colors(item, colors)
             else:
                 pass
 
@@ -297,6 +355,11 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
         self.stored_keys = get_stored_keys()
         for key in self.stored_keys:
             self.comboSelectAPI.addItem(key['name'])
+
+    def load_combo_stuff(self):
+        """Load the stuff on selecting anything on the combo"""
+        self.reset_everything()
+        self.load_permissions()
 
     @staticmethod
     def open_window_add():
@@ -537,74 +600,111 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
     ################### MAIN LOADING API CODE #####################
     ###############################################################
 
+    def reset_everything(self):
+        """Reset all fields"""
+        self.reset_permissions()
+        self.reset_bosses()
+        self.reset_currency()
+        self.reset_challenges()
+        self.reset_minis()
+
     def load_api(self):
         """Load all the data of this API"""
         self.change_statusbar("wait", "Loading your data...")
-        if self.comboSelectAPI.currentText() == "":
-            self.change_statusbar("error", "There is no API key selected.")
-        else:
+        try:
+            # Fill Bosses section
+            self.change_statusbar("wait", "Loading Bosses section...")
+            bosses = self.load_bosses_section()
+            self.change_statusbar("ready", "Bosses section loaded.")
+            # Fill Raid currencies section
+            self.change_statusbar("wait", "Loading Currencies section...")
+            currency = self.load_currency_section()
+            self.change_statusbar("ready", "Currency section loaded.")
+            # Fill Raid challenges section
+            self.change_statusbar("wait", "Loading Challenges section...")
+            challenges = self.load_challenges_section()
+            self.change_statusbar("ready", "Challenges section loaded.")
+            # Fill Minis section
+            self.change_statusbar("wait", "Loading Minis section...")
+            minis = self.load_minis_section()
+            self.change_statusbar("ready", "Minis section loaded.")
+            # Final message
+            warning = []
+            for result in [bosses, currency, challenges, minis]:
+                if result is not None:
+                    warning.append(result)
+            if len(warning) >= 1:
+                self.change_statusbar("error", "Not enough permission to do that - {0}".format(" - ".join(warning)))
+            else:
+                self.change_statusbar("ready", "API data loaded.")
+        # Special exceptions
+        except Exception as e:
+            if "HTTP Error 400" in str(e):
+                self.change_statusbar("error", "Your API key is not valid.")
+            elif "HTTP Error 403" in str(e):
+                self.change_statusbar("error", "LAZY BUG 0001 - If you can read this, tell the programmer.")
+            else:
+                self.change_statusbar("error", str(e))
+
+    def load_permissions(self):
+        """Load the permissions of the selected key"""
+        if not self.comboSelectAPI.currentText() == "":
+            self.change_statusbar("wait", "Loading API key permissions...")
             # Get key of that name
-            api_key = None
+            self.api_key = None
             for x in self.stored_keys:
                 if x['name'] == self.comboSelectAPI.currentText():
-                    api_key = x['key']
-            if api_key is not None:
+                    self.api_key = x['key']
+                    break
+            if self.api_key is not None:
                 # Fill the permissions sections
                 try:
-                    permissions = api_open("tokeninfo", token=api_key)['permissions']
+                    permissions = self.api_open("tokeninfo", token=self.api_key)['permissions']
                     self.fill_permissions(permissions)
-                    # Fill Bosses section
-                    self.change_statusbar("wait", "Loading Bosses section...")
-                    if self.checkBosses.isChecked() and self.linePermission_Progression.text() == "YES":
-                        self.fill_raid_bosses(api_key)
-                    else:
-                        self.reset_bossesstuff()
-                    # Fill Raid currencies section
-                    self.change_statusbar("wait", "Loading Currencies section...")
-                    if (self.checkCurrency.isChecked()
-                            and self.linePermission_Inventories.text() == "YES"
-                            and self.linePermission_Wallet.text() == "YES"
-                            and self.linePermission_Characters.text() == "YES"):
-                        api_characters_names = api_open("characters", token=api_key)
-                        api_characters = api_open("characters", ids=api_characters_names, token=api_key)
-                        api_shared_inventory = api_open("account/inventory", token=api_key)
-                        api_materials = api_open("account/materials", token=api_key)
-                        api_bank = api_open("account/bank", token=api_key)
-                        api_wallet = api_open("account", ids=["wallet"], token=api_key)
-                        self.fill_raid_currencies(api_wallet, api_characters,
-                                                  api_shared_inventory, api_materials, api_bank)
-                    else:
-                        self.reset_currencystuff()
-                    # Fill Raid challenges section
-                    self.change_statusbar("wait", "Loading Challenges section...")
-                    if self.checkChallenges.isChecked() and self.linePermission_Progression.text() == "YES":
-                        api_achievs = api_open("account/achievements", token=api_key)
-                        self.fill_achievements(api_achievs)
-                    else:
-                        self.reset_achievementsstuff()
-                    # Fill Minis section
-                    self.change_statusbar("wait", "Loading Minis section...")
-                    if self.checkMinis.isChecked() and self.linePermission_Unlocks.text() == "YES":
-                        api_minis = api_open("account/minis", token=api_key)
-                        self.fill_minis(api_minis)
-                    else:
-                        self.reset_minisstuff()
-                    # Final message
-                    self.change_statusbar("ready", "API data loaded.")
+                    self.api_permissions = permissions
                 except Exception as e:
                     if "HTTP Error 400" in str(e):
                         self.change_statusbar("error", "Your API key is not valid.")
-                        self.reset_permissions()
-                        self.reset_bossesstuff()
-                        self.reset_currencystuff()
-                        self.reset_achievementsstuff()
-                        self.reset_minisstuff()
-                    elif "HTTP Error 403" in str(e):
-                        self.change_statusbar("error", "Your API does not have the permissions to do that.")
-                    else:
-                        self.change_statusbar("error", str(e))
             else:
                 self.change_statusbar("ready", "API key not valid, probably empty or corrupted.")
+
+    def fill_permissions(self, permissions):
+        """Set yes or no for each item."""
+        # Get new colors to paint based on theme
+        yes_style = self.adapt_line_theme("yes")
+        no_style = self.adapt_line_theme("no")
+        # Load everything
+        all_sections = [("account", self.linePermission_Account),
+                        ("builds", self.linePermission_Builds),
+                        ("characters", self.linePermission_Characters),
+                        ("guilds", self.linePermission_Guilds),
+                        ("inventories", self.linePermission_Inventories),
+                        ("progression", self.linePermission_Progression),
+                        ("pvp", self.linePermission_PvP),
+                        ("tradingpost", self.linePermission_Tradingpost),
+                        ("unlocks", self.linePermission_Unlocks),
+                        ("wallet", self.linePermission_Wallet)]
+        for section in all_sections:
+            if section[0] in permissions:
+                section[1].setStyleSheet(yes_style)
+            else:
+                section[1].setStyleSheet(no_style)
+        self.change_statusbar("ready", "Permissions loaded.")
+
+    def reset_permissions(self):
+        """Clean all permissions"""
+        # Get new color to paint based on theme
+        reset_style = self.adapt_line_theme("reset")
+        # Clean everything
+        permission_fields = (
+            self.linePermission_Progression, self.linePermission_Wallet,
+            self.linePermission_Unlocks, self.linePermission_PvP,
+            self.linePermission_Inventories, self.linePermission_Guilds,
+            self.linePermission_Guilds, self.linePermission_Characters,
+            self.linePermission_Builds, self.linePermission_Account,
+            self.linePermission_Tradingpost)
+        for i in permission_fields:
+            i.setStyleSheet(reset_style)
 
     def adapt_line_theme(self, value):
         """Get a sample of a linedit and change the theme to meet new conditions."""
@@ -628,37 +728,27 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
         new_style = ";".join(new_style)
         return new_style
 
-    def fill_permissions(self, permissions):
-        """Set yes or no for each item."""
-        # Get new colors to paint based on theme
-        yes_style = self.adapt_line_theme("yes")
-        no_style = self.adapt_line_theme("no")
-        # Load everything
-        all_sections = [("account", self.linePermission_Account),
-                        ("builds", self.linePermission_Builds),
-                        ("characters", self.linePermission_Characters),
-                        ("guilds", self.linePermission_Guilds),
-                        ("inventories", self.linePermission_Inventories),
-                        ("progression", self.linePermission_Progression),
-                        ("pvp", self.linePermission_PvP),
-                        ("tradingpost", self.linePermission_Tradingpost),
-                        ("unlocks", self.linePermission_Unlocks),
-                        ("wallet", self.linePermission_Wallet)]
-        for section in all_sections:
-            if section[0] in permissions:
-                section[1].setText("YES")
-                section[1].setStyleSheet(yes_style)
-            else:
-                section[1].setText("NO")
-                section[1].setStyleSheet(no_style)
+    #######################################################
+    ################### BOSSES SECTION ####################
+    #######################################################
 
-    def fill_raid_bosses(self, api_key):
-        """Reset values and set yes or no for each item."""
+    def load_bosses_section(self):
+        """Load bosses section"""
+        if self.checkBosses.isChecked():
+            if "progression" in self.api_permissions:
+                self.fill_bosses(self.api_key)
+            else:
+                self.reset_bosses()
+                return "Raid bosses need: Progression"
+        else:
+            self.reset_bosses()
+
+    def fill_bosses(self, api_key):
+        """Set the correct style for each item."""
         # Get new colors to paint based on theme
         yes_style = self.adapt_line_theme("yes")
         no_style = self.adapt_line_theme("no")
-        # Reload everything
-        self.reset_bossesstuff()
+        # Bosses
         bosses = [{"name": "vale_guardian", "flag": 0, "uiitem": self.lineRaidboss_valeguardian},
                   {"name": "spirit_woods", "flag": 0, "uiitem": self.lineRaidboss_spiritwoods},
                   {"name": "gorseval", "flag": 0, "uiitem": self.lineRaidboss_gorseval},
@@ -682,7 +772,7 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
                   {"name": "twin_largos", "flag": 0, "uiitem": self.lineRaidboss_twinlargos},
                   {"name": "qadim", "flag": 0, "uiitem": self.lineRaidboss_qadim},
                   ]
-        bosses_killed = api_open("account", ids=["raids"], token=api_key)
+        bosses_killed = self.api_open("account", ids=["raids"], token=api_key)
         for i in bosses:
             for j in bosses_killed:
                 if j == i['name']:
@@ -694,13 +784,53 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
                 i['uiitem'].setText("NO")
                 i['uiitem'].setStyleSheet(no_style)
 
-    def fill_raid_currencies(self, api_wallet, api_characters, api_shared_inventory, api_materials, api_bank):
-        """Reset values and set new ones."""
+    def reset_bosses(self):
+        """Clean all bosses"""
+        # Get new color to paint based on theme
+        reset_style = self.adapt_line_theme("reset")
+        # Clean everything
+        raids_fields = (
+            self.lineRaidboss_valeguardian, self.lineRaidboss_spiritwoods, self.lineRaidboss_gorseval,
+            self.lineRaidboss_sabetha, self.lineRaidboss_slothasor, self.lineRaidboss_trio,
+            self.lineRaidboss_matthias, self.lineRaidboss_glenna, self.lineRaidboss_keepconstruct,
+            self.lineRaidboss_twistedcastle, self.lineRaidboss_xera, self.lineRaidboss_cairn,
+            self.lineRaidboss_mursaat, self.lineRaidboss_samarog, self.lineRaidboss_deimos,
+            self.lineRaidboss_desmina, self.lineRaidboss_riverofsouls, self.lineRaidboss_statues,
+            self.lineRaidboss_dhuum, self.lineRaidboss_conjureda, self.lineRaidboss_twinlargos,
+            self.lineRaidboss_qadim)
+        for i in raids_fields:
+            i.clear()
+            i.setStyleSheet(reset_style)
+
+    #######################################################
+    ################### CURRENCY SECTION ##################
+    #######################################################
+
+    def load_currency_section(self):
+        """Load currency section"""
+        if self.checkCurrency.isChecked():
+            if ("inventories" in self.api_permissions
+                    and "wallet" in self.api_permissions
+                    and "characters" in self.api_permissions):
+                api_characters_names = self.api_open("characters", token=self.api_key)
+                api_characters = self.api_open("characters", ids=api_characters_names, token=self.api_key)
+                api_shared_inventory = self.api_open("account/inventory", token=self.api_key)
+                api_materials = self.api_open("account/materials", token=self.api_key)
+                api_bank = self.api_open("account/bank", token=self.api_key)
+                api_wallet = self.api_open("account", ids=["wallet"], token=self.api_key)
+                self.fill_currency(api_wallet, api_characters,
+                                   api_shared_inventory, api_materials, api_bank)
+            else:
+                self.reset_currency()
+                return "Currency needs: Inventories, Wallet, Characters"
+        else:
+            self.reset_currency()
+
+    def fill_currency(self, api_wallet, api_characters, api_shared_inventory, api_materials, api_bank):
+        """Sum the values and set the correct style for each item."""
         # Get new colors to paint based on theme
         yes_style = self.adapt_line_theme("yes")
-        # Reload everything
-        self.reset_currencystuff()
-        # Wallet stuff
+        # Wallet
         for i in api_wallet:
             wallet_items = [{"name": "magnetite_shards", "id": 28, "uiitem": self.lineCurrency_Magnetiteshards},
                             {"name": "gaeting_crystals", "id": 39, "uiitem": self.lineCurrency_Gaetingcrystals}]
@@ -749,13 +879,38 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
             item['uiitem'].setText(str(total))
             item['uiitem'].setStyleSheet(yes_style)
 
-    def fill_achievements(self, api_achievs):
-        """Reset values and set yes or no for each item."""
+    def reset_currency(self):
+        """Clean all currency"""
+        # Get new color to paint based on theme
+        reset_style = self.adapt_line_theme("reset")
+        # Clean everything
+        currency_fields = (self.lineCurrency_Magnetiteshards, self.lineCurrency_Gaetingcrystals,
+                           self.lineCurrency_Legend_insights, self.lineCurrency_Legend_divinations,)
+        for i in currency_fields:
+            i.clear()
+            i.setStyleSheet(reset_style)
+
+    #######################################################
+    ################## CHALLENGES SECTION #################
+    #######################################################
+
+    def load_challenges_section(self):
+        """Load challenges section"""
+        if self.checkChallenges.isChecked():
+            if "progression" in self.api_permissions:
+                api_achievs = self.api_open("account/achievements", token=self.api_key)
+                self.fill_challenges(api_achievs)
+            else:
+                self.reset_challenges()
+                return "Challenges need: Progression"
+        else:
+            self.reset_challenges()
+
+    def fill_challenges(self, api_achievs):
+        """Set the correct style for each item."""
         # Get new colors to paint based on theme
         yes_style = self.adapt_line_theme("yes")
         no_style = self.adapt_line_theme("no")
-        # Reload everything
-        self.reset_achievementsstuff()
         # Challenge Modes
         challenges = [{"id": 3019, "flag": 0, "uiitem": self.lineRaidboss_keepconstruct_cm},
                       {"id": 3334, "flag": 0, "uiitem": self.lineRaidboss_cairn_cm},
@@ -782,10 +937,38 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
                 challenge['uiitem'].setText("NO")
                 challenge['uiitem'].setStyleSheet(no_style)
 
+    def reset_challenges(self):
+        """Clean all challenges"""
+        # Get new color to paint based on theme
+        reset_style = self.adapt_line_theme("reset")
+        # Clean everything
+        achievements_fields = (
+            self.lineRaidboss_keepconstruct_cm, self.lineRaidboss_cairn_cm, self.lineRaidboss_mursaat_cm,
+            self.lineRaidboss_samarog_cm, self.lineRaidboss_deimos_cm, self.lineRaidboss_desmina_cm,
+            self.lineRaidboss_dhuum_cm, self.lineRaidboss_conjureda_cm, self.lineRaidboss_twinlargos_cm,
+            self.lineRaidboss_qadim_cm)
+        for i in achievements_fields:
+            i.clear()
+            i.setStyleSheet(reset_style)
+
+    ####################################################
+    ################### MINIS SECTION ##################
+    ####################################################
+
+    def load_minis_section(self):
+        """Load minis section"""
+        if self.checkMinis.isChecked():
+            if "unlocks" in self.api_permissions:
+                api_minis = self.api_open("account/minis", token=self.api_key)
+                self.fill_minis(api_minis)
+            else:
+                self.reset_minis()
+                return "Minis need: Unlocks"
+        else:
+            self.reset_minis()
+
     def fill_minis(self, api_minis):
-        """Reset values and set yes or no for each item."""
-        # Reload everything
-        self.reset_minisstuff()
+        """Set the correct style for each item."""
         # Minis IDs
         raid_minis = [{"id": 371, "flag": 0, "uiitem": self.label_Mini_redguardian},
                       {"id": 376, "flag": 0, "uiitem": self.label_Mini_greenguardian},
@@ -833,8 +1016,8 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
                 no_style.setColor(QColor(150, 0, 0))
                 mini['uiitem'].setGraphicsEffect(no_style)
 
-    def reset_minisstuff(self):
-        """Clean all minis stuff"""
+    def reset_minis(self):
+        """Clean all minis"""
         # Clean everything
         minis_fields = (self.label_Mini_redguardian, self.label_Mini_greenguardian, self.label_Mini_blueguardian,
                         self.label_Mini_valeguardian, self.label_Mini_gorseval, self.label_Mini_knuckles,
@@ -848,65 +1031,6 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
                         self.label_Mini_kenut, self.label_Mini_nikare, self.label_Mini_qadim)
         for i in minis_fields:
             i.setGraphicsEffect(None)
-
-    def reset_permissions(self):
-        """Clean all permissions stuff"""
-        # Get new color to paint based on theme
-        reset_style = self.adapt_line_theme("reset")
-        # Clean everything
-        permission_fields = (
-            self.linePermission_Progression, self.linePermission_Wallet,
-            self.linePermission_Unlocks, self.linePermission_PvP,
-            self.linePermission_Inventories, self.linePermission_Guilds,
-            self.linePermission_Guilds, self.linePermission_Characters,
-            self.linePermission_Builds, self.linePermission_Account,
-            self.linePermission_Tradingpost)
-        for i in permission_fields:
-            i.clear()
-            i.setStyleSheet(reset_style)
-
-    def reset_bossesstuff(self):
-        """Clean all raid stuff"""
-        # Get new color to paint based on theme
-        reset_style = self.adapt_line_theme("reset")
-        # Clean everything
-        raids_fields = (
-            self.lineRaidboss_valeguardian, self.lineRaidboss_spiritwoods, self.lineRaidboss_gorseval,
-            self.lineRaidboss_sabetha, self.lineRaidboss_slothasor, self.lineRaidboss_trio,
-            self.lineRaidboss_matthias, self.lineRaidboss_glenna, self.lineRaidboss_keepconstruct,
-            self.lineRaidboss_twistedcastle, self.lineRaidboss_xera, self.lineRaidboss_cairn,
-            self.lineRaidboss_mursaat, self.lineRaidboss_samarog, self.lineRaidboss_deimos,
-            self.lineRaidboss_desmina, self.lineRaidboss_riverofsouls, self.lineRaidboss_statues,
-            self.lineRaidboss_dhuum, self.lineRaidboss_conjureda, self.lineRaidboss_twinlargos,
-            self.lineRaidboss_qadim)
-        for i in raids_fields:
-            i.clear()
-            i.setStyleSheet(reset_style)
-
-    def reset_currencystuff(self):
-        """Clean all currency stuff"""
-        # Get new color to paint based on theme
-        reset_style = self.adapt_line_theme("reset")
-        # Clean everything
-        currency_fields = (self.lineCurrency_Magnetiteshards, self.lineCurrency_Gaetingcrystals,
-                           self.lineCurrency_Legend_insights, self.lineCurrency_Legend_divinations,)
-        for i in currency_fields:
-            i.clear()
-            i.setStyleSheet(reset_style)
-
-    def reset_achievementsstuff(self):
-        """Clean all achievements stuff"""
-        # Get new color to paint based on theme
-        reset_style = self.adapt_line_theme("reset")
-        # Clean everything
-        achievements_fields = (
-            self.lineRaidboss_keepconstruct_cm, self.lineRaidboss_cairn_cm, self.lineRaidboss_mursaat_cm,
-            self.lineRaidboss_samarog_cm, self.lineRaidboss_deimos_cm, self.lineRaidboss_desmina_cm,
-            self.lineRaidboss_dhuum_cm, self.lineRaidboss_conjureda_cm, self.lineRaidboss_twinlargos_cm,
-            self.lineRaidboss_qadim_cm)
-        for i in achievements_fields:
-            i.clear()
-            i.setStyleSheet(reset_style)
 
 #########################################################
 ################### WINDOW ADD API ######################
@@ -961,27 +1085,6 @@ def get_stored_keys():
     for key in INI_OPTIONS.value("api_keys", []):
         stored_keys.append(key)
     return stored_keys
-
-
-def api_open(section, **keyarguments):
-    """Build the right address"""
-    address = "https://api.guildwars2.com/v2/"+section
-    separator = "?"
-    if 'ids' in keyarguments:
-        if len(keyarguments['ids']) > 1:
-            address = address+"?ids="+",".join(keyarguments['ids'])
-            separator = "&"
-        else:
-            address = address+"/"+keyarguments['ids'][0]
-    # Check for special parameters
-    if 'token' in keyarguments:
-        address = address+separator+"access_token="+keyarguments['token']
-    elif 'lang' in keyarguments:
-        address = address+separator+"lang="+keyarguments['lang']
-    # Now encode, debug and open it
-    address = urllib.parse.quote(address, safe='/:=', encoding="utf-8", errors="strict")
-    address = urllib.request.urlopen(address).read().decode('utf8')
-    return json.loads(address)
 
 ###########################################
 ################ QMESSAGEBOX ##############

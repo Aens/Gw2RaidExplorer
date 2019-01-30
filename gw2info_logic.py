@@ -197,15 +197,19 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
                                 "QGroupBox::title {subcontrol-origin: margin;"
                                 "subcontrol-position: top center; /* position at the top center */"
                                 "padding: 0 3px;  /* empty space at each side of title */}",
+
                   "tabstyle": "/* The tab menu buttons */"
-                               "QTabBar::tab {border: 2px solid gray;border-bottom: 0px;"
+                               "QTabBar::tab {border: 2px solid rgb(150, 150, 150);border-bottom: 0px;"
                                "border-top-left-radius: 6px;border-top-right-radius: 6px;"
                                "padding: 2px;}"
+                              
                                " /* The tab specific buttons */"
-                               "QTabBar::tab:selected {border-color: black;background-color: gray;}"
-                               "QTabBar::tab:hover {background-color: gray;}"
+                               "QTabBar::tab:selected {border-color: rgb(150, 150, 150);"
+                               "background-color: rgb(200, 210, 210);}"
+                               "QTabBar::tab:hover {background-color: rgb(200, 210, 210);}"
+                              
                                " /* The tab widget frame */"
-                               "QTabWidget::pane {border-radius: 5px;border: 2px solid gray;}"
+                               "QTabWidget::pane {border-radius: 5px;border: 2px solid rgb(150, 150, 150);}"
                   }
         return colors
 
@@ -231,15 +235,18 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
                                 "QGroupBox::title {subcontrol-origin: margin;"
                                 "subcontrol-position: top center; /* position at the top center */"
                                 "padding: 0 3px;  /* empty space at each side of title */}",
+
                   "tabstyle": "/* The tab menu buttons */"
-                              "QTabBar::tab {border: 2px solid gray;border-bottom: 0px;"
+                              "QTabBar::tab {border: 2px solid black;border-bottom: 0px;"
                               "border-top-left-radius: 6px;border-top-right-radius: 6px;"
                               "padding: 2px;}"
+                              
                               " /* The tab specific buttons */"
-                              "QTabBar::tab:selected {border-color: black;background-color: gray;}"
-                              "QTabBar::tab:hover {background-color: gray;}"
+                              "QTabBar::tab:selected {border-color: black;background-color: rgb(90, 95, 100);}"
+                              "QTabBar::tab:hover {background-color: rgb(90, 95, 100);}"
+                              
                               " /* The tab widget frame */"
-                              "QTabWidget::pane {border-radius: 5px;border: 2px solid gray;}"
+                              "QTabWidget::pane {border-radius: 5px;border: 2px solid black;}"
                   }
         return colors
 
@@ -265,15 +272,19 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
                                 "QGroupBox::title {subcontrol-origin: margin;"
                                 "subcontrol-position: top center; /* position at the top center */"
                                 "padding: 0 3px;  /* empty space at each side of title */}",
+
                   "tabstyle": "/* The tab menu buttons */"
-                              "QTabBar::tab {border: 2px solid gray;border-bottom: 0px;"
+                              "QTabBar::tab {border: 2px solid rgb(10, 105, 170);border-bottom: 0px;"
                               "border-top-left-radius: 6px;border-top-right-radius: 6px;"
                               "padding: 2px;}"
+                              
                               " /* The tab specific buttons */"
-                              "QTabBar::tab:selected {border-color: black;background-color: gray;}"
-                              "QTabBar::tab:hover {background-color: gray;}"
+                              "QTabBar::tab:selected {border-color: rgb(10, 105, 170);"
+                              "background-color: rgb(225, 255, 225);}"
+                              "QTabBar::tab:hover {background-color: rgb(225, 255, 225);}"
+                              
                               " /* The tab widget frame */"
-                              "QTabWidget::pane {border-radius: 5px;border: 2px solid gray;}"
+                              "QTabWidget::pane {border-radius: 5px;border: 2px solid rgb(10, 105, 170);}"
                   }
         return colors
 

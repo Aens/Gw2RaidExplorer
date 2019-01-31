@@ -6,7 +6,7 @@ You can download executable version from: https://github.com/Aens/Gw2RaidExplore
 * Extract it on any folder with Winrar program.
 * Execute the Gw2RaidExplorer file with a red skull icon.
 
-If you want to compile it yourself, make sure you `pip install Pyside2`.
+For programmers: If you want to compile it yourself, make sure you are using Python 3.7 and `pip install Pyside2`.
 
 # UPDATING  
 If you need to update this program, make sure to backup your **options.ini file**, that's where your API keys are stored. It's safe to delete/replace everything else.  

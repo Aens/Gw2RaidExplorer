@@ -36,9 +36,11 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
         self.setWindowIcon(QIcon(":/images/Images/Main.ico"))
         self.setWindowTitle("Gw2 API Raid Explorer {0}".format(PROGRAM_AUTHOR))
         # Initial window size/pos last saved. Use default values for first time
-        self.setFixedSize(QSize(1030, 840))
+        self.setFixedSize(QSize(1030, 670))
         self.move(INI_OPTIONS.value("menu_position", QPoint(350, 250)))
         self.lineInstallationFolder.setText((INI_OPTIONS.value("installation_folder", "")))
+
+        self.botonDebugger.clicked.connect(self.debugger) #TBD set it where it belongs
         # Left side Buttons
         self.botonThemeLight.clicked.connect(lambda: self.initialize_colors("light"))
         self.botonThemeDark.clicked.connect(lambda: self.initialize_colors("dark"))
@@ -63,19 +65,22 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
         self.botonWebsite_dpsreport.clicked.connect(self.open_web_dpsreport)
         self.botonWebsite_killproof.clicked.connect(self.open_web_killproof)
         self.botonWebsite_raidar.clicked.connect(self.open_web_raidar)
+        self.botonWebsite_gw2raidexplorer.clicked.connect(self.open_web_gw2raidexplorer)
         # Events
         self.comboSelectAPI.installEventFilter(self)
         self.comboSelectAPI.activated.connect(self.load_combo_stuff)
         self.checkBosses.stateChanged.connect(lambda: self.save_checkboxes_status(self.checkBosses))
         self.checkMinis.stateChanged.connect(lambda: self.save_checkboxes_status(self.checkMinis))
-        self.checkChallenges.stateChanged.connect(lambda: self.save_checkboxes_status(self.checkChallenges))
+        self.checkSkins.stateChanged.connect(lambda: self.save_checkboxes_status(self.checkSkins))
+        self.checkAchievements.stateChanged.connect(lambda: self.save_checkboxes_status(self.checkAchievements))
         self.checkCurrency.stateChanged.connect(lambda: self.save_checkboxes_status(self.checkCurrency))
-        # Check if we are ready to work
-        self.debug_mode = True
+        # Default vars
+        self.debug_mode = False
         self.stored_keys = []
         self.api_key = None
         self.api_permissions = None
         self.style_background = ""
+        # Check if we are ready to work
         self.check_if_ready()
 
     ################################################
@@ -127,7 +132,7 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
         # Now encode, debug and open it
         address = urllib.parse.quote(address, safe='/:=', encoding="utf-8", errors="strict")
         if self.debug_mode:
-            print(address)
+            self.plainDebugger.appendPlainText(address)
         address = urllib.request.urlopen(address).read().decode('utf8')
         return json.loads(address)
 
@@ -144,7 +149,8 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
         # Languages
         self.initialize_language(INI_OPTIONS.value("language", "en"))
         # Load checkboxes status
-        for checkbox in [self.checkBosses, self.checkCurrency, self.checkChallenges, self.checkMinis]:
+        for checkbox in (self.checkBosses, self.checkCurrency, self.checkAchievements, self.checkMinis,
+                         self.checkSkins):
             if self.load_checkboxes_status(checkbox) == "true":
                 checkbox.setChecked(True)
         # Check if there is something stored
@@ -199,17 +205,19 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
                                 "padding: 0 3px;  /* empty space at each side of title */}",
 
                   "tabstyle": "/* The tab menu buttons */"
-                               "QTabBar::tab {border: 2px solid rgb(150, 150, 150);border-bottom: 0px;"
-                               "border-top-left-radius: 6px;border-top-right-radius: 6px;"
-                               "padding: 2px;}"
+                              "QTabBar::tab {border: 2px solid rgb(150, 150, 150);border-bottom: 0px;"
+                              "border-top-left-radius: 6px;border-top-right-radius: 6px;"
+                              "padding: 2px;}"
                               
-                               " /* The tab specific buttons */"
-                               "QTabBar::tab:selected {border-color: rgb(150, 150, 150);"
-                               "background-color: rgb(200, 210, 210);}"
-                               "QTabBar::tab:hover {background-color: rgb(200, 210, 210);}"
+                              " /* The tab specific buttons */"
+                              "QTabBar::tab:selected {border-color: rgb(150, 150, 150);"
+                              "background-color: rgb(200, 210, 210);}"
+                              "QTabBar::tab:hover {background-color: rgb(200, 210, 210);}"
                               
-                               " /* The tab widget frame */"
-                               "QTabWidget::pane {border-radius: 5px;border: 2px solid rgb(150, 150, 150);}"
+                              " /* The tab widget frame */"
+                              "QTabWidget::pane {border: 2px solid rgb(150, 150, 150);"
+                              "border-top-right-radius: 5px;border-bottom-right-radius: 5px;"
+                              "border-bottom-left-radius: 5px;padding: 2px;}"
                   }
         return colors
 
@@ -246,7 +254,9 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
                               "QTabBar::tab:hover {background-color: rgb(90, 95, 100);}"
                               
                               " /* The tab widget frame */"
-                              "QTabWidget::pane {border-radius: 5px;border: 2px solid black;}"
+                              "QTabWidget::pane {border: 2px solid black;"
+                              "border-top-right-radius: 5px;border-bottom-right-radius: 5px;"
+                              "border-bottom-left-radius: 5px;padding: 2px;}"
                   }
         return colors
 
@@ -284,7 +294,9 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
                               "QTabBar::tab:hover {background-color: rgb(225, 255, 225);}"
                               
                               " /* The tab widget frame */"
-                              "QTabWidget::pane {border-radius: 5px;border: 2px solid rgb(10, 105, 170);}"
+                              "QTabWidget::pane {border: 2px solid rgb(10, 105, 170);"
+                              "border-top-right-radius: 5px;border-bottom-right-radius: 5px;"
+                              "border-bottom-left-radius: 5px;padding: 2px;}"
                   }
         return colors
 
@@ -309,34 +321,36 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
     def set_colors(self, widget, colors):
         """Paint the initial colors for the controls"""
         for item in widget.children():
-            item_type = item.metaObject().className()
-            if item_type == "QLineEdit":
+            if isinstance(item, QtWidgets.QLineEdit):
                 if item.isReadOnly():
                     item.setStyleSheet(colors['inputcolorreadonly'])
                 else:
                     item.setStyleSheet(colors['inputcolor'])
-            elif item_type == "QPlainTextEdit":
+            elif isinstance(item, QtWidgets.QPlainTextEdit):
                 item.setStyleSheet(colors['inputcolor'])
-            elif item_type == "QTextEdit":
+            elif isinstance(item, QtWidgets.QTextEdit):
                 item.setStyleSheet(colors['inputcolor'])
-            elif item_type == "QLabel":
+            elif isinstance(item, QtWidgets.QLabel):
                 item.setStyleSheet(colors['labelcolor'])
-            elif item_type == "QPushButton":
+            elif isinstance(item, QtWidgets.QPushButton):
                 item.setStyleSheet(colors['buttoncolor'])
-            elif item_type == "QComboBox":
+            elif isinstance(item, QtWidgets.QComboBox):
                 item.setStyleSheet(colors['dropdowncolor'])
             # SPECIALS: Set background to it and then re-iterate on these items
-            elif item_type == "QMainWindowLayout" or item_type == "QWidget":
+            elif (item.metaObject().className() == "QMainWindowLayout" # Bug?
+                  or isinstance(item, QtWidgets.QWidget)
+                  or isinstance(item, QtWidgets.QDialog)):
                 widget.setStyleSheet(colors['backgroundcolor'])
                 self.set_colors(item, colors)
             # SPECIALS: Set style to it and then re-iterate on these items
-            elif item_type == "QGroupBox":
+            elif isinstance(item, QtWidgets.QGroupBox):
                 item.setStyleSheet(colors['groupstyle'])
                 self.set_colors(item, colors)
-            elif item_type == "QTabWidget":
+            elif isinstance(item, QtWidgets.QTabWidget):
                 item.setStyleSheet(colors['tabstyle'])
                 self.set_colors(item, colors)
             else:
+                print(item.metaObject().className()) # Bug? This prints the QMainLayout
                 pass
 
     def initialize_language(self, lang):
@@ -372,10 +386,22 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
         self.reset_everything()
         self.load_permissions()
 
-    @staticmethod
-    def open_window_add():
-        """Open the Add API window."""
+    def open_window_add(self):
+        """Create instance of the Add API window, get the right theme
+        Iterate over every widget to paint them, execute instance."""
         addwindow = AddNewApi()
+        # Get correct theme
+        theme = INI_OPTIONS.value("theme", "default")
+        if theme == "dark":
+            colors = self.dark_theme()
+        elif theme == "light":
+            colors = self.light_theme()
+        else:
+            colors = self.default_theme()
+        # Let's paint them
+        self.set_colors(addwindow, colors)
+        addwindow.setStyleSheet(colors['backgroundcolor'])
+        # Execute instance
         addwindow.exec_()
 
     def delete_api(self):
@@ -400,6 +426,15 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
                 self.change_statusbar("ready", "Key not deleted ^^")
         else:
             self.change_statusbar("error", "There is no API key selected.")
+
+    def debugger(self):
+        """Enable/Disable the debugger section"""
+        if self.debug_mode:
+            self.debug_mode = False
+            self.setFixedSize(QSize(1030, 670))
+        else:
+            self.debug_mode = True
+            self.setFixedSize(QSize(1030, 760))
 
     def open_web_anet(self):
         """Open the website browser with this website."""
@@ -454,6 +489,12 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
         self.change_statusbar("wait", "Loading website...")
         webbrowser.open("http://dulfy.net/category/gw2/raid-guides/")
         self.change_statusbar("ready", "Website for Dulfy raid guides launched on your browser.")
+
+    def open_web_gw2raidexplorer(self):
+        """Open the website browser with this website."""
+        self.change_statusbar("wait", "Loading website...")
+        webbrowser.open("https://github.com/Aens/Gw2RaidExplorer")
+        self.change_statusbar("ready", "Website for this tool launched on your browser.")
 
     #######################################################
     ################## ARCDPS AND PLUGINS #################
@@ -616,8 +657,9 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
         self.reset_permissions()
         self.reset_bosses()
         self.reset_currency()
-        self.reset_challenges()
+        self.reset_achievements()
         self.reset_minis()
+        self.reset_skins()
 
     def load_api(self):
         """Load all the data of this API"""
@@ -631,17 +673,21 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
             self.change_statusbar("wait", "Loading Currencies section...")
             currency = self.load_currency_section()
             self.change_statusbar("ready", "Currency section loaded.")
-            # Fill Raid challenges section
-            self.change_statusbar("wait", "Loading Challenges section...")
-            challenges = self.load_challenges_section()
-            self.change_statusbar("ready", "Challenges section loaded.")
+            # Fill Raid Achievements section
+            self.change_statusbar("wait", "Loading Achievements section...")
+            achievements = self.load_achievements_section()
+            self.change_statusbar("ready", "Achievements section loaded.")
             # Fill Minis section
             self.change_statusbar("wait", "Loading Minis section...")
             minis = self.load_minis_section()
             self.change_statusbar("ready", "Minis section loaded.")
+            # Fill Skins section
+            self.change_statusbar("wait", "Loading Skins section...")
+            skins = self.load_skins_section()
+            self.change_statusbar("ready", "Skins section loaded.")
             # Final message
             warning = []
-            for result in [bosses, currency, challenges, minis]:
+            for result in [bosses, currency, achievements, minis, skins]:
                 if result is not None:
                     warning.append(result)
             if len(warning) >= 1:
@@ -788,6 +834,7 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
             for j in bosses_killed:
                 if j == i['name']:
                     i['flag'] = 1
+                    break
             if i['flag'] == 1:
                 i['uiitem'].setText("YES")
                 i['uiitem'].setStyleSheet(yes_style)
@@ -902,22 +949,22 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
             i.setStyleSheet(reset_style)
 
     #######################################################
-    ################## CHALLENGES SECTION #################
+    ################ ACHIEVEMENTS SECTION #################
     #######################################################
 
-    def load_challenges_section(self):
-        """Load challenges section"""
-        if self.checkChallenges.isChecked():
+    def load_achievements_section(self):
+        """Load achievements section"""
+        if self.checkAchievements.isChecked():
             if "progression" in self.api_permissions:
                 api_achievs = self.api_open("account/achievements", token=self.api_key)
-                self.fill_challenges(api_achievs)
+                self.fill_achievements(api_achievs)
             else:
-                self.reset_challenges()
-                return "Challenges need: Progression"
+                self.reset_achievements()
+                return "Achievements need: Progression"
         else:
-            self.reset_challenges()
+            self.reset_achievements()
 
-    def fill_challenges(self, api_achievs):
+    def fill_achievements(self, api_achievs):
         """Set the correct style for each item."""
         # Get new colors to paint based on theme
         yes_style = self.adapt_line_theme("yes")
@@ -939,6 +986,7 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
                 if achiev['id'] == challenge['id']:
                     if achiev['done']:
                         challenge['flag'] = 1
+                        break
         # Set the UI
         for challenge in challenges:
             if challenge['flag'] == 1:
@@ -948,8 +996,8 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
                 challenge['uiitem'].setText("NO")
                 challenge['uiitem'].setStyleSheet(no_style)
 
-    def reset_challenges(self):
-        """Clean all challenges"""
+    def reset_achievements(self):
+        """Clean all achievements"""
         # Get new color to paint based on theme
         reset_style = self.adapt_line_theme("reset")
         # Clean everything
@@ -1016,6 +1064,7 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
             for mini in raid_minis:
                 if mini['id'] == your_mini:
                     mini['flag'] = 1
+                    break
         # Set the UI
         for mini in raid_minis:
             if mini['flag'] == 1:
@@ -1043,6 +1092,127 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
         for i in minis_fields:
             i.setGraphicsEffect(None)
 
+    ####################################################
+    ################### SKINS SECTION ##################
+    ####################################################
+
+    def load_skins_section(self):
+        """Load skins section"""
+        if self.checkSkins.isChecked():
+            if "unlocks" in self.api_permissions:
+                api_skins = self.api_open("account/skins", token=self.api_key)
+                self.fill_skins(api_skins)
+            else:
+                self.reset_skins()
+                return "Skins need: Unlocks"
+        else:
+            self.reset_skins()
+
+    def fill_skins(self, api_skins):
+        """Set the correct style for each item."""
+        # Skins IDs
+        raid_skins = [{"id": 6528, "flag": 0, "uiitem": self.label_Skin_vg_dagger},
+                      {"id": 6532, "flag": 0, "uiitem": self.label_Skin_vg_greatsword},
+                      {"id": 6536, "flag": 0, "uiitem": self.label_Skin_gorse_shield},
+                      {"id": 6531, "flag": 0, "uiitem": self.label_Skin_gorse_staff},
+                      {"id": 6141, "flag": 0, "uiitem": self.label_Skin_sab_rifle},
+                      {"id": 6135, "flag": 0, "uiitem": self.label_Skin_sab_back},
+                      {"id": 6642, "flag": 0, "uiitem": self.label_Skin_sloth_hammer},
+                      {"id": 6639, "flag": 0, "uiitem": self.label_Skin_sloth_focus},
+                      {"id": 6645, "flag": 0, "uiitem": self.label_Skin_matthias_staff},
+                      {"id": 6630, "flag": 0, "uiitem": self.label_Skin_matthias_greatsword},
+                      {"id": 6652, "flag": 0, "uiitem": self.label_Skin_matthias_longbow},
+                      {"id": 6638, "flag": 0, "uiitem": self.label_Skin_matthias_shortbow},
+                      {"id": 6649, "flag": 0, "uiitem": self.label_Skin_matthias_mace},
+                      {"id": 6651, "flag": 0, "uiitem": self.label_Skin_matthias_shield},
+                      {"id": 6626, "flag": 0, "uiitem": self.label_Skin_matthias_warhorn},
+                      {"id": 6635, "flag": 0, "uiitem": self.label_Skin_matthias_pistol},
+                      {"id": 6633, "flag": 0, "uiitem": self.label_Skin_matthias_torch},
+                      {"id": 6805, "flag": 0, "uiitem": self.label_Skin_kc_hammer},
+                      {"id": 6836, "flag": 0, "uiitem": self.label_Skin_kc_torch},
+                      {"id": 6821, "flag": 0, "uiitem": self.label_Skin_kc_focus},
+                      {"id": 6804, "flag": 0, "uiitem": self.label_Skin_kc_scepter},
+                      {"id": 6813, "flag": 0, "uiitem": self.label_Skin_xera_scepter},
+                      {"id": 6825, "flag": 0, "uiitem": self.label_Skin_xera_staff},
+                      {"id": 6835, "flag": 0, "uiitem": self.label_Skin_xera_rifle},
+                      {"id": 6788, "flag": 0, "uiitem": self.label_Skin_xera_sword},
+                      {"id": 6810, "flag": 0, "uiitem": self.label_Skin_xera_axe},
+                      {"id": 6815, "flag": 0, "uiitem": self.label_Skin_xera_dagger},
+                      {"id": 6809, "flag": 0, "uiitem": self.label_Skin_xera_back},
+                      {"id": 7101, "flag": 0, "uiitem": self.label_Skin_cairn_pistol},
+                      {"id": 7125, "flag": 0, "uiitem": self.label_Skin_cairn_sword},
+                      {"id": 7097, "flag": 0, "uiitem": self.label_Skin_mursaat_longbow},
+                      {"id": 7091, "flag": 0, "uiitem": self.label_Skin_samarog_axe},
+                      {"id": 7155, "flag": 0, "uiitem": self.label_Skin_samarog_shortbow},
+                      {"id": 7113, "flag": 0, "uiitem": self.label_Skin_samarog_staff},
+                      {"id": 7147, "flag": 0, "uiitem": self.label_Skin_samarog_warhorn},
+                      {"id": 7076, "flag": 0, "uiitem": self.label_Skin_deimos_mace},
+                      {"id": 7151, "flag": 0, "uiitem": self.label_Skin_deimos_hammer},
+                      {"id": 7104, "flag": 0, "uiitem": self.label_Skin_deimos_staff},
+                      {"id": 7114, "flag": 0, "uiitem": self.label_Skin_deimos_back},
+                      {"id": 7115, "flag": 0, "uiitem": self.label_Skin_deimos_gloves},
+                      {"id": 7909, "flag": 0, "uiitem": self.label_Skin_desmina_axe},
+                      {"id": 7894, "flag": 0, "uiitem": self.label_Skin_desmina_hammer},
+                      {"id": 7845, "flag": 0, "uiitem": self.label_Skin_river_shield},
+                      {"id": 7863, "flag": 0, "uiitem": self.label_Skin_river_sword},
+                      {"id": 7867, "flag": 0, "uiitem": self.label_Skin_statues_dagger},
+                      {"id": 7910, "flag": 0, "uiitem": self.label_Skin_statues_greatsword},
+                      {"id": 7881, "flag": 0, "uiitem": self.label_Skin_dhuum_staff},
+                      {"id": 7872, "flag": 0, "uiitem": self.label_Skin_dhuum_helm},
+                      {"id": 7871, "flag": 0, "uiitem": self.label_Skin_dhuum_shoulders},
+                      {"id": 7848, "flag": 0, "uiitem": self.label_Skin_dhuum_gloves},
+                      {"id": 7887, "flag": 0, "uiitem": self.label_Skin_dhuum_boots},
+                      {"id": 8412, "flag": 0, "uiitem": self.label_Skin_conjured_shield},
+                      {"id": 8398, "flag": 0, "uiitem": self.label_Skin_conjured_greatsword},
+                      {"id": 8337, "flag": 0, "uiitem": self.label_Skin_largos_sword},
+                      {"id": 8363, "flag": 0, "uiitem": self.label_Skin_largos_longbow},
+                      {"id": 8344, "flag": 0, "uiitem": self.label_Skin_qadim_mace},
+                      {"id": 8409, "flag": 0, "uiitem": self.label_Skin_qadim_pistol}]
+        # Flag the ones done
+        for your_skin in api_skins:
+            for skin in raid_skins:
+                if skin['id'] == your_skin:
+                    skin['flag'] = 1
+                    break
+        # Set the UI
+        for skin in raid_skins:
+            if skin['flag'] == 1:
+                yes_style = QtWidgets.QGraphicsColorizeEffect(self)
+                yes_style.setColor(QColor(0, 150, 0))
+                skin['uiitem'].setGraphicsEffect(yes_style)
+            else:
+                no_style = QtWidgets.QGraphicsColorizeEffect(self)
+                no_style.setColor(QColor(150, 0, 0))
+                skin['uiitem'].setGraphicsEffect(no_style)
+
+    def reset_skins(self):
+        """Clean all skins"""
+        # Clean everything
+        skins_fields = (self.label_Skin_vg_dagger, self.label_Skin_vg_greatsword, self.label_Skin_gorse_shield,
+                        self.label_Skin_gorse_staff, self.label_Skin_sab_rifle, self.label_Skin_sab_back,
+                        self.label_Skin_sloth_hammer, self.label_Skin_sloth_focus, self.label_Skin_matthias_staff,
+                        self.label_Skin_matthias_greatsword, self.label_Skin_matthias_longbow,
+                        self.label_Skin_matthias_shortbow, self.label_Skin_matthias_mace,
+                        self.label_Skin_matthias_shield, self.label_Skin_matthias_warhorn,
+                        self.label_Skin_matthias_pistol, self.label_Skin_matthias_torch,  self.label_Skin_kc_hammer,
+                        self.label_Skin_kc_torch, self.label_Skin_kc_focus, self.label_Skin_kc_scepter,
+                        self.label_Skin_xera_scepter, self.label_Skin_xera_staff, self.label_Skin_xera_rifle,
+                        self.label_Skin_xera_sword, self.label_Skin_xera_axe, self.label_Skin_xera_dagger,
+                        self.label_Skin_xera_back, self.label_Skin_cairn_pistol, self.label_Skin_cairn_sword,
+                        self.label_Skin_mursaat_longbow, self.label_Skin_samarog_axe,
+                        self.label_Skin_samarog_shortbow, self.label_Skin_samarog_staff,
+                        self.label_Skin_samarog_warhorn, self.label_Skin_deimos_mace, self.label_Skin_deimos_hammer,
+                        self.label_Skin_deimos_staff, self.label_Skin_deimos_back, self.label_Skin_deimos_gloves,
+                        self.label_Skin_desmina_axe, self.label_Skin_desmina_hammer, self.label_Skin_river_shield,
+                        self.label_Skin_river_sword, self.label_Skin_statues_dagger,
+                        self.label_Skin_statues_greatsword, self.label_Skin_dhuum_staff, self.label_Skin_dhuum_helm,
+                        self.label_Skin_dhuum_shoulders, self.label_Skin_dhuum_gloves, self.label_Skin_dhuum_boots,
+                        self.label_Skin_conjured_shield, self.label_Skin_conjured_greatsword,
+                        self.label_Skin_largos_sword, self.label_Skin_largos_longbow, self.label_Skin_qadim_mace,
+                        self.label_Skin_qadim_pistol)
+        for i in skins_fields:
+            i.setGraphicsEffect(None)
+
 #########################################################
 ################### WINDOW ADD API ######################
 #########################################################
@@ -1055,7 +1225,7 @@ class AddNewApi(QtWidgets.QDialog, Ui_Dialog):
         """Set initial status"""
         QtWidgets.QDialog.__init__(self, parent)
         self.setupUi(self)
-        # self.setAttribute(Qt.WA_DeleteOnClose)
+        self.setWindowIcon(QIcon(":/images/Images/Main.ico"))
         self.setFixedSize(QSize(595, 100))
         self.move(INI_OPTIONS.value("add_position", QPoint(360, 325)))
         self.botonSave.clicked.connect(self.save_new_api)

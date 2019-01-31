@@ -321,6 +321,7 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
     def set_colors(self, widget, colors):
         """Paint the initial colors for the controls"""
         for item in widget.children():
+            item_type = item.metaObject().className()
             if isinstance(item, QtWidgets.QLineEdit):
                 if item.isReadOnly():
                     item.setStyleSheet(colors['inputcolorreadonly'])
@@ -337,8 +338,8 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
             elif isinstance(item, QtWidgets.QComboBox):
                 item.setStyleSheet(colors['dropdowncolor'])
             # SPECIALS: Set background to it and then re-iterate on these items
-            elif (item.metaObject().className() == "QMainWindowLayout" # Bug?
-                  or isinstance(item, QtWidgets.QWidget)
+            elif (item_type == "QMainWindowLayout" # Bug?
+                  or item_type == "QWidget"
                   or isinstance(item, QtWidgets.QDialog)):
                 widget.setStyleSheet(colors['backgroundcolor'])
                 self.set_colors(item, colors)

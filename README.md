@@ -1,5 +1,12 @@
 # Gw2RaidExplorer
-A tool to check raid-based stuff of Guild Wars 2.
+A tool to check raid-based stuff of Guild Wars 2.  
+You can download executable version from: https://github.com/Aens/Gw2RaidExplorer/releases 
+
+* Download the .rar file.
+* Extract it on any folder with Winrar program.
+* Execute the Gw2RaidExplorer file with a red skull icon.
+
+If you want to compile it yourself, make sure you `pip install Pyside2`.
 
 # UPDATING  
 If you need to update this program, make sure to backup your **options.ini file**, that's where your API keys are stored. It's safe to delete/replace everything else.  

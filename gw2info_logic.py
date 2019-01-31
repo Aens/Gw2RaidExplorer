@@ -6,6 +6,7 @@ import hashlib
 import sys
 import psutil
 import subprocess
+from os import environ
 from pathlib import Path
 from PySide2 import QtWidgets
 from PySide2.QtGui import QIcon, QColor
@@ -14,7 +15,7 @@ from gw2info_ui import Ui_MainWindow
 from add_ui import Ui_Dialog
 
 PROGRAM_VERSION = "090"
-PROGRAM_AUTHOR = "(Made by Elrey.5472) https://github.com/Aens"
+PROGRAM_AUTHOR = "(Made by Elrey.5472) - https://github.com/Aens"
 INI_OPTIONS = QSettings("options.ini", QSettings.IniFormat)
 
 
@@ -39,14 +40,14 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
         self.setFixedSize(QSize(1030, 670))
         self.move(INI_OPTIONS.value("menu_position", QPoint(350, 250)))
         self.lineInstallationFolder.setText((INI_OPTIONS.value("installation_folder", "")))
-
-        self.botonDebugger.clicked.connect(self.debugger) #TBD set it where it belongs
         # Left side Buttons
         self.botonThemeLight.clicked.connect(lambda: self.initialize_colors("light"))
         self.botonThemeDark.clicked.connect(lambda: self.initialize_colors("dark"))
         self.botonThemeDefault.clicked.connect(lambda: self.initialize_colors("default"))
         self.botonLanguage_english.clicked.connect(lambda: self.initialize_language("en"))
         self.botonLanguage_spanish.clicked.connect(lambda: self.initialize_language("es"))
+        self.botonLanguage_french.clicked.connect(lambda: self.initialize_language("fr"))
+        self.botonLanguage_deutsch.clicked.connect(lambda: self.initialize_language("de"))
         self.botonWebsite_Anet.clicked.connect(self.open_web_anet)
         self.botonLoad.clicked.connect(self.load_api)
         self.botonAddAPI.clicked.connect(self.open_window_add)
@@ -66,6 +67,7 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
         self.botonWebsite_killproof.clicked.connect(self.open_web_killproof)
         self.botonWebsite_raidar.clicked.connect(self.open_web_raidar)
         self.botonWebsite_gw2raidexplorer.clicked.connect(self.open_web_gw2raidexplorer)
+        self.botonDebugger.clicked.connect(self.debugger)
         # Events
         self.comboSelectAPI.installEventFilter(self)
         self.comboSelectAPI.activated.connect(self.load_combo_stuff)
@@ -162,14 +164,12 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
         # Check if there is warnings
         if len(warning) >= 1:
             self.change_statusbar("error", ",".join(warning))
-            return False
         else:
             self.change_statusbar("ready", "Everything seems fine. Program ready.")
             # Check if we are in the last version
             online_version = self.check_online_version()
             if int(PROGRAM_VERSION) < int(online_version):
-                self.change_statusbar("special", "There is a new version availible, you should download it.")
-            return True
+                self.change_statusbar("special", "There is a new version availible, you may want to download it.")
 
     @staticmethod
     def load_checkboxes_status(checkbox):
@@ -315,13 +315,27 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
         for widget in app.topLevelWidgets():
             if widget.isWindow():
                 self.set_colors(widget, colors)
-        self.style_background = colors['backgroundcolor']
+        self.style_background = colors['backgroundcolor'] # For the statusbar
         self.change_statusbar("ready", "New theme loaded, you may need to reload data to assign correct colors to it.")
 
     def set_colors(self, widget, colors):
         """Paint the initial colors for the controls"""
         for item in widget.children():
             item_type = item.metaObject().className()
+            # SPECIALS: Set background to it and then re-iterate on these items
+            if (item_type == "QMainWindowLayout" # TBD Bug?
+                  or item_type == "QWidget" # TBD Bug?
+                  or isinstance(item, QtWidgets.QDialog)):
+                widget.setStyleSheet(colors['backgroundcolor'])
+                self.set_colors(item, colors)
+            # SPECIALS: Set style to it and then re-iterate on these items
+            elif isinstance(item, QtWidgets.QGroupBox):
+                item.setStyleSheet(colors['groupstyle'])
+                self.set_colors(item, colors)
+            elif isinstance(item, QtWidgets.QTabWidget):
+                item.setStyleSheet(colors['tabstyle'])
+                self.set_colors(item, colors)
+            # OTHER: Stand-alone widgets
             if isinstance(item, QtWidgets.QLineEdit):
                 if item.isReadOnly():
                     item.setStyleSheet(colors['inputcolorreadonly'])
@@ -337,31 +351,13 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
                 item.setStyleSheet(colors['buttoncolor'])
             elif isinstance(item, QtWidgets.QComboBox):
                 item.setStyleSheet(colors['dropdowncolor'])
-            # SPECIALS: Set background to it and then re-iterate on these items
-            elif (item_type == "QMainWindowLayout" # Bug?
-                  or item_type == "QWidget"
-                  or isinstance(item, QtWidgets.QDialog)):
-                widget.setStyleSheet(colors['backgroundcolor'])
-                self.set_colors(item, colors)
-            # SPECIALS: Set style to it and then re-iterate on these items
-            elif isinstance(item, QtWidgets.QGroupBox):
-                item.setStyleSheet(colors['groupstyle'])
-                self.set_colors(item, colors)
-            elif isinstance(item, QtWidgets.QTabWidget):
-                item.setStyleSheet(colors['tabstyle'])
-                self.set_colors(item, colors)
             else:
-                print(item.metaObject().className()) # Bug? This prints the QMainLayout
                 pass
 
     def initialize_language(self, lang):
         """Iterate over every widget to paint them."""
-        if lang == "en":
-            self.change_statusbar("special", "Languages are not programmed yet.")
-            INI_OPTIONS.setValue("lang", "en")
-        elif lang == "es":
-            self.change_statusbar("special", "Languages are not programmed yet.")
-            INI_OPTIONS.setValue("lang", "es")
+        self.change_statusbar("special", "Languages are not programmed yet.")
+        INI_OPTIONS.setValue("lang", lang)
 
     @staticmethod
     def check_online_version():
@@ -378,7 +374,7 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
     def fill_combo_selectapi(self):
         """Fill the combo with all the APIs"""
         self.comboSelectAPI.clear()
-        self.stored_keys = get_stored_keys()
+        self.stored_keys = self.get_stored_keys()
         for key in self.stored_keys:
             self.comboSelectAPI.addItem(key['name'])
 
@@ -405,13 +401,21 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
         # Execute instance
         addwindow.exec_()
 
+    @staticmethod
+    def get_stored_keys():
+        """Get stored APIs from database, which is a list of dicts."""
+        stored_keys = []
+        for key in INI_OPTIONS.value("api_keys", []):
+            stored_keys.append(key)
+        return stored_keys
+
     def delete_api(self):
         """Delete the selected API from database"""
         self.change_statusbar("wait", "Deleting key...")
         if not self.comboSelectAPI.currentText() == "":
             if popup_delete():
                 # get all keys
-                keys = get_stored_keys()
+                keys = self.get_stored_keys()
                 # delete right one
                 for item in keys:
                     if item['name'] == self.comboSelectAPI.currentText():
@@ -777,7 +781,7 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
         elif value == "reset":
             background_color = "background-color: rgb(150, 150, 150)"
         # Create the new style
-        new_style = self.lineRaidboss_valeguardian.styleSheet().split(";")
+        new_style = self.lineInstallationFolder.styleSheet().split(";")
         for index, value in enumerate(new_style):
             if "background-color:" in value:
                 new_style[index] = background_color
@@ -1243,7 +1247,7 @@ class AddNewApi(QtWidgets.QDialog, Ui_Dialog):
         else:
             self.labelInfo.clear()
             # Get old keys
-            keys = get_stored_keys()
+            keys = MainForm.get_stored_keys()
             # Add the new key
             keys.append({'name': self.lineName.text(), 'key': self.lineKey.text()})
             # Save them into file
@@ -1255,18 +1259,6 @@ class AddNewApi(QtWidgets.QDialog, Ui_Dialog):
         """Write window position to config file"""
         INI_OPTIONS.setValue("add_position", self.pos())
         event.accept()
-
-#################################################
-##################### UTILS #####################
-#################################################
-
-
-def get_stored_keys():
-    """Get stored APIs from database, which is a list of dicts."""
-    stored_keys = []
-    for key in INI_OPTIONS.value("api_keys", []):
-        stored_keys.append(key)
-    return stored_keys
 
 ###########################################
 ################ QMESSAGEBOX ##############
@@ -1297,6 +1289,7 @@ def popup_delete():
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
     # Make sure you scale for high DPI
+    environ["QT_AUTO_SCREEN_SCALE_FACTOR"] = "1"
     app.setAttribute(Qt.AA_EnableHighDpiScaling)
     app.setAttribute(Qt.AA_UseHighDpiPixmaps)
     # Launch the window

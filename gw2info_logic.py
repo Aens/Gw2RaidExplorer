@@ -52,6 +52,7 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
         self.botonLoad.clicked.connect(self.load_api)
         self.botonAddAPI.clicked.connect(self.open_window_add)
         self.botonDeleteAPI.clicked.connect(self.delete_api)
+        self.botonDonate.clicked.connect(self.open_web_donate)
         # Right side buttons
         self.botonFindfolder.clicked.connect(self.set_installation_folder)
         self.botonArcDps.clicked.connect(self.update_arcdps)
@@ -501,6 +502,14 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
         self.change_statusbar("wait", "Loading website...")
         webbrowser.open("https://github.com/Aens/Gw2RaidExplorer")
         self.change_statusbar("ready", "Website for this tool launched on your browser.")
+
+    def open_web_donate(self):
+        """Open the website browser with this website."""
+        self.change_statusbar("wait", "Loading website...")
+        webbrowser.open("https://www.paypal.com/cgi-bin/webscr?cmd=_donations"
+                        "&business=Aenswindstorm@gmail.com&lc=US&item_name=For+Gw2raidexplorer"
+                        "&no_note=0&cn=&curency_code=USD&bn=PP-DonationsBF:btn_donateCC_LG.gif:NonHosted")
+        self.change_statusbar("ready", "Website to donate launched on your browser.")
 
     #######################################################
     ################## ARCDPS AND PLUGINS #################

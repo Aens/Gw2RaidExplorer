@@ -37,7 +37,7 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
         self.setWindowIcon(QIcon(":/images/Images/Main.ico"))
         self.setWindowTitle("Gw2 API Raid Explorer {0}".format(PROGRAM_AUTHOR))
         # Initial window size/pos last saved. Use default values for first time
-        self.setFixedSize(QSize(1030, 670))
+        self.setFixedSize(QSize(970, 600))
         self.move(INI_OPTIONS.value("menu_position", QPoint(350, 250)))
         self.lineInstallationFolder.setText((INI_OPTIONS.value("installation_folder", "")))
         # Left side Buttons
@@ -316,27 +316,26 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
             if widget.isWindow():
                 self.set_colors(widget, colors)
         self.style_background = colors['backgroundcolor'] # For the statusbar
-        self.change_statusbar("ready", "New theme loaded, you may need to reload data to assign correct colors to it.")
+        self.load_permissions()
+        self.change_statusbar("ready", "New theme loaded.")
 
     def set_colors(self, widget, colors):
         """Paint the initial colors for the controls"""
         for item in widget.children():
             item_type = item.metaObject().className()
             # SPECIALS: Set background to it and then re-iterate on these items
-            if (item_type == "QMainWindowLayout" # TBD Bug?
-                  or item_type == "QWidget" # TBD Bug?
-                  or isinstance(item, QtWidgets.QDialog)):
+            if item_type == "QWidget" or isinstance(item, QtWidgets.QDialog):
                 widget.setStyleSheet(colors['backgroundcolor'])
                 self.set_colors(item, colors)
             # SPECIALS: Set style to it and then re-iterate on these items
             elif isinstance(item, QtWidgets.QGroupBox):
                 item.setStyleSheet(colors['groupstyle'])
                 self.set_colors(item, colors)
-            elif isinstance(item, QtWidgets.QTabWidget):
+            elif isinstance(item, QtWidgets.QTabWidget) or isinstance(item, QtWidgets.QStackedWidget):
                 item.setStyleSheet(colors['tabstyle'])
                 self.set_colors(item, colors)
             # OTHER: Stand-alone widgets
-            if isinstance(item, QtWidgets.QLineEdit):
+            elif item_type == "QLineEdit":
                 if item.isReadOnly():
                     item.setStyleSheet(colors['inputcolorreadonly'])
                 else:
@@ -352,6 +351,8 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
             elif isinstance(item, QtWidgets.QComboBox):
                 item.setStyleSheet(colors['dropdowncolor'])
             else:
+                # print(item_type) # TBD Used to debug
+                # print(item.objectName())# TBD Used to debug
                 pass
 
     def initialize_language(self, lang):
@@ -436,10 +437,10 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
         """Enable/Disable the debugger section"""
         if self.debug_mode:
             self.debug_mode = False
-            self.setFixedSize(QSize(1030, 670))
+            self.setFixedSize(QSize(self.width(), self.height() - self.plainDebugger.height()))
         else:
             self.debug_mode = True
-            self.setFixedSize(QSize(1030, 760))
+            self.setFixedSize(QSize(self.width(), self.height() + self.plainDebugger.height()))
 
     def open_web_anet(self):
         """Open the website browser with this website."""
@@ -554,30 +555,30 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
             online_file_bt = "https://www.deltaconnected.com/arcdps/x64/buildtemplates/d3d9_arcdps_buildtemplates.dll"
             online_file_md5 = "https://www.deltaconnected.com/arcdps/x64/d3d9.dll.md5sum"
             # Check if exists
-            if self.file_exists(local_file):
-                # Get both md5
-                local_file_md5 = self.get_hash_of_file(local_file)
-                address = urllib.parse.quote(online_file_md5, safe='/:=', encoding="utf-8", errors="strict")
-                address = urllib.request.urlopen(address).read().decode('utf8')
-                online_md5 = address.split(" ")[0]
-                # Compare online MD5 with local md5
-                if online_md5 == local_file_md5:
-                    self.change_statusbar("ready", "ArcDps was already updated.")
+            try:
+                if self.file_exists(local_file):
+                    # Get both md5
+                    local_file_md5 = self.get_hash_of_file(local_file)
+                    address = urllib.parse.quote(online_file_md5, safe='/:=', encoding="utf-8", errors="strict")
+                    address = urllib.request.urlopen(address).read().decode('utf8')
+                    online_md5 = address.split(" ")[0]
+                    # Compare online MD5 with local md5
+                    if online_md5 == local_file_md5:
+                        self.change_statusbar("ready", "NOPE, ArcDps was already updated.")
+                    else:
+                        # Download files and replace them
+                        self.change_statusbar("wait", "ArcDps is being updated...")
+                        urllib.request.urlretrieve(online_file, local_file)
+                        urllib.request.urlretrieve(online_file_bt, local_file_bt)
+                        self.change_statusbar("ready", "YES, there was a new version. ArcDps has been updated.")
                 else:
-                    # Download files and replace them
-                    self.change_statusbar("wait", "ArcDps is being updated...")
-                    urllib.request.urlretrieve(online_file, local_file)
-                    urllib.request.urlretrieve(online_file_bt, local_file_bt)
-                    self.change_statusbar("ready", "ArcDps has been updated.")
-            else:
-                # Download files
-                try:
+                    # Download files
                     self.change_statusbar("wait", "ArcDps is not installed, downloading...")
                     urllib.request.urlretrieve(online_file, local_file)
                     urllib.request.urlretrieve(online_file_bt, local_file_bt)
-                    self.change_statusbar("ready", "ArcDps has been Installed.")
-                except Exception as e:
-                    self.change_statusbar("error", "Unexpected error: {0}".format(str(e)))
+                    self.change_statusbar("ready", "YES, there was a new version. ArcDps has been Installed.")
+            except Exception as e:
+                self.change_statusbar("error", "Unexpected error: {0}".format(str(e)))
 
     def update_arcdps_mechanics(self):
         """Install or update ArcDps Mechanics plugin."""
@@ -589,28 +590,28 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
             online_file = "http://martionlabs.com/wp-content/uploads/d3d9_arcdps_mechanics.dll"
             online_file_md5 = "http://martionlabs.com/wp-content/uploads/d3d9_arcdps_mechanics.dll.md5sum"
             # Check if exists
-            if self.file_exists(local_file):
-                # Get both md5
-                local_file_md5 = self.get_hash_of_file(local_file)
-                address = urllib.parse.quote(online_file_md5, safe='/:=', encoding="utf-8", errors="strict")
-                address = urllib.request.urlopen(address).read().decode('utf8')
-                online_md5 = address[:32]
-                # Compare online md5 with local md5
-                if online_md5 == local_file_md5:
-                    self.change_statusbar("ready", "ArcDps Mechanics Addon was already updated.")
+            try:
+                if self.file_exists(local_file):
+                    # Get both md5
+                    local_file_md5 = self.get_hash_of_file(local_file)
+                    address = urllib.parse.quote(online_file_md5, safe='/:=', encoding="utf-8", errors="strict")
+                    address = urllib.request.urlopen(address).read().decode('utf8')
+                    online_md5 = address[:32]
+                    # Compare online md5 with local md5
+                    if online_md5 == local_file_md5:
+                        self.change_statusbar("ready", "ArcDps Mechanics Addon was already updated.")
+                    else:
+                        # Download files and replace them
+                        self.change_statusbar("wait", "ArcDps Mechanics Addon is being updated...")
+                        urllib.request.urlretrieve(online_file, local_file)
+                        self.change_statusbar("ready", "ArcDps Mechanics Addon has been updated.")
                 else:
-                    # Download files and replace them
-                    self.change_statusbar("wait", "ArcDps Mechanics Addon is being updated...")
-                    urllib.request.urlretrieve(online_file, local_file)
-                    self.change_statusbar("ready", "ArcDps Mechanics Addon has been updated.")
-            else:
-                # Download files
-                try:
+                    # Download files
                     self.change_statusbar("wait", "ArcDps Mechanics Addon is not installed, downloading...")
                     urllib.request.urlretrieve(online_file, local_file)
                     self.change_statusbar("ready", "ArcDps Mechanics Addon has been Installed.")
-                except Exception as e:
-                    self.change_statusbar("error", "Unexpected error: {0}".format(str(e)))
+            except Exception as e:
+                self.change_statusbar("error", "Unexpected error: {0}".format(str(e)))
 
     #######################################################
     ################## GUILD WARS 2 #######################
@@ -668,45 +669,48 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def load_api(self):
         """Load all the data of this API"""
-        self.change_statusbar("wait", "Loading your data...")
-        try:
-            # Fill Bosses section
-            self.change_statusbar("wait", "Loading Bosses section...")
-            bosses = self.load_bosses_section()
-            self.change_statusbar("ready", "Bosses section loaded.")
-            # Fill Raid currencies section
-            self.change_statusbar("wait", "Loading Currencies section...")
-            currency = self.load_currency_section()
-            self.change_statusbar("ready", "Currency section loaded.")
-            # Fill Raid Achievements section
-            self.change_statusbar("wait", "Loading Achievements section...")
-            achievements = self.load_achievements_section()
-            self.change_statusbar("ready", "Achievements section loaded.")
-            # Fill Minis section
-            self.change_statusbar("wait", "Loading Minis section...")
-            minis = self.load_minis_section()
-            self.change_statusbar("ready", "Minis section loaded.")
-            # Fill Skins section
-            self.change_statusbar("wait", "Loading Skins section...")
-            skins = self.load_skins_section()
-            self.change_statusbar("ready", "Skins section loaded.")
-            # Final message
-            warning = []
-            for result in [bosses, currency, achievements, minis, skins]:
-                if result is not None:
-                    warning.append(result)
-            if len(warning) >= 1:
-                self.change_statusbar("error", "Not enough permission to do that - {0}".format(" - ".join(warning)))
-            else:
-                self.change_statusbar("ready", "API data loaded.")
-        # Special exceptions
-        except Exception as e:
-            if "HTTP Error 400" in str(e):
-                self.change_statusbar("error", "Your API key is not valid.")
-            elif "HTTP Error 403" in str(e):
-                self.change_statusbar("error", "LAZY BUG 0001 - If you can read this, tell the programmer.")
-            else:
-                self.change_statusbar("error", str(e))
+        if self.comboSelectAPI.currentText() == "":
+            self.change_statusbar("error", "You have not added any API key yet.")
+        else:
+            self.change_statusbar("wait", "Loading your data...")
+            try:
+                # Fill Bosses section
+                self.change_statusbar("wait", "Loading Bosses section...")
+                bosses = self.load_bosses_section()
+                self.change_statusbar("ready", "Bosses section loaded.")
+                # Fill Raid currencies section
+                self.change_statusbar("wait", "Loading Currencies section...")
+                currency = self.load_currency_section()
+                self.change_statusbar("ready", "Currency section loaded.")
+                # Fill Raid Achievements section
+                self.change_statusbar("wait", "Loading Achievements section...")
+                achievements = self.load_achievements_section()
+                self.change_statusbar("ready", "Achievements section loaded.")
+                # Fill Minis section
+                self.change_statusbar("wait", "Loading Minis section...")
+                minis = self.load_minis_section()
+                self.change_statusbar("ready", "Minis section loaded.")
+                # Fill Skins section
+                self.change_statusbar("wait", "Loading Skins section...")
+                skins = self.load_skins_section()
+                self.change_statusbar("ready", "Skins section loaded.")
+                # Final message
+                warning = []
+                for result in [bosses, currency, achievements, minis, skins]:
+                    if result is not None:
+                        warning.append(result)
+                if len(warning) >= 1:
+                    self.change_statusbar("error", "Not enough permission to do that - {0}".format(" - ".join(warning)))
+                else:
+                    self.change_statusbar("ready", "API data loaded.")
+            # Special exceptions
+            except Exception as e:
+                if "HTTP Error 400" in str(e):
+                    self.change_statusbar("error", "Your API key is not valid.")
+                elif "HTTP Error 403" in str(e):
+                    self.change_statusbar("error", "LAZY BUG 0001 - If you can read this, tell the programmer.")
+                else:
+                    self.change_statusbar("error", str(e))
 
     def load_permissions(self):
         """Load the permissions of the selected key"""

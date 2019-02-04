@@ -83,6 +83,7 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
         self.api_key = None
         self.api_permissions = None
         self.style_background = ""
+        self.style_lineedits = ""
         # Check if we are ready to work
         self.check_if_ready()
 
@@ -317,6 +318,7 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
             if widget.isWindow():
                 self.set_colors(widget, colors)
         self.style_background = colors['backgroundcolor'] # For the statusbar
+        self.style_lineedits = colors['inputcolorreadonly']  # For the reset of YES/NO fields
         self.load_permissions()
         self.change_statusbar("ready", "New theme loaded.")
 
@@ -792,7 +794,7 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
             background_color = "background-color: rgb(200, 0, 0)"
             border = "border: 1px solid rgb(220, 0, 0)"
         elif value == "reset":
-            background_color = "background-color: rgb(150, 150, 150)"
+            return self.style_lineedits
         # Create the new style
         new_style = self.lineInstallationFolder.styleSheet().split(";")
         for index, value in enumerate(new_style):
@@ -854,10 +856,8 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
                     i['flag'] = 1
                     break
             if i['flag'] == 1:
-                i['uiitem'].setText("YES")
                 i['uiitem'].setStyleSheet(yes_style)
             else:
-                i['uiitem'].setText("NO")
                 i['uiitem'].setStyleSheet(no_style)
 
     def reset_bosses(self):
@@ -875,7 +875,6 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
             self.lineRaidboss_dhuum, self.lineRaidboss_conjureda, self.lineRaidboss_twinlargos,
             self.lineRaidboss_qadim)
         for i in raids_fields:
-            i.clear()
             i.setStyleSheet(reset_style)
 
     #######################################################
@@ -987,32 +986,101 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
         # Get new colors to paint based on theme
         yes_style = self.adapt_line_theme("yes")
         no_style = self.adapt_line_theme("no")
-        # Challenge Modes
-        challenges = [{"id": 3019, "flag": 0, "uiitem": self.lineRaidboss_keepconstruct_cm},
-                      {"id": 3334, "flag": 0, "uiitem": self.lineRaidboss_cairn_cm},
-                      {"id": 3287, "flag": 0, "uiitem": self.lineRaidboss_mursaat_cm},
-                      {"id": 3342, "flag": 0, "uiitem": self.lineRaidboss_samarog_cm},
-                      {"id": 3292, "flag": 0, "uiitem": self.lineRaidboss_deimos_cm},
-                      {"id": 3993, "flag": 0, "uiitem": self.lineRaidboss_desmina_cm},
-                      {"id": 3979, "flag": 0, "uiitem": self.lineRaidboss_dhuum_cm},
-                      {"id": 4416, "flag": 0, "uiitem": self.lineRaidboss_conjureda_cm},
-                      {"id": 4429, "flag": 0, "uiitem": self.lineRaidboss_twinlargos_cm},
-                      {"id": 4355, "flag": 0, "uiitem": self.lineRaidboss_qadim_cm}]
+        # Achievements
+        achievements = [{"id": 2657, "flag": 0, "uiitem": self.lineRaidboss_w1_1},
+                        {"id": 2651, "flag": 0, "uiitem": self.lineRaidboss_w1_2},
+                        {"id": 2663, "flag": 0, "uiitem": self.lineRaidboss_w1_3},
+                        {"id": 2654, "flag": 0, "uiitem": self.lineRaidboss_w1_4},
+                        {"id": 2658, "flag": 0, "uiitem": self.lineRaidboss_w1_5},
+                        {"id": 2655, "flag": 0, "uiitem": self.lineRaidboss_w1_6},
+                        {"id": 2656, "flag": 0, "uiitem": self.lineRaidboss_w1_7},
+                        {"id": 2647, "flag": 0, "uiitem": self.lineRaidboss_w1_8},
+                        {"id": 2660, "flag": 0, "uiitem": self.lineRaidboss_w1_9},
+                        {"id": 2665, "flag": 0, "uiitem": self.lineRaidboss_w1_10},
+                        {"id": 2662, "flag": 0, "uiitem": self.lineRaidboss_w1_11},
+                        {"id": 2667, "flag": 0, "uiitem": self.lineRaidboss_w1_12},
+                        {"id": 2666, "flag": 0, "uiitem": self.lineRaidboss_w1_13},
+                        {"id": 2649, "flag": 0, "uiitem": self.lineRaidboss_w1_14},
+                        {"id": 2648, "flag": 0, "uiitem": self.lineRaidboss_w1_15},
+                        {"id": 2659, "flag": 0, "uiitem": self.lineRaidboss_w1_16},
+                        {"id": 2664, "flag": 0, "uiitem": self.lineRaidboss_w1_17},
+                        {"id": 2652, "flag": 0, "uiitem": self.lineRaidboss_w1_18},
+                        {"id": 2661, "flag": 0, "uiitem": self.lineRaidboss_w1_19},
+                        {"id": 2668, "flag": 0, "uiitem": self.lineRaidboss_w1_20},
+                        {"id": 2653, "flag": 0, "uiitem": self.lineRaidboss_w1_21},
+
+                        {"id": 2832, "flag": 0, "uiitem": self.lineRaidboss_w2_1},
+                        {"id": 2826, "flag": 0, "uiitem": self.lineRaidboss_w2_2},
+                        {"id": 2824, "flag": 0, "uiitem": self.lineRaidboss_w2_3},
+                        {"id": 2830, "flag": 0, "uiitem": self.lineRaidboss_w2_4},
+                        {"id": 2821, "flag": 0, "uiitem": self.lineRaidboss_w2_5},
+                        {"id": 2836, "flag": 0, "uiitem": self.lineRaidboss_w2_6},
+                        {"id": 2831, "flag": 0, "uiitem": self.lineRaidboss_w2_7},
+                        {"id": 2835, "flag": 0, "uiitem": self.lineRaidboss_w2_8},
+                        {"id": 2823, "flag": 0, "uiitem": self.lineRaidboss_w2_9},
+
+                        {"id": 3024, "flag": 0, "uiitem": self.lineRaidboss_w3_1},
+                        {"id": 3021, "flag": 0, "uiitem": self.lineRaidboss_w3_2},
+                        {"id": 3016, "flag": 0, "uiitem": self.lineRaidboss_w3_3},
+                        {"id": 3014, "flag": 0, "uiitem": self.lineRaidboss_w3_4},
+                        {"id": 3010, "flag": 0, "uiitem": self.lineRaidboss_w3_5},
+                        {"id": 3017, "flag": 0, "uiitem": self.lineRaidboss_w3_6},
+                        {"id": 3019, "flag": 0, "uiitem": self.lineRaidboss_w3_7},
+                        {"id": 3011, "flag": 0, "uiitem": self.lineRaidboss_w3_8},
+                        {"id": 3022, "flag": 0, "uiitem": self.lineRaidboss_w3_9},
+                        {"id": 3025, "flag": 0, "uiitem": self.lineRaidboss_w3_10},
+                        {"id": 3013, "flag": 0, "uiitem": self.lineRaidboss_w3_11},
+
+                        {"id": 3287, "flag": 0, "uiitem": self.lineRaidboss_w4_1},
+                        {"id": 3349, "flag": 0, "uiitem": self.lineRaidboss_w4_2},
+                        {"id": 3364, "flag": 0, "uiitem": self.lineRaidboss_w4_3},
+                        {"id": 3299, "flag": 0, "uiitem": self.lineRaidboss_w4_4},
+                        {"id": 3342, "flag": 0, "uiitem": self.lineRaidboss_w4_5},
+                        {"id": 3321, "flag": 0, "uiitem": self.lineRaidboss_w4_6},
+                        {"id": 3334, "flag": 0, "uiitem": self.lineRaidboss_w4_7},
+                        {"id": 3292, "flag": 0, "uiitem": self.lineRaidboss_w4_8},
+                        {"id": 3347, "flag": 0, "uiitem": self.lineRaidboss_w4_9},
+                        {"id": 3296, "flag": 0, "uiitem": self.lineRaidboss_w4_10},
+                        {"id": 3392, "flag": 0, "uiitem": self.lineRaidboss_w4_11},
+
+                        {"id": 4020, "flag": 0, "uiitem": self.lineRaidboss_w5_1},
+                        {"id": 3979, "flag": 0, "uiitem": self.lineRaidboss_w5_2},
+                        {"id": 3998, "flag": 0, "uiitem": self.lineRaidboss_w5_3},
+                        {"id": 3993, "flag": 0, "uiitem": self.lineRaidboss_w5_4},
+                        {"id": 4038, "flag": 0, "uiitem": self.lineRaidboss_w5_5},
+                        {"id": 4033, "flag": 0, "uiitem": self.lineRaidboss_w5_6},
+                        {"id": 4036, "flag": 0, "uiitem": self.lineRaidboss_w5_7},
+                        {"id": 4004, "flag": 0, "uiitem": self.lineRaidboss_w5_8},
+                        {"id": 4037, "flag": 0, "uiitem": self.lineRaidboss_w5_9},
+                        {"id": 4010, "flag": 0, "uiitem": self.lineRaidboss_w5_10},
+                        {"id": 4016, "flag": 0, "uiitem": self.lineRaidboss_w5_11},
+
+                        {"id": 4423, "flag": 0, "uiitem": self.lineRaidboss_w6_1},
+                        {"id": 4364, "flag": 0, "uiitem": self.lineRaidboss_w6_2},
+                        {"id": 4397, "flag": 0, "uiitem": self.lineRaidboss_w6_3},
+                        {"id": 4415, "flag": 0, "uiitem": self.lineRaidboss_w6_4},
+                        {"id": 4355, "flag": 0, "uiitem": self.lineRaidboss_w6_5},
+                        {"id": 4429, "flag": 0, "uiitem": self.lineRaidboss_w6_6},
+                        {"id": 4361, "flag": 0, "uiitem": self.lineRaidboss_w6_7},
+                        {"id": 4409, "flag": 0, "uiitem": self.lineRaidboss_w6_8},
+                        {"id": 4395, "flag": 0, "uiitem": self.lineRaidboss_w6_9},
+                        {"id": 4416, "flag": 0, "uiitem": self.lineRaidboss_w6_10},
+                        {"id": 4388, "flag": 0, "uiitem": self.lineRaidboss_w6_11},
+                        {"id": 4404, "flag": 0, "uiitem": self.lineRaidboss_w6_12},
+                        {"id": 4396, "flag": 0, "uiitem": self.lineRaidboss_w6_13},]
         # Flag the ones done
-        for achiev in api_achievs:
-            for challenge in challenges:
-                if achiev['id'] == challenge['id']:
-                    if achiev['done']:
-                        challenge['flag'] = 1
+        for api_achiev in api_achievs:
+            for achievement in achievements:
+                if api_achiev['id'] == achievement['id']:
+                    if api_achiev['done']:
+                        achievement['flag'] = 1
                         break
         # Set the UI
-        for challenge in challenges:
-            if challenge['flag'] == 1:
-                challenge['uiitem'].setText("YES")
-                challenge['uiitem'].setStyleSheet(yes_style)
+        for achievement in achievements:
+            if achievement['flag'] == 1:
+                achievement['uiitem'].setStyleSheet(yes_style)
             else:
-                challenge['uiitem'].setText("NO")
-                challenge['uiitem'].setStyleSheet(no_style)
+                achievement['uiitem'].setStyleSheet(no_style)
 
     def reset_achievements(self):
         """Clean all achievements"""
@@ -1020,12 +1088,29 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
         reset_style = self.adapt_line_theme("reset")
         # Clean everything
         achievements_fields = (
-            self.lineRaidboss_keepconstruct_cm, self.lineRaidboss_cairn_cm, self.lineRaidboss_mursaat_cm,
-            self.lineRaidboss_samarog_cm, self.lineRaidboss_deimos_cm, self.lineRaidboss_desmina_cm,
-            self.lineRaidboss_dhuum_cm, self.lineRaidboss_conjureda_cm, self.lineRaidboss_twinlargos_cm,
-            self.lineRaidboss_qadim_cm)
+            self.lineRaidboss_w1_1, self.lineRaidboss_w1_2, self.lineRaidboss_w1_3, self.lineRaidboss_w1_4,
+            self.lineRaidboss_w1_5, self.lineRaidboss_w1_6, self.lineRaidboss_w1_7, self.lineRaidboss_w1_8,
+            self.lineRaidboss_w1_9, self.lineRaidboss_w1_10, self.lineRaidboss_w1_11, self.lineRaidboss_w1_12,
+            self.lineRaidboss_w1_13, self.lineRaidboss_w1_14, self.lineRaidboss_w1_15, self.lineRaidboss_w1_16,
+            self.lineRaidboss_w1_17, self.lineRaidboss_w1_18, self.lineRaidboss_w1_19, self.lineRaidboss_w1_20,
+            self.lineRaidboss_w1_21,
+            self.lineRaidboss_w2_1, self.lineRaidboss_w2_2, self.lineRaidboss_w2_3, self.lineRaidboss_w2_4,
+            self.lineRaidboss_w2_5, self.lineRaidboss_w2_6, self.lineRaidboss_w2_7, self.lineRaidboss_w2_8,
+            self.lineRaidboss_w2_9,
+            self.lineRaidboss_w3_1, self.lineRaidboss_w3_2, self.lineRaidboss_w3_3, self.lineRaidboss_w3_4,
+            self.lineRaidboss_w3_5, self.lineRaidboss_w3_6, self.lineRaidboss_w3_7, self.lineRaidboss_w3_8,
+            self.lineRaidboss_w3_9, self.lineRaidboss_w3_10, self.lineRaidboss_w3_11,
+            self.lineRaidboss_w4_1, self.lineRaidboss_w4_2, self.lineRaidboss_w4_3, self.lineRaidboss_w4_4,
+            self.lineRaidboss_w4_5, self.lineRaidboss_w4_6, self.lineRaidboss_w4_7, self.lineRaidboss_w4_8,
+            self.lineRaidboss_w4_9, self.lineRaidboss_w4_10, self.lineRaidboss_w4_11,
+            self.lineRaidboss_w5_1, self.lineRaidboss_w5_2, self.lineRaidboss_w5_3, self.lineRaidboss_w5_4,
+            self.lineRaidboss_w5_5, self.lineRaidboss_w5_6, self.lineRaidboss_w5_7, self.lineRaidboss_w5_8,
+            self.lineRaidboss_w5_9, self.lineRaidboss_w5_10, self.lineRaidboss_w5_11,
+            self.lineRaidboss_w6_1, self.lineRaidboss_w6_2, self.lineRaidboss_w6_3, self.lineRaidboss_w6_4,
+            self.lineRaidboss_w6_5, self.lineRaidboss_w6_6, self.lineRaidboss_w6_7, self.lineRaidboss_w6_8,
+            self.lineRaidboss_w6_9, self.lineRaidboss_w6_10, self.lineRaidboss_w6_11, self.lineRaidboss_w6_12,
+            self.lineRaidboss_w6_13)
         for i in achievements_fields:
-            i.clear()
             i.setStyleSheet(reset_style)
 
     ####################################################

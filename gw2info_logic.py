@@ -11,8 +11,9 @@ from pathlib import Path
 from PySide2 import QtWidgets
 from PySide2.QtGui import QIcon, QColor
 from PySide2.QtCore import Qt, QEvent, QPoint, QSize, QSettings
-from gw2info_ui import Ui_MainWindow
-from add_ui import Ui_Dialog
+from ui.gw2info_ui import Ui_MainWindow
+from ui.add_ui import Ui_Dialog
+import rc.resources_rc
 
 PROGRAM_VERSION = "090"
 PROGRAM_AUTHOR = "(Made by Elrey.5472) - https://github.com/Aens"
@@ -210,12 +211,12 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
                               "QTabBar::tab {border: 2px solid rgb(150, 150, 150);border-bottom: 0px;"
                               "border-top-left-radius: 6px;border-top-right-radius: 6px;"
                               "padding: 2px;}"
-                              
+
                               " /* The tab specific buttons */"
                               "QTabBar::tab:selected {border-color: rgb(150, 150, 150);"
                               "background-color: rgb(200, 210, 210);}"
                               "QTabBar::tab:hover {background-color: rgb(200, 210, 210);}"
-                              
+
                               " /* The tab widget frame */"
                               "QTabWidget::pane {border: 2px solid rgb(150, 150, 150);"
                               "border-top-right-radius: 5px;border-bottom-right-radius: 5px;"
@@ -250,11 +251,11 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
                               "QTabBar::tab {border: 2px solid black;border-bottom: 0px;"
                               "border-top-left-radius: 6px;border-top-right-radius: 6px;"
                               "padding: 2px;}"
-                              
+
                               " /* The tab specific buttons */"
                               "QTabBar::tab:selected {border-color: black;background-color: rgb(90, 95, 100);}"
                               "QTabBar::tab:hover {background-color: rgb(90, 95, 100);}"
-                              
+
                               " /* The tab widget frame */"
                               "QTabWidget::pane {border: 2px solid black;"
                               "border-top-right-radius: 5px;border-bottom-right-radius: 5px;"
@@ -289,12 +290,12 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
                               "QTabBar::tab {border: 2px solid rgb(10, 105, 170);border-bottom: 0px;"
                               "border-top-left-radius: 6px;border-top-right-radius: 6px;"
                               "padding: 2px;}"
-                              
+
                               " /* The tab specific buttons */"
                               "QTabBar::tab:selected {border-color: rgb(10, 105, 170);"
                               "background-color: rgb(225, 255, 225);}"
                               "QTabBar::tab:hover {background-color: rgb(225, 255, 225);}"
-                              
+
                               " /* The tab widget frame */"
                               "QTabWidget::pane {border: 2px solid rgb(10, 105, 170);"
                               "border-top-right-radius: 5px;border-bottom-right-radius: 5px;"

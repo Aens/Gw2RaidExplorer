@@ -2165,5 +2165,3 @@ class Ui_MainWindow(object):
         self.tabRaids.setTabText(self.tabRaids.indexOf(self.tab_achievements), QtWidgets.QApplication.translate("MainWindow", "Achievements", None, -1))
         self.checkAchievements.setText(QtWidgets.QApplication.translate("MainWindow", "Achievements", None, -1))
         self.label_92.setText(QtWidgets.QApplication.translate("MainWindow", "Data to request from your API Key:", None, -1))
-
-import resources_rc

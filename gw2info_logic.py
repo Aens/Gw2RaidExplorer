@@ -11,7 +11,7 @@ from pathlib import Path
 
 from PySide2.QtWidgets import (QApplication, QComboBox, QDialog, QFileDialog,
     QGraphicsColorizeEffect, QGroupBox, QLabel, QMainWindow, QMessageBox,
-    QPlainTextEdit, QPush Button, QStackedWidget, QTabWidget, QTextEdit)
+    QPlainTextEdit, QPushButton, QStackedWidget, QTabWidget, QTextEdit)
 from PySide2.QtGui import QIcon, QColor
 from PySide2.QtCore import Qt, QEvent, QPoint, QSize, QSettings
 

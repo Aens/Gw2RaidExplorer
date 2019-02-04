@@ -27,7 +27,7 @@
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QPushButton" name="botonThemeDefault">
+   <widget class="QPushButton" name="buttonThemeDefault">
     <property name="geometry">
      <rect>
       <x>190</x>
@@ -49,7 +49,7 @@
      </size>
     </property>
    </widget>
-   <widget class="QPushButton" name="botonThemeLight">
+   <widget class="QPushButton" name="buttonThemeLight">
     <property name="geometry">
      <rect>
       <x>270</x>
@@ -71,7 +71,7 @@
      </size>
     </property>
    </widget>
-   <widget class="QPushButton" name="botonThemeDark">
+   <widget class="QPushButton" name="buttonThemeDark">
     <property name="geometry">
      <rect>
       <x>230</x>
@@ -93,7 +93,7 @@
      </size>
     </property>
    </widget>
-   <widget class="QPushButton" name="botonLanguage_spanish">
+   <widget class="QPushButton" name="buttonLanguage_spanish">
     <property name="geometry">
      <rect>
       <x>100</x>
@@ -113,7 +113,7 @@
      </size>
     </property>
    </widget>
-   <widget class="QPushButton" name="botonLanguage_english">
+   <widget class="QPushButton" name="buttonLanguage_english">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -149,7 +149,7 @@
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QPushButton" name="botonLanguage_french">
+   <widget class="QPushButton" name="buttonLanguage_french">
     <property name="geometry">
      <rect>
       <x>60</x>
@@ -169,7 +169,7 @@
      </size>
     </property>
    </widget>
-   <widget class="QPushButton" name="botonLanguage_deutsch">
+   <widget class="QPushButton" name="buttonLanguage_deutsch">
     <property name="geometry">
      <rect>
       <x>140</x>
@@ -321,7 +321,7 @@ QTabWidget::pane {
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QPushButton" name="botonAddAPI">
+     <widget class="QPushButton" name="buttonAddAPI">
       <property name="geometry">
        <rect>
         <x>90</x>
@@ -404,7 +404,7 @@ QTabWidget::pane {
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QPushButton" name="botonWebsite_Anet">
+     <widget class="QPushButton" name="buttonWebsite_Anet">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -493,7 +493,7 @@ QTabWidget::pane {
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QPushButton" name="botonDeleteAPI">
+     <widget class="QPushButton" name="buttonDeleteAPI">
       <property name="geometry">
        <rect>
         <x>220</x>
@@ -594,7 +594,7 @@ QTabWidget::pane {
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QPushButton" name="botonLoad">
+     <widget class="QPushButton" name="buttonLoad">
       <property name="geometry">
        <rect>
         <x>220</x>
@@ -693,7 +693,7 @@ QTabWidget::pane {
        <enum>Qt::Horizontal</enum>
       </property>
      </widget>
-     <widget class="QPushButton" name="botonDebugger">
+     <widget class="QPushButton" name="buttonDebugger">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -737,7 +737,7 @@ QTabWidget::pane {
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QPushButton" name="botonDonate">
+     <widget class="QPushButton" name="buttonDonate">
       <property name="geometry">
        <rect>
         <x>170</x>
@@ -764,7 +764,7 @@ QTabWidget::pane {
      <attribute name="title">
       <string>Plugins and Websites</string>
      </attribute>
-     <widget class="QPushButton" name="botonWebsite_dulfy">
+     <widget class="QPushButton" name="buttonWebsite_dulfy">
       <property name="geometry">
        <rect>
         <x>170</x>
@@ -786,7 +786,7 @@ QTabWidget::pane {
        </size>
       </property>
      </widget>
-     <widget class="QPushButton" name="botonWebsite_builds">
+     <widget class="QPushButton" name="buttonWebsite_builds">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -808,7 +808,7 @@ QTabWidget::pane {
        </size>
       </property>
      </widget>
-     <widget class="QPushButton" name="botonClosegame">
+     <widget class="QPushButton" name="buttonClosegame">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -847,7 +847,7 @@ QTabWidget::pane {
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QPushButton" name="botonFindfolder">
+     <widget class="QPushButton" name="buttonFindfolder">
       <property name="geometry">
        <rect>
         <x>290</x>
@@ -864,7 +864,7 @@ QTabWidget::pane {
         <normaloff>:/images/Images/Iconofolder.png</normaloff>:/images/Images/Iconofolder.png</iconset>
       </property>
      </widget>
-     <widget class="QPushButton" name="botonLaunchgame">
+     <widget class="QPushButton" name="buttonLaunchgame">
       <property name="geometry">
        <rect>
         <x>170</x>
@@ -890,7 +890,7 @@ QTabWidget::pane {
        </size>
       </property>
      </widget>
-     <widget class="QPushButton" name="botonWebsite_arcdpsmechanics">
+     <widget class="QPushButton" name="buttonWebsite_arcdpsmechanics">
       <property name="geometry">
        <rect>
         <x>170</x>
@@ -912,7 +912,7 @@ QTabWidget::pane {
        </size>
       </property>
      </widget>
-     <widget class="QPushButton" name="botonWebsite_builds_alternative">
+     <widget class="QPushButton" name="buttonWebsite_builds_alternative">
       <property name="geometry">
        <rect>
         <x>170</x>
@@ -934,7 +934,7 @@ QTabWidget::pane {
        </size>
       </property>
      </widget>
-     <widget class="QPushButton" name="botonArcDps">
+     <widget class="QPushButton" name="buttonArcDps">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -960,7 +960,7 @@ QTabWidget::pane {
        </size>
       </property>
      </widget>
-     <widget class="QPushButton" name="botonWebsite_gw2raidexplorer">
+     <widget class="QPushButton" name="buttonWebsite_gw2raidexplorer">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -982,7 +982,7 @@ QTabWidget::pane {
        </size>
       </property>
      </widget>
-     <widget class="QPushButton" name="botonWebsite_raidar">
+     <widget class="QPushButton" name="buttonWebsite_raidar">
       <property name="geometry">
        <rect>
         <x>170</x>
@@ -1026,7 +1026,7 @@ QTabWidget::pane {
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QPushButton" name="botonWebsite_arcdps">
+     <widget class="QPushButton" name="buttonWebsite_arcdps">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -1048,7 +1048,7 @@ QTabWidget::pane {
        </size>
       </property>
      </widget>
-     <widget class="QPushButton" name="botonArcDps_mechanics">
+     <widget class="QPushButton" name="buttonArcDps_mechanics">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -1074,7 +1074,7 @@ QTabWidget::pane {
        </size>
       </property>
      </widget>
-     <widget class="QPushButton" name="botonWebsite_killproof">
+     <widget class="QPushButton" name="buttonWebsite_killproof">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -1096,7 +1096,7 @@ QTabWidget::pane {
        </size>
       </property>
      </widget>
-     <widget class="QPushButton" name="botonWebsite_dpsreport">
+     <widget class="QPushButton" name="buttonWebsite_dpsreport">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -5143,14 +5143,14 @@ QTabWidget::pane {
    <zorder>tabRaids</zorder>
    <zorder>plainDebugger</zorder>
    <zorder>label_32</zorder>
-   <zorder>botonThemeDefault</zorder>
-   <zorder>botonThemeLight</zorder>
-   <zorder>botonThemeDark</zorder>
-   <zorder>botonLanguage_spanish</zorder>
-   <zorder>botonLanguage_english</zorder>
+   <zorder>buttonThemeDefault</zorder>
+   <zorder>buttonThemeLight</zorder>
+   <zorder>buttonThemeDark</zorder>
+   <zorder>buttonLanguage_spanish</zorder>
+   <zorder>buttonLanguage_english</zorder>
    <zorder>label_69</zorder>
-   <zorder>botonLanguage_french</zorder>
-   <zorder>botonLanguage_deutsch</zorder>
+   <zorder>buttonLanguage_french</zorder>
+   <zorder>buttonLanguage_deutsch</zorder>
    <zorder>tabOptions</zorder>
    <zorder>groupUnused</zorder>
    <zorder>checkBosses</zorder>
@@ -5182,7 +5182,7 @@ QTabWidget::pane {
   <tabstop>linePermission_Builds</tabstop>
   <tabstop>linePermission_Progression</tabstop>
   <tabstop>linePermission_Guilds</tabstop>
-  <tabstop>botonLoad</tabstop>
+  <tabstop>buttonLoad</tabstop>
  </tabstops>
  <resources>
   <include location="resources.qrc"/>

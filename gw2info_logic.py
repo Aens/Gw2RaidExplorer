@@ -8,9 +8,13 @@ import psutil
 import subprocess
 from os import environ
 from pathlib import Path
-from PySide2 import QtWidgets
+
+from PySide2.QtWidgets import (QApplication, QComboBox, QDialog, QFileDialog,
+    QGraphicsColorizeEffect, QGroupBox, QLabel, QMainWindow, QMessageBox,
+    QPlainTextEdit, QPush Button, QStackedWidget, QTabWidget, QTextEdit)
 from PySide2.QtGui import QIcon, QColor
 from PySide2.QtCore import Qt, QEvent, QPoint, QSize, QSettings
+
 from ui.gw2info_ui import Ui_MainWindow
 from ui.add_ui import Ui_Dialog
 import rc.resources_rc
@@ -24,7 +28,7 @@ INI_OPTIONS = QSettings("options.ini", QSettings.IniFormat)
 ##################### MAIN WINDOW ######################
 ########################################################
 
-class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
+class MainForm(QMainWindow, Ui_MainWindow):
     """Main window of the program."""
 
     def __init__(self, parent=None):
@@ -33,7 +37,7 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
         Connect the events to their triggers.
         Set proper colors to their items.
         And fire up initial functions."""
-        QtWidgets.QMainWindow.__init__(self, parent)
+        QMainWindow.__init__(self, parent)
         self.setupUi(self)
         self.setWindowIcon(QIcon(":/images/Images/Main.ico"))
         self.setWindowTitle("Gw2 API Raid Explorer {0}".format(PROGRAM_AUTHOR))
@@ -328,14 +332,14 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
         for item in widget.children():
             item_type = item.metaObject().className()
             # SPECIALS: Set background to it and then re-iterate on these items
-            if item_type == "QWidget" or isinstance(item, QtWidgets.QDialog):
+            if item_type == "QWidget" or isinstance(item, QDialog):
                 widget.setStyleSheet(colors['backgroundcolor'])
                 self.set_colors(item, colors)
             # SPECIALS: Set style to it and then re-iterate on these items
-            elif isinstance(item, QtWidgets.QGroupBox):
+            elif isinstance(item, QGroupBox):
                 item.setStyleSheet(colors['groupstyle'])
                 self.set_colors(item, colors)
-            elif isinstance(item, QtWidgets.QTabWidget) or isinstance(item, QtWidgets.QStackedWidget):
+            elif isinstance(item, QTabWidget) or isinstance(item, QStackedWidget):
                 item.setStyleSheet(colors['tabstyle'])
                 self.set_colors(item, colors)
             # OTHER: Stand-alone widgets
@@ -344,15 +348,15 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
                     item.setStyleSheet(colors['inputcolorreadonly'])
                 else:
                     item.setStyleSheet(colors['inputcolor'])
-            elif isinstance(item, QtWidgets.QPlainTextEdit):
+            elif isinstance(item, QPlainTextEdit):
                 item.setStyleSheet(colors['inputcolor'])
-            elif isinstance(item, QtWidgets.QTextEdit):
+            elif isinstance(item, QTextEdit):
                 item.setStyleSheet(colors['inputcolor'])
-            elif isinstance(item, QtWidgets.QLabel):
+            elif isinstance(item, QLabel):
                 item.setStyleSheet(colors['labelcolor'])
-            elif isinstance(item, QtWidgets.QPushButton):
+            elif isinstance(item, QPushButton):
                 item.setStyleSheet(colors['buttoncolor'])
-            elif isinstance(item, QtWidgets.QComboBox):
+            elif isinstance(item, QComboBox):
                 item.setStyleSheet(colors['dropdowncolor'])
             else:
                 # print(item_type) # TBD Used to debug
@@ -520,7 +524,7 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def set_installation_folder(self):
         """Set the installation folder"""
-        folderpath = QtWidgets.QFileDialog.getExistingDirectory()
+        folderpath = QFileDialog.getExistingDirectory()
         if not folderpath == "":
             self.lineInstallationFolder.setText(folderpath)
             INI_OPTIONS.setValue("installation_folder", folderpath)
@@ -1172,11 +1176,11 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
         # Set the UI
         for mini in raid_minis:
             if mini['flag'] == 1:
-                yes_style = QtWidgets.QGraphicsColorizeEffect(self)
+                yes_style = QGraphicsColorizeEffect(self)
                 yes_style.setColor(QColor(0, 150, 0))
                 mini['uiitem'].setGraphicsEffect(yes_style)
             else:
-                no_style = QtWidgets.QGraphicsColorizeEffect(self)
+                no_style = QGraphicsColorizeEffect(self)
                 no_style.setColor(QColor(150, 0, 0))
                 mini['uiitem'].setGraphicsEffect(no_style)
 
@@ -1281,11 +1285,11 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
         # Set the UI
         for skin in raid_skins:
             if skin['flag'] == 1:
-                yes_style = QtWidgets.QGraphicsColorizeEffect(self)
+                yes_style = QGraphicsColorizeEffect(self)
                 yes_style.setColor(QColor(0, 150, 0))
                 skin['uiitem'].setGraphicsEffect(yes_style)
             else:
-                no_style = QtWidgets.QGraphicsColorizeEffect(self)
+                no_style = QGraphicsColorizeEffect(self)
                 no_style.setColor(QColor(150, 0, 0))
                 skin['uiitem'].setGraphicsEffect(no_style)
 
@@ -1322,12 +1326,12 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
 #########################################################
 
 
-class AddNewApi(QtWidgets.QDialog, Ui_Dialog):
+class AddNewApi(QDialog, Ui_Dialog):
     """Class for the Add New Api window"""
 
     def __init__(self, parent=None):
         """Set initial status"""
-        QtWidgets.QDialog.__init__(self, parent)
+        QDialog.__init__(self, parent)
         self.setupUi(self)
         self.setWindowIcon(QIcon(":/images/Images/Main.ico"))
         self.setFixedSize(QSize(595, 100))
@@ -1366,14 +1370,14 @@ class AddNewApi(QtWidgets.QDialog, Ui_Dialog):
 
 def popup_delete():
     """Generate a popup that requests if you are really sure that you want to delete a record."""
-    msgbox = QtWidgets.QMessageBox()
+    msgbox = QMessageBox()
     msgbox.setWindowTitle("Security check.")
-    msgbox.setIcon(QtWidgets.QMessageBox.Warning)
+    msgbox.setIcon(QMessageBox.Warning)
     msgbox.setText("Are you sure that you want to delete that key?")
-    botonyes = QtWidgets.QPushButton("Yes")
-    msgbox.addButton(botonyes, QtWidgets.QMessageBox.YesRole)
-    botonno = QtWidgets.QPushButton("No")
-    msgbox.addButton(botonno, QtWidgets.QMessageBox.NoRole)
+    botonyes = QPushButton("Yes")
+    msgbox.addButton(botonyes, QMessageBox.YesRole)
+    botonno = QPushButton("No")
+    msgbox.addButton(botonno, QMessageBox.NoRole)
     msgbox.exec_()
     if msgbox.clickedButton() == botonno:
         return False
@@ -1386,7 +1390,7 @@ def popup_delete():
 
 
 if __name__ == '__main__':
-    app = QtWidgets.QApplication(sys.argv)
+    app = QApplication(sys.argv)
     # Make sure you scale for high DPI
     environ["QT_AUTO_SCREEN_SCALE_FACTOR"] = "1"
     app.setAttribute(Qt.AA_EnableHighDpiScaling)

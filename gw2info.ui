@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1190</width>
+    <width>1672</width>
     <height>682</height>
    </rect>
   </property>
@@ -250,7 +250,7 @@ QTabWidget::pane {
       <property name="geometry">
        <rect>
         <x>170</x>
-        <y>60</y>
+        <y>90</y>
         <width>61</width>
         <height>20</height>
        </rect>
@@ -271,36 +271,11 @@ QTabWidget::pane {
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QLabel" name="label_33">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>140</y>
-        <width>301</width>
-        <height>51</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: rgb(111, 111, 111);</string>
-      </property>
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;You can create API keys at the Guild Wars 2 website.&lt;br/&gt;* &lt;/span&gt;Your API key will be able to &lt;span style=&quot; font-weight:600;&quot;&gt;only read&lt;/span&gt; and provide information from the Guild Wars 2 servers, but it can't edit, change or update anything for your account.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-      <property name="textFormat">
-       <enum>Qt::RichText</enum>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-      </property>
-      <property name="wordWrap">
-       <bool>true</bool>
-      </property>
-     </widget>
      <widget class="QLineEdit" name="linePermission_Tradingpost">
       <property name="geometry">
        <rect>
         <x>90</x>
-        <y>100</y>
+        <y>130</y>
         <width>71</width>
         <height>20</height>
        </rect>
@@ -325,7 +300,7 @@ QTabWidget::pane {
       <property name="geometry">
        <rect>
         <x>90</x>
-        <y>200</y>
+        <y>210</y>
         <width>121</width>
         <height>31</height>
        </rect>
@@ -351,7 +326,7 @@ QTabWidget::pane {
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>51</y>
+        <y>81</y>
         <width>151</width>
         <height>20</height>
        </rect>
@@ -383,7 +358,7 @@ QTabWidget::pane {
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>80</y>
+        <y>110</y>
         <width>71</width>
         <height>20</height>
        </rect>
@@ -408,7 +383,7 @@ QTabWidget::pane {
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>200</y>
+        <y>210</y>
         <width>71</width>
         <height>31</height>
        </rect>
@@ -430,24 +405,11 @@ QTabWidget::pane {
        </size>
       </property>
      </widget>
-     <widget class="Line" name="line_2">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>130</y>
-        <width>300</width>
-        <height>3</height>
-       </rect>
-      </property>
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-     </widget>
      <widget class="QLineEdit" name="linePermission_Unlocks">
       <property name="geometry">
        <rect>
         <x>170</x>
-        <y>80</y>
+        <y>110</y>
         <width>61</width>
         <height>20</height>
        </rect>
@@ -472,7 +434,7 @@ QTabWidget::pane {
       <property name="geometry">
        <rect>
         <x>90</x>
-        <y>80</y>
+        <y>110</y>
         <width>71</width>
         <height>20</height>
        </rect>
@@ -497,7 +459,7 @@ QTabWidget::pane {
       <property name="geometry">
        <rect>
         <x>220</x>
-        <y>200</y>
+        <y>210</y>
         <width>91</width>
         <height>31</height>
        </rect>
@@ -523,7 +485,7 @@ QTabWidget::pane {
       <property name="geometry">
        <rect>
         <x>240</x>
-        <y>60</y>
+        <y>90</y>
         <width>71</width>
         <height>20</height>
        </rect>
@@ -548,7 +510,7 @@ QTabWidget::pane {
       <property name="geometry">
        <rect>
         <x>170</x>
-        <y>100</y>
+        <y>130</y>
         <width>61</width>
         <height>20</height>
        </rect>
@@ -573,7 +535,7 @@ QTabWidget::pane {
       <property name="geometry">
        <rect>
         <x>240</x>
-        <y>100</y>
+        <y>130</y>
         <width>71</width>
         <height>20</height>
        </rect>
@@ -624,9 +586,9 @@ QTabWidget::pane {
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>30</y>
+        <y>29</y>
         <width>201</width>
-        <height>20</height>
+        <height>21</height>
        </rect>
       </property>
      </widget>
@@ -634,7 +596,7 @@ QTabWidget::pane {
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>100</y>
+        <y>130</y>
         <width>71</width>
         <height>20</height>
        </rect>
@@ -659,7 +621,7 @@ QTabWidget::pane {
       <property name="geometry">
        <rect>
         <x>240</x>
-        <y>80</y>
+        <y>110</y>
         <width>71</width>
         <height>20</height>
        </rect>
@@ -684,7 +646,7 @@ QTabWidget::pane {
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>240</y>
+        <y>250</y>
         <width>320</width>
         <height>3</height>
        </rect>
@@ -719,13 +681,13 @@ QTabWidget::pane {
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>250</y>
+        <y>260</y>
         <width>311</width>
         <height>191</height>
        </rect>
       </property>
       <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600; text-decoration: underline;&quot;&gt;CONTACT&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;If you want to talk, suggestions or anything, feel free to send me a mail/whisper to the account &lt;span style=&quot; font-weight:600;&quot;&gt;Elrey.5472&lt;/span&gt; the character &lt;span style=&quot; font-weight:600;&quot;&gt;Ellantriel&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;If you want to donate something to this project or help me buy a coffee, click on the donate button.&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600; text-decoration: underline;&quot;&gt;BUGS&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;If you find a bug, please tell me. I will look into it and fix it for the next release of this tool. If the error is on an specific API key, please use the debug mode and send me the corrupted urls so I can replicate it.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600; text-decoration: underline;&quot;&gt;CONTACT&lt;br/&gt;&lt;/span&gt;If you want to talk, submit a suggestion or anything, feel free to send me a mail/whisper to the account &lt;span style=&quot; font-weight:600;&quot;&gt;Elrey.5472&lt;/span&gt; or the character &lt;span style=&quot; font-weight:600;&quot;&gt;Ellantriel&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;If you want to donate to this project or help me buy a coffee, click on the donate button.&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600; text-decoration: underline;&quot;&gt;BUGS&lt;br/&gt;&lt;/span&gt;If you find a bug, please tell me. I will look into it and fix it for the next release of this tool. If the error is on an specific API key, please use the debug mode and send me the corrupted urls so I can replicate it.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <property name="textFormat">
        <enum>Qt::RichText</enum>
@@ -759,6 +721,69 @@ QTabWidget::pane {
        </size>
       </property>
      </widget>
+     <widget class="QLabel" name="label_33">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>60</y>
+        <width>301</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(111, 111, 111);</string>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;You can create API keys at the Guild Wars 2 website.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="textFormat">
+       <enum>Qt::RichText</enum>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="Line" name="line_2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>80</y>
+        <width>300</width>
+        <height>3</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_36">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>160</y>
+        <width>301</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(111, 111, 111);</string>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;* Your API key will be able to only read and provide information from the Guild Wars 2 servers, but it can't edit, change or update anything for your account.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="textFormat">
+       <enum>Qt::RichText</enum>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="tab_plugins">
      <attribute name="title">
@@ -768,7 +793,7 @@ QTabWidget::pane {
       <property name="geometry">
        <rect>
         <x>170</x>
-        <y>350</y>
+        <y>370</y>
         <width>141</width>
         <height>31</height>
        </rect>
@@ -790,7 +815,7 @@ QTabWidget::pane {
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>390</y>
+        <y>410</y>
         <width>141</width>
         <height>31</height>
        </rect>
@@ -812,7 +837,7 @@ QTabWidget::pane {
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>180</y>
+        <y>210</y>
         <width>141</width>
         <height>31</height>
        </rect>
@@ -868,7 +893,7 @@ QTabWidget::pane {
       <property name="geometry">
        <rect>
         <x>170</x>
-        <y>180</y>
+        <y>210</y>
         <width>141</width>
         <height>31</height>
        </rect>
@@ -894,7 +919,7 @@ QTabWidget::pane {
       <property name="geometry">
        <rect>
         <x>170</x>
-        <y>270</y>
+        <y>290</y>
         <width>141</width>
         <height>31</height>
        </rect>
@@ -916,7 +941,7 @@ QTabWidget::pane {
       <property name="geometry">
        <rect>
         <x>170</x>
-        <y>390</y>
+        <y>410</y>
         <width>141</width>
         <height>31</height>
        </rect>
@@ -964,7 +989,7 @@ QTabWidget::pane {
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>430</y>
+        <y>450</y>
         <width>301</width>
         <height>31</height>
        </rect>
@@ -986,7 +1011,7 @@ QTabWidget::pane {
       <property name="geometry">
        <rect>
         <x>170</x>
-        <y>310</y>
+        <y>330</y>
         <width>141</width>
         <height>31</height>
        </rect>
@@ -1010,17 +1035,17 @@ QTabWidget::pane {
         <x>10</x>
         <y>140</y>
         <width>301</width>
-        <height>31</height>
+        <height>41</height>
        </rect>
       </property>
       <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;NOTE:&lt;/span&gt; Make sure you have the game closed before installing or updating arcdps or mechanics.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: &lt;/span&gt;This program assumes your arcdps is named &lt;span style=&quot; font-weight:600;&quot;&gt;d3d9.dll&lt;/span&gt;. If you are using another plugin/hook/chainload that took that name, &lt;span style=&quot; font-weight:600;&quot;&gt;DON'T&lt;/span&gt; update arcDPS using his program.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <property name="textFormat">
        <enum>Qt::RichText</enum>
       </property>
       <property name="alignment">
-       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
       </property>
       <property name="wordWrap">
        <bool>true</bool>
@@ -1030,7 +1055,7 @@ QTabWidget::pane {
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>270</y>
+        <y>290</y>
         <width>141</width>
         <height>31</height>
        </rect>
@@ -1078,7 +1103,7 @@ QTabWidget::pane {
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>350</y>
+        <y>370</y>
         <width>141</width>
         <height>31</height>
        </rect>
@@ -1100,7 +1125,7 @@ QTabWidget::pane {
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>310</y>
+        <y>330</y>
         <width>141</width>
         <height>31</height>
        </rect>
@@ -1138,7 +1163,7 @@ QTabWidget::pane {
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>230</y>
+        <y>250</y>
         <width>320</width>
         <height>3</height>
        </rect>
@@ -1151,7 +1176,7 @@ QTabWidget::pane {
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>240</y>
+        <y>260</y>
         <width>321</width>
         <height>20</height>
        </rect>
@@ -1193,12 +1218,34 @@ QTabWidget::pane {
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
+     <widget class="QLabel" name="label_70">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>180</y>
+        <width>301</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Also: &lt;/span&gt;Make sure you have the game closed before installing or updating ArcDps.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="textFormat">
+       <enum>Qt::RichText</enum>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+     </widget>
     </widget>
    </widget>
    <widget class="QCheckBox" name="checkMinis">
     <property name="geometry">
      <rect>
-      <x>800</x>
+      <x>710</x>
       <y>0</y>
       <width>51</width>
       <height>20</height>
@@ -1236,7 +1283,7 @@ QTabWidget::pane {
    <widget class="QCheckBox" name="checkBosses">
     <property name="geometry">
      <rect>
-      <x>570</x>
+      <x>580</x>
       <y>0</y>
       <width>61</width>
       <height>20</height>
@@ -1255,7 +1302,7 @@ QTabWidget::pane {
    <widget class="QCheckBox" name="checkCurrency">
     <property name="geometry">
      <rect>
-      <x>710</x>
+      <x>770</x>
       <y>0</y>
       <width>71</width>
       <height>20</height>
@@ -1274,8 +1321,8 @@ QTabWidget::pane {
    <widget class="QGroupBox" name="groupUnused">
     <property name="geometry">
      <rect>
-      <x>1010</x>
-      <y>20</y>
+      <x>1090</x>
+      <y>520</y>
       <width>161</width>
       <height>111</height>
      </rect>
@@ -1303,9 +1350,9 @@ padding: 0 3px;  /* empty space at each side of title */
     <property name="geometry">
      <rect>
       <x>360</x>
-      <y>20</y>
+      <y>30</y>
       <width>601</width>
-      <height>551</height>
+      <height>541</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -1356,8 +1403,8 @@ QTabWidget::pane {
      <widget class="QLabel" name="label_Skin_xera_axe">
       <property name="geometry">
        <rect>
-        <x>460</x>
-        <y>320</y>
+        <x>280</x>
+        <y>360</y>
         <width>32</width>
         <height>32</height>
        </rect>
@@ -1369,30 +1416,11 @@ QTabWidget::pane {
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QLabel" name="label_21">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>440</y>
-        <width>91</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Cairn:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-      <property name="buddy">
-       <cstring>linePermission_Guilds</cstring>
-      </property>
-     </widget>
      <widget class="QLabel" name="label_Skin_xera_back">
       <property name="geometry">
        <rect>
-        <x>520</x>
-        <y>320</y>
+        <x>340</x>
+        <y>360</y>
         <width>32</width>
         <height>32</height>
        </rect>
@@ -1407,8 +1435,8 @@ QTabWidget::pane {
      <widget class="QLabel" name="label_Skin_deimos_back">
       <property name="geometry">
        <rect>
-        <x>520</x>
-        <y>440</y>
+        <x>340</x>
+        <y>470</y>
         <width>32</width>
         <height>32</height>
        </rect>
@@ -1424,7 +1452,7 @@ QTabWidget::pane {
       <property name="geometry">
        <rect>
         <x>310</x>
-        <y>210</y>
+        <y>220</y>
         <width>32</width>
         <height>32</height>
        </rect>
@@ -1440,13 +1468,16 @@ QTabWidget::pane {
       <property name="geometry">
        <rect>
         <x>100</x>
-        <y>260</y>
-        <width>71</width>
-        <height>20</height>
+        <y>220</y>
+        <width>91</width>
+        <height>31</height>
        </rect>
       </property>
       <property name="styleSheet">
        <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>Matthias</string>
       </property>
       <property name="frame">
        <bool>false</bool>
@@ -1462,7 +1493,7 @@ QTabWidget::pane {
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>410</y>
+        <y>400</y>
         <width>590</width>
         <height>3</height>
        </rect>
@@ -1471,27 +1502,11 @@ QTabWidget::pane {
        <enum>Qt::Horizontal</enum>
       </property>
      </widget>
-     <widget class="QLabel" name="label_Mini_narella">
-      <property name="geometry">
-       <rect>
-        <x>340</x>
-        <y>250</y>
-        <width>32</width>
-        <height>32</height>
-       </rect>
-      </property>
-      <property name="pixmap">
-       <pixmap resource="resources.qrc">:/Minis/Images/minis/Mini Narella.png</pixmap>
-      </property>
-      <property name="scaledContents">
-       <bool>true</bool>
-      </property>
-     </widget>
      <widget class="QLabel" name="label_Mini_valeguardian">
       <property name="geometry">
        <rect>
-        <x>310</x>
-        <y>140</y>
+        <x>520</x>
+        <y>110</y>
         <width>32</width>
         <height>32</height>
        </rect>
@@ -1506,17 +1521,17 @@ QTabWidget::pane {
      <widget class="QLineEdit" name="lineRaidboss_cairn">
       <property name="geometry">
        <rect>
-        <x>100</x>
+        <x>10</x>
         <y>440</y>
-        <width>71</width>
-        <height>20</height>
+        <width>91</width>
+        <height>31</height>
        </rect>
       </property>
       <property name="styleSheet">
        <string notr="true">background-color: rgb(150, 150, 150);</string>
       </property>
       <property name="text">
-       <string/>
+       <string>Cairn</string>
       </property>
       <property name="frame">
        <bool>false</bool>
@@ -1532,15 +1547,16 @@ QTabWidget::pane {
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>80</y>
-        <width>171</width>
+        <y>70</y>
+        <width>591</width>
         <height>20</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <weight>50</weight>
-        <bold>false</bold>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
         <underline>true</underline>
        </font>
       </property>
@@ -1548,58 +1564,23 @@ QTabWidget::pane {
        <string>Wing 1 - Spirit Vale</string>
       </property>
       <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_107">
-      <property name="geometry">
-       <rect>
-        <x>180</x>
-        <y>480</y>
-        <width>31</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Minis:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_19">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>100</y>
-        <width>91</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Vale Guardian:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-      <property name="buddy">
-       <cstring>linePermission_Account</cstring>
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
      <widget class="QLineEdit" name="lineRaidboss_xera">
       <property name="geometry">
        <rect>
         <x>100</x>
-        <y>380</y>
-        <width>71</width>
-        <height>20</height>
+        <y>360</y>
+        <width>91</width>
+        <height>31</height>
        </rect>
       </property>
       <property name="styleSheet">
        <string notr="true">background-color: rgb(150, 150, 150);</string>
       </property>
       <property name="text">
-       <string/>
+       <string>Xera</string>
       </property>
       <property name="frame">
        <bool>false</bool>
@@ -1609,22 +1590,6 @@ QTabWidget::pane {
       </property>
       <property name="readOnly">
        <bool>true</bool>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_111">
-      <property name="geometry">
-       <rect>
-        <x>180</x>
-        <y>250</y>
-        <width>31</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Minis:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
       </property>
      </widget>
      <widget class="QLabel" name="label_82">
@@ -1650,7 +1615,7 @@ QTabWidget::pane {
       <property name="geometry">
        <rect>
         <x>310</x>
-        <y>100</y>
+        <y>110</y>
         <width>32</width>
         <height>32</height>
        </rect>
@@ -1681,17 +1646,17 @@ QTabWidget::pane {
      <widget class="QLineEdit" name="lineRaidboss_glenna">
       <property name="geometry">
        <rect>
-        <x>100</x>
-        <y>320</y>
-        <width>71</width>
-        <height>20</height>
+        <x>10</x>
+        <y>330</y>
+        <width>91</width>
+        <height>31</height>
        </rect>
       </property>
       <property name="styleSheet">
        <string notr="true">background-color: rgb(150, 150, 150);</string>
       </property>
       <property name="text">
-       <string/>
+       <string>Escort</string>
       </property>
       <property name="frame">
        <bool>false</bool>
@@ -1701,38 +1666,22 @@ QTabWidget::pane {
       </property>
       <property name="readOnly">
        <bool>true</bool>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_112">
-      <property name="geometry">
-       <rect>
-        <x>180</x>
-        <y>100</y>
-        <width>31</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Skins:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
       </property>
      </widget>
      <widget class="QLineEdit" name="lineRaidboss_valeguardian">
       <property name="geometry">
        <rect>
-        <x>100</x>
-        <y>100</y>
-        <width>71</width>
-        <height>20</height>
+        <x>10</x>
+        <y>110</y>
+        <width>91</width>
+        <height>31</height>
        </rect>
       </property>
       <property name="styleSheet">
        <string notr="true">background-color: rgb(150, 150, 150);</string>
       </property>
       <property name="text">
-       <string/>
+       <string>Vale Guardian</string>
       </property>
       <property name="frame">
        <bool>false</bool>
@@ -1742,25 +1691,6 @@ QTabWidget::pane {
       </property>
       <property name="readOnly">
        <bool>true</bool>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_20">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>380</y>
-        <width>91</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Xera:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-      <property name="buddy">
-       <cstring>linePermission_Progression</cstring>
       </property>
      </widget>
      <widget class="QLineEdit" name="lineCurrency_Magnetiteshards">
@@ -1788,46 +1718,11 @@ QTabWidget::pane {
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QLabel" name="label_108">
-      <property name="geometry">
-       <rect>
-        <x>180</x>
-        <y>440</y>
-        <width>31</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Skins:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_36">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>360</y>
-        <width>91</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Twisted Castle:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-      <property name="buddy">
-       <cstring>linePermission_Progression</cstring>
-      </property>
-     </widget>
      <widget class="QLabel" name="label_Skin_vg_greatsword">
       <property name="geometry">
        <rect>
         <x>250</x>
-        <y>100</y>
+        <y>110</y>
         <width>32</width>
         <height>32</height>
        </rect>
@@ -1842,17 +1737,17 @@ QTabWidget::pane {
      <widget class="QLineEdit" name="lineRaidboss_trio">
       <property name="geometry">
        <rect>
-        <x>100</x>
-        <y>240</y>
-        <width>71</width>
-        <height>20</height>
+        <x>10</x>
+        <y>250</y>
+        <width>91</width>
+        <height>31</height>
        </rect>
       </property>
       <property name="styleSheet">
        <string notr="true">background-color: rgb(150, 150, 150);</string>
       </property>
       <property name="text">
-       <string/>
+       <string>Bandit Trio</string>
       </property>
       <property name="frame">
        <bool>false</bool>
@@ -1862,25 +1757,6 @@ QTabWidget::pane {
       </property>
       <property name="readOnly">
        <bool>true</bool>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_37">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>120</y>
-        <width>91</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Spirit Woods:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-      <property name="buddy">
-       <cstring>linePermission_Progression</cstring>
       </property>
      </widget>
      <widget class="QLabel" name="label_72">
@@ -1940,17 +1816,17 @@ QTabWidget::pane {
      <widget class="QLineEdit" name="lineRaidboss_slothasor">
       <property name="geometry">
        <rect>
-        <x>100</x>
+        <x>10</x>
         <y>220</y>
-        <width>71</width>
-        <height>20</height>
+        <width>91</width>
+        <height>31</height>
        </rect>
       </property>
       <property name="styleSheet">
        <string notr="true">background-color: rgb(150, 150, 150);</string>
       </property>
       <property name="text">
-       <string/>
+       <string>Slothasor</string>
       </property>
       <property name="frame">
        <bool>false</bool>
@@ -1959,22 +1835,6 @@ QTabWidget::pane {
        <set>Qt::AlignCenter</set>
       </property>
       <property name="readOnly">
-       <bool>true</bool>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_Mini_berg">
-      <property name="geometry">
-       <rect>
-        <x>280</x>
-        <y>250</y>
-        <width>32</width>
-        <height>32</height>
-       </rect>
-      </property>
-      <property name="pixmap">
-       <pixmap resource="resources.qrc">:/Minis/Images/minis/Mini Berg.png</pixmap>
-      </property>
-      <property name="scaledContents">
        <bool>true</bool>
       </property>
      </widget>
@@ -1994,62 +1854,11 @@ QTabWidget::pane {
        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
       </property>
      </widget>
-     <widget class="QLabel" name="label_Mini_whitemantle">
-      <property name="geometry">
-       <rect>
-        <x>340</x>
-        <y>480</y>
-        <width>32</width>
-        <height>32</height>
-       </rect>
-      </property>
-      <property name="pixmap">
-       <pixmap resource="resources.qrc">:/Minis/Images/minis/Mini White Mantle Figurehead.png</pixmap>
-      </property>
-      <property name="scaledContents">
-       <bool>true</bool>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_17">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>160</y>
-        <width>91</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Sabetha:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-      <property name="buddy">
-       <cstring>linePermission_Characters</cstring>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_Mini_slubling">
-      <property name="geometry">
-       <rect>
-        <x>220</x>
-        <y>250</y>
-        <width>32</width>
-        <height>32</height>
-       </rect>
-      </property>
-      <property name="pixmap">
-       <pixmap resource="resources.qrc">:/Minis/Images/minis/Mini Slubling.png</pixmap>
-      </property>
-      <property name="scaledContents">
-       <bool>true</bool>
-      </property>
-     </widget>
      <widget class="QLabel" name="label_Skin_matthias_staff">
       <property name="geometry">
        <rect>
         <x>280</x>
-        <y>210</y>
+        <y>220</y>
         <width>32</width>
         <height>32</height>
        </rect>
@@ -2065,7 +1874,7 @@ QTabWidget::pane {
       <property name="geometry">
        <rect>
         <x>250</x>
-        <y>320</y>
+        <y>330</y>
         <width>32</width>
         <height>32</height>
        </rect>
@@ -2080,8 +1889,8 @@ QTabWidget::pane {
      <widget class="QLabel" name="label_Mini_greenguardian">
       <property name="geometry">
        <rect>
-        <x>250</x>
-        <y>140</y>
+        <x>460</x>
+        <y>110</y>
         <width>32</width>
         <height>32</height>
        </rect>
@@ -2097,7 +1906,7 @@ QTabWidget::pane {
       <property name="geometry">
        <rect>
         <x>310</x>
-        <y>320</y>
+        <y>330</y>
         <width>32</width>
         <height>32</height>
        </rect>
@@ -2112,8 +1921,8 @@ QTabWidget::pane {
      <widget class="QLabel" name="label_Skin_deimos_staff">
       <property name="geometry">
        <rect>
-        <x>490</x>
-        <y>440</y>
+        <x>310</x>
+        <y>470</y>
         <width>32</width>
         <height>32</height>
        </rect>
@@ -2161,16 +1970,16 @@ QTabWidget::pane {
       <property name="geometry">
        <rect>
         <x>100</x>
-        <y>360</y>
-        <width>71</width>
-        <height>20</height>
+        <y>330</y>
+        <width>91</width>
+        <height>31</height>
        </rect>
       </property>
       <property name="styleSheet">
        <string notr="true">background-color: rgb(150, 150, 150);</string>
       </property>
       <property name="text">
-       <string/>
+       <string> Twisted Castle</string>
       </property>
       <property name="frame">
        <bool>false</bool>
@@ -2182,30 +1991,11 @@ QTabWidget::pane {
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QLabel" name="label_26">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>240</y>
-        <width>91</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Bandit Trio:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-      <property name="buddy">
-       <cstring>linePermission_Wallet</cstring>
-      </property>
-     </widget>
      <widget class="QLabel" name="label_Skin_sab_rifle">
       <property name="geometry">
        <rect>
         <x>340</x>
-        <y>100</y>
+        <y>110</y>
         <width>32</width>
         <height>32</height>
        </rect>
@@ -2221,7 +2011,7 @@ QTabWidget::pane {
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>190</y>
+        <y>180</y>
         <width>590</width>
         <height>3</height>
        </rect>
@@ -2234,15 +2024,16 @@ QTabWidget::pane {
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>200</y>
-        <width>171</width>
+        <y>180</y>
+        <width>591</width>
         <height>20</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <weight>50</weight>
-        <bold>false</bold>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
         <underline>true</underline>
        </font>
       </property>
@@ -2250,23 +2041,7 @@ QTabWidget::pane {
        <string>Wing 2 - Salvation Pass</string>
       </property>
       <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_Mini_samarog">
-      <property name="geometry">
-       <rect>
-        <x>310</x>
-        <y>480</y>
-        <width>32</width>
-        <height>32</height>
-       </rect>
-      </property>
-      <property name="pixmap">
-       <pixmap resource="resources.qrc">:/Minis/Images/minis/Mini Samarog.png</pixmap>
-      </property>
-      <property name="scaledContents">
-       <bool>true</bool>
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
      <widget class="QLabel" name="label_115">
@@ -2285,30 +2060,11 @@ QTabWidget::pane {
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QLabel" name="label_30">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>500</y>
-        <width>91</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Deimos:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-      <property name="buddy">
-       <cstring>linePermission_Guilds</cstring>
-      </property>
-     </widget>
      <widget class="QLabel" name="label_Skin_deimos_mace">
       <property name="geometry">
        <rect>
-        <x>430</x>
-        <y>440</y>
+        <x>250</x>
+        <y>470</y>
         <width>32</width>
         <height>32</height>
        </rect>
@@ -2323,8 +2079,8 @@ QTabWidget::pane {
      <widget class="QLabel" name="label_Skin_xera_sword">
       <property name="geometry">
        <rect>
-        <x>430</x>
-        <y>320</y>
+        <x>250</x>
+        <y>360</y>
         <width>32</width>
         <height>32</height>
        </rect>
@@ -2336,36 +2092,20 @@ QTabWidget::pane {
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QLabel" name="label_Mini_slothasor">
-      <property name="geometry">
-       <rect>
-        <x>250</x>
-        <y>250</y>
-        <width>32</width>
-        <height>32</height>
-       </rect>
-      </property>
-      <property name="pixmap">
-       <pixmap resource="resources.qrc">:/Minis/Images/minis/Mini Slothasor.png</pixmap>
-      </property>
-      <property name="scaledContents">
-       <bool>true</bool>
-      </property>
-     </widget>
      <widget class="QLineEdit" name="lineRaidboss_gorseval">
       <property name="geometry">
        <rect>
         <x>100</x>
-        <y>140</y>
-        <width>71</width>
-        <height>20</height>
+        <y>110</y>
+        <width>91</width>
+        <height>31</height>
        </rect>
       </property>
       <property name="styleSheet">
        <string notr="true">background-color: rgb(150, 150, 150);</string>
       </property>
       <property name="text">
-       <string/>
+       <string>Gorseval</string>
       </property>
       <property name="frame">
        <bool>false</bool>
@@ -2381,15 +2121,16 @@ QTabWidget::pane {
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>420</y>
-        <width>171</width>
+        <y>400</y>
+        <width>591</width>
         <height>20</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <weight>50</weight>
-        <bold>false</bold>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
         <underline>true</underline>
        </font>
       </property>
@@ -2397,42 +2138,23 @@ QTabWidget::pane {
        <string>Wing 4 - Bastion of the Penitent</string>
       </property>
       <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_29">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>480</y>
-        <width>91</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Samarog:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-      <property name="buddy">
-       <cstring>linePermission_Guilds</cstring>
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
      <widget class="QLineEdit" name="lineRaidboss_deimos">
       <property name="geometry">
        <rect>
         <x>100</x>
-        <y>500</y>
-        <width>71</width>
-        <height>20</height>
+        <y>470</y>
+        <width>91</width>
+        <height>31</height>
        </rect>
       </property>
       <property name="styleSheet">
        <string notr="true">background-color: rgb(150, 150, 150);</string>
       </property>
       <property name="text">
-       <string/>
+       <string>Deimos</string>
       </property>
       <property name="frame">
        <bool>false</bool>
@@ -2444,36 +2166,20 @@ QTabWidget::pane {
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QLabel" name="label_102">
-      <property name="geometry">
-       <rect>
-        <x>180</x>
-        <y>140</y>
-        <width>31</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Minis:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
      <widget class="QLineEdit" name="lineRaidboss_samarog">
       <property name="geometry">
        <rect>
-        <x>100</x>
-        <y>480</y>
-        <width>71</width>
-        <height>20</height>
+        <x>10</x>
+        <y>470</y>
+        <width>91</width>
+        <height>31</height>
        </rect>
       </property>
       <property name="styleSheet">
        <string notr="true">background-color: rgb(150, 150, 150);</string>
       </property>
       <property name="text">
-       <string/>
+       <string>Samarog</string>
       </property>
       <property name="frame">
        <bool>false</bool>
@@ -2488,8 +2194,8 @@ QTabWidget::pane {
      <widget class="QLabel" name="label_Skin_matthias_pistol">
       <property name="geometry">
        <rect>
-        <x>490</x>
-        <y>210</y>
+        <x>310</x>
+        <y>250</y>
         <width>32</width>
         <height>32</height>
        </rect>
@@ -2505,7 +2211,7 @@ QTabWidget::pane {
       <property name="geometry">
        <rect>
         <x>340</x>
-        <y>320</y>
+        <y>330</y>
         <width>32</width>
         <height>32</height>
        </rect>
@@ -2520,8 +2226,8 @@ QTabWidget::pane {
      <widget class="QLabel" name="label_Mini_blueguardian">
       <property name="geometry">
        <rect>
-        <x>280</x>
-        <y>140</y>
+        <x>490</x>
+        <y>110</y>
         <width>32</width>
         <height>32</height>
        </rect>
@@ -2533,27 +2239,11 @@ QTabWidget::pane {
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QLabel" name="label_Mini_matthias">
-      <property name="geometry">
-       <rect>
-        <x>370</x>
-        <y>250</y>
-        <width>32</width>
-        <height>32</height>
-       </rect>
-      </property>
-      <property name="pixmap">
-       <pixmap resource="resources.qrc">:/Minis/Images/minis/Mini Matthias Abomination.png</pixmap>
-      </property>
-      <property name="scaledContents">
-       <bool>true</bool>
-      </property>
-     </widget>
      <widget class="QLabel" name="label_Skin_matthias_warhorn">
       <property name="geometry">
        <rect>
-        <x>460</x>
-        <y>210</y>
+        <x>280</x>
+        <y>250</y>
         <width>32</width>
         <height>32</height>
        </rect>
@@ -2565,30 +2255,11 @@ QTabWidget::pane {
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QLabel" name="label_23">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>320</y>
-        <width>91</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Escort Glenna:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-      <property name="buddy">
-       <cstring>linePermission_PvP</cstring>
-      </property>
-     </widget>
      <widget class="QLabel" name="label_Skin_kc_focus">
       <property name="geometry">
        <rect>
         <x>280</x>
-        <y>320</y>
+        <y>330</y>
         <width>32</width>
         <height>32</height>
        </rect>
@@ -2603,7 +2274,7 @@ QTabWidget::pane {
      <widget class="QLabel" name="label_Mini_kernan">
       <property name="geometry">
        <rect>
-        <x>400</x>
+        <x>460</x>
         <y>140</y>
         <width>32</width>
         <height>32</height>
@@ -2620,7 +2291,7 @@ QTabWidget::pane {
       <property name="geometry">
        <rect>
         <x>370</x>
-        <y>210</y>
+        <y>220</y>
         <width>32</width>
         <height>32</height>
        </rect>
@@ -2635,8 +2306,8 @@ QTabWidget::pane {
      <widget class="QLabel" name="label_Skin_matthias_torch">
       <property name="geometry">
        <rect>
-        <x>520</x>
-        <y>210</y>
+        <x>340</x>
+        <y>250</y>
         <width>32</width>
         <height>32</height>
        </rect>
@@ -2652,7 +2323,7 @@ QTabWidget::pane {
       <property name="geometry">
        <rect>
         <x>340</x>
-        <y>210</y>
+        <y>220</y>
         <width>32</width>
         <height>32</height>
        </rect>
@@ -2667,17 +2338,17 @@ QTabWidget::pane {
      <widget class="QLineEdit" name="lineRaidboss_keepconstruct">
       <property name="geometry">
        <rect>
-        <x>100</x>
-        <y>340</y>
-        <width>71</width>
-        <height>20</height>
+        <x>10</x>
+        <y>360</y>
+        <width>91</width>
+        <height>31</height>
        </rect>
       </property>
       <property name="styleSheet">
        <string notr="true">background-color: rgb(150, 150, 150);</string>
       </property>
       <property name="text">
-       <string/>
+       <string>Keep Construct</string>
       </property>
       <property name="frame">
        <bool>false</bool>
@@ -2693,7 +2364,7 @@ QTabWidget::pane {
       <property name="geometry">
        <rect>
         <x>370</x>
-        <y>320</y>
+        <y>330</y>
         <width>32</width>
         <height>32</height>
        </rect>
@@ -2709,7 +2380,7 @@ QTabWidget::pane {
       <property name="geometry">
        <rect>
         <x>370</x>
-        <y>100</y>
+        <y>110</y>
         <width>32</width>
         <height>32</height>
        </rect>
@@ -2724,8 +2395,8 @@ QTabWidget::pane {
      <widget class="QLabel" name="label_Mini_xera">
       <property name="geometry">
        <rect>
-        <x>280</x>
-        <y>360</y>
+        <x>490</x>
+        <y>330</y>
         <width>32</width>
         <height>32</height>
        </rect>
@@ -2740,7 +2411,7 @@ QTabWidget::pane {
      <widget class="QLabel" name="label_Mini_knuckles">
       <property name="geometry">
        <rect>
-        <x>370</x>
+        <x>430</x>
         <y>140</y>
         <width>32</width>
         <height>32</height>
@@ -2770,15 +2441,16 @@ QTabWidget::pane {
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>300</y>
-        <width>171</width>
+        <y>290</y>
+        <width>591</width>
         <height>20</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <weight>50</weight>
-        <bold>false</bold>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
         <underline>true</underline>
        </font>
       </property>
@@ -2786,30 +2458,14 @@ QTabWidget::pane {
        <string>Wing 3 - Stronghold of the Faithful</string>
       </property>
       <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_Mini_zane">
-      <property name="geometry">
-       <rect>
-        <x>310</x>
-        <y>250</y>
-        <width>32</width>
-        <height>32</height>
-       </rect>
-      </property>
-      <property name="pixmap">
-       <pixmap resource="resources.qrc">:/Minis/Images/minis/Mini Zane.png</pixmap>
-      </property>
-      <property name="scaledContents">
-       <bool>true</bool>
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
      <widget class="QLabel" name="label_Skin_matthias_mace">
       <property name="geometry">
        <rect>
-        <x>400</x>
-        <y>210</y>
+        <x>220</x>
+        <y>250</y>
         <width>32</width>
         <height>32</height>
        </rect>
@@ -2821,39 +2477,20 @@ QTabWidget::pane {
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QLabel" name="label_13">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>220</y>
-        <width>91</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Slothasor:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-      <property name="buddy">
-       <cstring>linePermission_Tradingpost</cstring>
-      </property>
-     </widget>
      <widget class="QLineEdit" name="lineRaidboss_spiritwoods">
       <property name="geometry">
        <rect>
-        <x>100</x>
-        <y>120</y>
-        <width>71</width>
-        <height>20</height>
+        <x>10</x>
+        <y>140</y>
+        <width>91</width>
+        <height>31</height>
        </rect>
       </property>
       <property name="styleSheet">
        <string notr="true">background-color: rgb(150, 150, 150);</string>
       </property>
       <property name="text">
-       <string/>
+       <string>Spirit Woods</string>
       </property>
       <property name="frame">
        <bool>false</bool>
@@ -2884,27 +2521,11 @@ QTabWidget::pane {
        <cstring>linePermission_PvP</cstring>
       </property>
      </widget>
-     <widget class="QLabel" name="label_110">
-      <property name="geometry">
-       <rect>
-        <x>180</x>
-        <y>320</y>
-        <width>31</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Skins:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
      <widget class="QLabel" name="label_Skin_kc_hammer">
       <property name="geometry">
        <rect>
         <x>220</x>
-        <y>320</y>
+        <y>330</y>
         <width>32</width>
         <height>32</height>
        </rect>
@@ -2919,8 +2540,8 @@ QTabWidget::pane {
      <widget class="QLabel" name="label_Skin_deimos_hammer">
       <property name="geometry">
        <rect>
-        <x>460</x>
-        <y>440</y>
+        <x>280</x>
+        <y>470</y>
         <width>32</width>
         <height>32</height>
        </rect>
@@ -2936,7 +2557,7 @@ QTabWidget::pane {
       <property name="geometry">
        <rect>
         <x>280</x>
-        <y>100</y>
+        <y>110</y>
         <width>32</width>
         <height>32</height>
        </rect>
@@ -2967,8 +2588,8 @@ QTabWidget::pane {
      <widget class="QLabel" name="label_Skin_matthias_shield">
       <property name="geometry">
        <rect>
-        <x>430</x>
-        <y>210</y>
+        <x>250</x>
+        <y>250</y>
         <width>32</width>
         <height>32</height>
        </rect>
@@ -2980,27 +2601,11 @@ QTabWidget::pane {
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QLabel" name="label_Mini_mursaat">
-      <property name="geometry">
-       <rect>
-        <x>250</x>
-        <y>480</y>
-        <width>32</width>
-        <height>32</height>
-       </rect>
-      </property>
-      <property name="pixmap">
-       <pixmap resource="resources.qrc">:/Minis/Images/minis/Mini Mursaat Overseer.png</pixmap>
-      </property>
-      <property name="scaledContents">
-       <bool>true</bool>
-      </property>
-     </widget>
      <widget class="QLabel" name="label_Mini_keepconstruct">
       <property name="geometry">
        <rect>
-        <x>250</x>
-        <y>360</y>
+        <x>460</x>
+        <y>330</y>
         <width>32</width>
         <height>32</height>
        </rect>
@@ -3010,25 +2615,6 @@ QTabWidget::pane {
       </property>
       <property name="scaledContents">
        <bool>true</bool>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_18">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>340</y>
-        <width>91</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Keep Construct:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-      <property name="buddy">
-       <cstring>linePermission_Builds</cstring>
       </property>
      </widget>
      <widget class="QLabel" name="label_Skin_samarog_staff">
@@ -3047,27 +2633,11 @@ QTabWidget::pane {
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QLabel" name="label_Mini_ragged_whitemantle">
-      <property name="geometry">
-       <rect>
-        <x>370</x>
-        <y>480</y>
-        <width>32</width>
-        <height>32</height>
-       </rect>
-      </property>
-      <property name="pixmap">
-       <pixmap resource="resources.qrc">:/Minis/Images/minis/Mini Ragged White Mantle Figurehead.png</pixmap>
-      </property>
-      <property name="scaledContents">
-       <bool>true</bool>
-      </property>
-     </widget>
      <widget class="QLabel" name="label_Mini_mcleod">
       <property name="geometry">
        <rect>
-        <x>220</x>
-        <y>360</y>
+        <x>430</x>
+        <y>330</y>
         <width>32</width>
         <height>32</height>
        </rect>
@@ -3082,8 +2652,8 @@ QTabWidget::pane {
      <widget class="QLabel" name="label_Skin_deimos_gloves">
       <property name="geometry">
        <rect>
-        <x>550</x>
-        <y>440</y>
+        <x>370</x>
+        <y>470</y>
         <width>32</width>
         <height>32</height>
        </rect>
@@ -3095,46 +2665,11 @@ QTabWidget::pane {
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QLabel" name="label_28">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>460</y>
-        <width>91</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Mursaat Overseer:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-      <property name="buddy">
-       <cstring>linePermission_Guilds</cstring>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_Mini_cairn">
-      <property name="geometry">
-       <rect>
-        <x>220</x>
-        <y>480</y>
-        <width>32</width>
-        <height>32</height>
-       </rect>
-      </property>
-      <property name="pixmap">
-       <pixmap resource="resources.qrc">:/Minis/Images/minis/Mini Cairn the Indomitable.png</pixmap>
-      </property>
-      <property name="scaledContents">
-       <bool>true</bool>
-      </property>
-     </widget>
      <widget class="QLabel" name="label_Skin_samarog_warhorn">
       <property name="geometry">
        <rect>
-        <x>400</x>
-        <y>440</y>
+        <x>220</x>
+        <y>470</y>
         <width>32</width>
         <height>32</height>
        </rect>
@@ -3149,8 +2684,8 @@ QTabWidget::pane {
      <widget class="QLabel" name="label_Mini_gorseval">
       <property name="geometry">
        <rect>
-        <x>340</x>
-        <y>140</y>
+        <x>550</x>
+        <y>110</y>
         <width>32</width>
         <height>32</height>
        </rect>
@@ -3166,7 +2701,7 @@ QTabWidget::pane {
       <property name="geometry">
        <rect>
         <x>250</x>
-        <y>210</y>
+        <y>220</y>
         <width>32</width>
         <height>32</height>
        </rect>
@@ -3178,27 +2713,11 @@ QTabWidget::pane {
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QLabel" name="label_101">
-      <property name="geometry">
-       <rect>
-        <x>180</x>
-        <y>210</y>
-        <width>31</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Skins:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
      <widget class="QLabel" name="label_Skin_sloth_hammer">
       <property name="geometry">
        <rect>
         <x>220</x>
-        <y>210</y>
+        <y>220</y>
         <width>32</width>
         <height>32</height>
        </rect>
@@ -3210,46 +2729,11 @@ QTabWidget::pane {
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QLabel" name="label_11">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>260</y>
-        <width>91</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Matthias:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-      <property name="buddy">
-       <cstring>linePermission_Unlocks</cstring>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_Mini_eyeofjanthir">
-      <property name="geometry">
-       <rect>
-        <x>280</x>
-        <y>480</y>
-        <width>32</width>
-        <height>32</height>
-       </rect>
-      </property>
-      <property name="pixmap">
-       <pixmap resource="resources.qrc">:/Minis/Images/minis/Mini Eye of Janthir.png</pixmap>
-      </property>
-      <property name="scaledContents">
-       <bool>true</bool>
-      </property>
-     </widget>
      <widget class="QLabel" name="label_Mini_redguardian">
       <property name="geometry">
        <rect>
-        <x>220</x>
-        <y>140</y>
+        <x>430</x>
+        <y>110</y>
         <width>32</width>
         <height>32</height>
        </rect>
@@ -3264,8 +2748,8 @@ QTabWidget::pane {
      <widget class="QLabel" name="label_Skin_xera_dagger">
       <property name="geometry">
        <rect>
-        <x>490</x>
-        <y>320</y>
+        <x>310</x>
+        <y>360</y>
         <width>32</width>
         <height>32</height>
        </rect>
@@ -3280,7 +2764,7 @@ QTabWidget::pane {
      <widget class="QLabel" name="label_Mini_karde">
       <property name="geometry">
        <rect>
-        <x>430</x>
+        <x>490</x>
         <y>140</y>
         <width>32</width>
         <height>32</height>
@@ -3291,22 +2775,6 @@ QTabWidget::pane {
       </property>
       <property name="scaledContents">
        <bool>true</bool>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_109">
-      <property name="geometry">
-       <rect>
-        <x>180</x>
-        <y>360</y>
-        <width>31</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Minis:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
       </property>
      </widget>
      <widget class="QLabel" name="label_Skin_cairn_pistol">
@@ -3329,13 +2797,16 @@ QTabWidget::pane {
       <property name="geometry">
        <rect>
         <x>100</x>
-        <y>160</y>
-        <width>71</width>
-        <height>20</height>
+        <y>140</y>
+        <width>91</width>
+        <height>31</height>
        </rect>
       </property>
       <property name="styleSheet">
        <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>Sabetha</string>
       </property>
       <property name="frame">
        <bool>false</bool>
@@ -3347,39 +2818,20 @@ QTabWidget::pane {
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QLabel" name="label_15">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>140</y>
-        <width>91</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Gorseval:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-      <property name="buddy">
-       <cstring>linePermission_Inventories</cstring>
-      </property>
-     </widget>
      <widget class="QLineEdit" name="lineRaidboss_mursaat">
       <property name="geometry">
        <rect>
         <x>100</x>
-        <y>460</y>
-        <width>71</width>
-        <height>20</height>
+        <y>440</y>
+        <width>91</width>
+        <height>31</height>
        </rect>
       </property>
       <property name="styleSheet">
        <string notr="true">background-color: rgb(150, 150, 150);</string>
       </property>
       <property name="text">
-       <string/>
+       <string>Mursaat Overseer</string>
       </property>
       <property name="frame">
        <bool>false</bool>
@@ -3395,7 +2847,7 @@ QTabWidget::pane {
       <property name="geometry">
        <rect>
         <x>220</x>
-        <y>100</y>
+        <y>110</y>
         <width>32</width>
         <height>32</height>
        </rect>
@@ -3410,8 +2862,8 @@ QTabWidget::pane {
      <widget class="QLabel" name="label_Skin_xera_rifle">
       <property name="geometry">
        <rect>
-        <x>400</x>
-        <y>320</y>
+        <x>220</x>
+        <y>360</y>
         <width>32</width>
         <height>32</height>
        </rect>
@@ -3423,10 +2875,394 @@ QTabWidget::pane {
        <bool>true</bool>
       </property>
      </widget>
+     <widget class="QLabel" name="label_Mini_samarog">
+      <property name="geometry">
+       <rect>
+        <x>520</x>
+        <y>440</y>
+        <width>32</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="resources.qrc">:/Minis/Images/minis/Mini Samarog.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_Mini_ragged_whitemantle">
+      <property name="geometry">
+       <rect>
+        <x>430</x>
+        <y>470</y>
+        <width>32</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="resources.qrc">:/Minis/Images/minis/Mini Ragged White Mantle Figurehead.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_Mini_whitemantle">
+      <property name="geometry">
+       <rect>
+        <x>550</x>
+        <y>440</y>
+        <width>32</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="resources.qrc">:/Minis/Images/minis/Mini White Mantle Figurehead.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_Mini_cairn">
+      <property name="geometry">
+       <rect>
+        <x>430</x>
+        <y>440</y>
+        <width>32</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="resources.qrc">:/Minis/Images/minis/Mini Cairn the Indomitable.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_Mini_mursaat">
+      <property name="geometry">
+       <rect>
+        <x>460</x>
+        <y>440</y>
+        <width>32</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="resources.qrc">:/Minis/Images/minis/Mini Mursaat Overseer.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_Mini_eyeofjanthir">
+      <property name="geometry">
+       <rect>
+        <x>490</x>
+        <y>440</y>
+        <width>32</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="resources.qrc">:/Minis/Images/minis/Mini Eye of Janthir.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_119">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>420</y>
+        <width>181</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Skins unlocked&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_120">
+      <property name="geometry">
+       <rect>
+        <x>430</x>
+        <y>420</y>
+        <width>151</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Minis unlocked&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_121">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>410</y>
+        <width>181</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Bosses/Events&lt;br/&gt;Completed this week&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_124">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>310</y>
+        <width>181</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Skins unlocked&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_123">
+      <property name="geometry">
+       <rect>
+        <x>430</x>
+        <y>310</y>
+        <width>151</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Minis unlocked&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_122">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>300</y>
+        <width>181</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Bosses/Events&lt;br/&gt;Completed this week&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_127">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>200</y>
+        <width>181</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Skins unlocked&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_125">
+      <property name="geometry">
+       <rect>
+        <x>430</x>
+        <y>200</y>
+        <width>151</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Minis unlocked&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_126">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>190</y>
+        <width>181</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Bosses/Events&lt;br/&gt;Completed this week&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_130">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>90</y>
+        <width>181</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Skins unlocked&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_129">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>80</y>
+        <width>181</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Bosses/Events&lt;br/&gt;Completed this week&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_128">
+      <property name="geometry">
+       <rect>
+        <x>430</x>
+        <y>90</y>
+        <width>151</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Minis unlocked&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_Mini_zane">
+      <property name="geometry">
+       <rect>
+        <x>520</x>
+        <y>220</y>
+        <width>32</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="resources.qrc">:/Minis/Images/minis/Mini Zane.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_Mini_berg">
+      <property name="geometry">
+       <rect>
+        <x>490</x>
+        <y>220</y>
+        <width>32</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="resources.qrc">:/Minis/Images/minis/Mini Berg.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_Mini_matthias">
+      <property name="geometry">
+       <rect>
+        <x>430</x>
+        <y>250</y>
+        <width>32</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="resources.qrc">:/Minis/Images/minis/Mini Matthias Abomination.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_Mini_narella">
+      <property name="geometry">
+       <rect>
+        <x>550</x>
+        <y>220</y>
+        <width>32</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="resources.qrc">:/Minis/Images/minis/Mini Narella.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_Mini_slothasor">
+      <property name="geometry">
+       <rect>
+        <x>460</x>
+        <y>220</y>
+        <width>32</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="resources.qrc">:/Minis/Images/minis/Mini Slothasor.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_Mini_slubling">
+      <property name="geometry">
+       <rect>
+        <x>430</x>
+        <y>220</y>
+        <width>32</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="resources.qrc">:/Minis/Images/minis/Mini Slubling.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
      <widget class="QLabel" name="label_83">
       <property name="geometry">
        <rect>
-        <x>420</x>
+        <x>410</x>
         <y>70</y>
         <width>171</width>
         <height>20</height>
@@ -3445,9 +3281,9 @@ QTabWidget::pane {
      <widget class="QLabel" name="label_84">
       <property name="geometry">
        <rect>
-        <x>420</x>
-        <y>190</y>
-        <width>171</width>
+        <x>430</x>
+        <y>180</y>
+        <width>151</width>
         <height>20</height>
        </rect>
       </property>
@@ -3464,9 +3300,9 @@ QTabWidget::pane {
      <widget class="QLabel" name="label_85">
       <property name="geometry">
        <rect>
-        <x>420</x>
+        <x>430</x>
         <y>290</y>
-        <width>171</width>
+        <width>151</width>
         <height>20</height>
        </rect>
       </property>
@@ -3484,8 +3320,8 @@ QTabWidget::pane {
       <property name="geometry">
        <rect>
         <x>420</x>
-        <y>410</y>
-        <width>171</width>
+        <y>400</y>
+        <width>161</width>
         <height>20</height>
        </rect>
       </property>
@@ -3504,30 +3340,11 @@ QTabWidget::pane {
      <attribute name="title">
       <string>PoF Raids</string>
      </attribute>
-     <widget class="QLabel" name="label_41">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>120</y>
-        <width>91</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>River of Souls:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-      <property name="buddy">
-       <cstring>linePermission_PvP</cstring>
-      </property>
-     </widget>
      <widget class="QLabel" name="label_Mini_dhuum">
       <property name="geometry">
        <rect>
-        <x>280</x>
-        <y>140</y>
+        <x>490</x>
+        <y>110</y>
         <width>32</width>
         <height>32</height>
        </rect>
@@ -3542,8 +3359,8 @@ QTabWidget::pane {
      <widget class="QLabel" name="label_Mini_brokenking">
       <property name="geometry">
        <rect>
-        <x>250</x>
-        <y>140</y>
+        <x>460</x>
+        <y>110</y>
         <width>32</width>
         <height>32</height>
        </rect>
@@ -3568,30 +3385,11 @@ QTabWidget::pane {
        <enum>Qt::Horizontal</enum>
       </property>
      </widget>
-     <widget class="QLabel" name="label_40">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>100</y>
-        <width>91</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Soulless Horror:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-      <property name="buddy">
-       <cstring>linePermission_PvP</cstring>
-      </property>
-     </widget>
      <widget class="QLabel" name="label_Skin_qadim_pistol">
       <property name="geometry">
        <rect>
         <x>370</x>
-        <y>210</y>
+        <y>220</y>
         <width>32</width>
         <height>32</height>
        </rect>
@@ -3607,7 +3405,7 @@ QTabWidget::pane {
       <property name="geometry">
        <rect>
         <x>220</x>
-        <y>210</y>
+        <y>220</y>
         <width>32</width>
         <height>32</height>
        </rect>
@@ -3622,8 +3420,8 @@ QTabWidget::pane {
      <widget class="QLabel" name="label_Mini_zommoros">
       <property name="geometry">
        <rect>
-        <x>220</x>
-        <y>250</y>
+        <x>430</x>
+        <y>220</y>
         <width>32</width>
         <height>32</height>
        </rect>
@@ -3635,30 +3433,11 @@ QTabWidget::pane {
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QLabel" name="label_42">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>140</y>
-        <width>91</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>The 3 Statues:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-      <property name="buddy">
-       <cstring>linePermission_PvP</cstring>
-      </property>
-     </widget>
      <widget class="QLabel" name="label_Skin_desmina_hammer">
       <property name="geometry">
        <rect>
         <x>250</x>
-        <y>100</y>
+        <y>110</y>
         <width>32</width>
         <height>32</height>
        </rect>
@@ -3670,30 +3449,11 @@ QTabWidget::pane {
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QLabel" name="label_49">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>260</y>
-        <width>91</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Qadim:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-      <property name="buddy">
-       <cstring>linePermission_PvP</cstring>
-      </property>
-     </widget>
      <widget class="QLabel" name="label_Skin_dhuum_gloves">
       <property name="geometry">
        <rect>
-        <x>490</x>
-        <y>100</y>
+        <x>310</x>
+        <y>140</y>
         <width>32</width>
         <height>32</height>
        </rect>
@@ -3708,8 +3468,8 @@ QTabWidget::pane {
      <widget class="QLabel" name="label_Skin_dhuum_helm">
       <property name="geometry">
        <rect>
-        <x>430</x>
-        <y>100</y>
+        <x>250</x>
+        <y>140</y>
         <width>32</width>
         <height>32</height>
        </rect>
@@ -3725,16 +3485,16 @@ QTabWidget::pane {
       <property name="geometry">
        <rect>
         <x>100</x>
-        <y>160</y>
-        <width>71</width>
-        <height>20</height>
+        <y>140</y>
+        <width>91</width>
+        <height>31</height>
        </rect>
       </property>
       <property name="styleSheet">
        <string notr="true">background-color: rgb(150, 150, 150);</string>
       </property>
       <property name="text">
-       <string/>
+       <string>Dhuum</string>
       </property>
       <property name="frame">
        <bool>false</bool>
@@ -3750,7 +3510,7 @@ QTabWidget::pane {
       <property name="geometry">
        <rect>
         <x>340</x>
-        <y>100</y>
+        <y>110</y>
         <width>32</width>
         <height>32</height>
        </rect>
@@ -3766,7 +3526,7 @@ QTabWidget::pane {
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>300</y>
+        <y>290</y>
         <width>590</width>
         <height>3</height>
        </rect>
@@ -3778,8 +3538,8 @@ QTabWidget::pane {
      <widget class="QLabel" name="label_Mini_qadim">
       <property name="geometry">
        <rect>
-        <x>310</x>
-        <y>250</y>
+        <x>520</x>
+        <y>220</y>
         <width>32</width>
         <height>32</height>
        </rect>
@@ -3794,8 +3554,8 @@ QTabWidget::pane {
      <widget class="QLabel" name="label_Mini_nikare">
       <property name="geometry">
        <rect>
-        <x>280</x>
-        <y>250</y>
+        <x>490</x>
+        <y>220</y>
         <width>32</width>
         <height>32</height>
        </rect>
@@ -3811,7 +3571,7 @@ QTabWidget::pane {
       <property name="geometry">
        <rect>
         <x>340</x>
-        <y>210</y>
+        <y>220</y>
         <width>32</width>
         <height>32</height>
        </rect>
@@ -3823,27 +3583,11 @@ QTabWidget::pane {
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QLabel" name="label_99">
-      <property name="geometry">
-       <rect>
-        <x>180</x>
-        <y>100</y>
-        <width>31</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Skins:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
      <widget class="QLabel" name="label_Skin_dhuum_shoulders">
       <property name="geometry">
        <rect>
-        <x>460</x>
-        <y>100</y>
+        <x>280</x>
+        <y>140</y>
         <width>32</width>
         <height>32</height>
        </rect>
@@ -3858,8 +3602,8 @@ QTabWidget::pane {
      <widget class="QLabel" name="label_Skin_dhuum_staff">
       <property name="geometry">
        <rect>
-        <x>400</x>
-        <y>100</y>
+        <x>220</x>
+        <y>140</y>
         <width>32</width>
         <height>32</height>
        </rect>
@@ -3875,7 +3619,7 @@ QTabWidget::pane {
       <property name="geometry">
        <rect>
         <x>310</x>
-        <y>100</y>
+        <y>110</y>
         <width>32</width>
         <height>32</height>
        </rect>
@@ -3891,15 +3635,16 @@ QTabWidget::pane {
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>80</y>
-        <width>171</width>
+        <y>70</y>
+        <width>591</width>
         <height>20</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <weight>50</weight>
-        <bold>false</bold>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
         <underline>true</underline>
        </font>
       </property>
@@ -3907,52 +3652,14 @@ QTabWidget::pane {
        <string>Wing 5 - Hall of Chains</string>
       </property>
       <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_48">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>240</y>
-        <width>91</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Twin Largos:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-      <property name="buddy">
-       <cstring>linePermission_PvP</cstring>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_50">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>220</y>
-        <width>91</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>C. Amalgamated:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-      <property name="buddy">
-       <cstring>linePermission_PvP</cstring>
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
      <widget class="Line" name="line_4">
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>190</y>
+        <y>180</y>
         <width>590</width>
         <height>3</height>
        </rect>
@@ -3965,16 +3672,16 @@ QTabWidget::pane {
       <property name="geometry">
        <rect>
         <x>100</x>
-        <y>260</y>
-        <width>71</width>
-        <height>20</height>
+        <y>220</y>
+        <width>91</width>
+        <height>31</height>
        </rect>
       </property>
       <property name="styleSheet">
        <string notr="true">background-color: rgb(150, 150, 150);</string>
       </property>
       <property name="text">
-       <string/>
+       <string>Qadim</string>
       </property>
       <property name="frame">
        <bool>false</bool>
@@ -3990,7 +3697,7 @@ QTabWidget::pane {
       <property name="geometry">
        <rect>
         <x>250</x>
-        <y>210</y>
+        <y>220</y>
         <width>32</width>
         <height>32</height>
        </rect>
@@ -4005,8 +3712,8 @@ QTabWidget::pane {
      <widget class="QLabel" name="label_Mini_desmina">
       <property name="geometry">
        <rect>
-        <x>220</x>
-        <y>140</y>
+        <x>430</x>
+        <y>110</y>
         <width>32</width>
         <height>32</height>
        </rect>
@@ -4022,7 +3729,7 @@ QTabWidget::pane {
       <property name="geometry">
        <rect>
         <x>280</x>
-        <y>100</y>
+        <y>110</y>
         <width>32</width>
         <height>32</height>
        </rect>
@@ -4038,7 +3745,7 @@ QTabWidget::pane {
       <property name="geometry">
        <rect>
         <x>370</x>
-        <y>100</y>
+        <y>110</y>
         <width>32</width>
         <height>32</height>
        </rect>
@@ -4054,7 +3761,7 @@ QTabWidget::pane {
       <property name="geometry">
        <rect>
         <x>220</x>
-        <y>100</y>
+        <y>110</y>
         <width>32</width>
         <height>32</height>
        </rect>
@@ -4069,17 +3776,17 @@ QTabWidget::pane {
      <widget class="QLineEdit" name="lineRaidboss_riverofsouls">
       <property name="geometry">
        <rect>
-        <x>100</x>
-        <y>120</y>
-        <width>71</width>
-        <height>20</height>
+        <x>10</x>
+        <y>140</y>
+        <width>91</width>
+        <height>31</height>
        </rect>
       </property>
       <property name="styleSheet">
        <string notr="true">background-color: rgb(150, 150, 150);</string>
       </property>
       <property name="text">
-       <string/>
+       <string>River of Souls</string>
       </property>
       <property name="frame">
        <bool>false</bool>
@@ -4094,17 +3801,17 @@ QTabWidget::pane {
      <widget class="QLineEdit" name="lineRaidboss_desmina">
       <property name="geometry">
        <rect>
-        <x>100</x>
-        <y>100</y>
-        <width>71</width>
-        <height>20</height>
+        <x>10</x>
+        <y>110</y>
+        <width>91</width>
+        <height>31</height>
        </rect>
       </property>
       <property name="styleSheet">
        <string notr="true">background-color: rgb(150, 150, 150);</string>
       </property>
       <property name="text">
-       <string/>
+       <string>Soulless Horror</string>
       </property>
       <property name="frame">
        <bool>false</bool>
@@ -4119,17 +3826,17 @@ QTabWidget::pane {
      <widget class="QLineEdit" name="lineRaidboss_conjureda">
       <property name="geometry">
        <rect>
-        <x>100</x>
+        <x>10</x>
         <y>220</y>
-        <width>71</width>
-        <height>20</height>
+        <width>91</width>
+        <height>31</height>
        </rect>
       </property>
       <property name="styleSheet">
        <string notr="true">background-color: rgb(150, 150, 150);</string>
       </property>
       <property name="text">
-       <string/>
+       <string>C. Amalgamated</string>
       </property>
       <property name="frame">
        <bool>false</bool>
@@ -4144,17 +3851,17 @@ QTabWidget::pane {
      <widget class="QLineEdit" name="lineRaidboss_twinlargos">
       <property name="geometry">
        <rect>
-        <x>100</x>
-        <y>240</y>
-        <width>71</width>
-        <height>20</height>
+        <x>10</x>
+        <y>250</y>
+        <width>91</width>
+        <height>31</height>
        </rect>
       </property>
       <property name="styleSheet">
        <string notr="true">background-color: rgb(150, 150, 150);</string>
       </property>
       <property name="text">
-       <string/>
+       <string>Twin Largos</string>
       </property>
       <property name="frame">
        <bool>false</bool>
@@ -4166,35 +3873,20 @@ QTabWidget::pane {
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QLabel" name="label_90">
-      <property name="geometry">
-       <rect>
-        <x>180</x>
-        <y>210</y>
-        <width>31</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Skins:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
      <widget class="QLabel" name="label_47">
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>200</y>
-        <width>171</width>
+        <y>180</y>
+        <width>591</width>
         <height>20</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <weight>50</weight>
-        <bold>false</bold>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
         <underline>true</underline>
        </font>
       </property>
@@ -4202,14 +3894,14 @@ QTabWidget::pane {
        <string>Wing 6 - The Mythwright Gambit</string>
       </property>
       <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
      <widget class="QLabel" name="label_Skin_largos_sword">
       <property name="geometry">
        <rect>
         <x>280</x>
-        <y>210</y>
+        <y>220</y>
         <width>32</width>
         <height>32</height>
        </rect>
@@ -4225,16 +3917,16 @@ QTabWidget::pane {
       <property name="geometry">
        <rect>
         <x>100</x>
-        <y>140</y>
-        <width>71</width>
-        <height>20</height>
+        <y>110</y>
+        <width>91</width>
+        <height>31</height>
        </rect>
       </property>
       <property name="styleSheet">
        <string notr="true">background-color: rgb(150, 150, 150);</string>
       </property>
       <property name="text">
-       <string/>
+       <string>The 3 Statues</string>
       </property>
       <property name="frame">
        <bool>false</bool>
@@ -4246,30 +3938,11 @@ QTabWidget::pane {
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QLabel" name="label_43">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>160</y>
-        <width>91</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Dhuum:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-      <property name="buddy">
-       <cstring>linePermission_PvP</cstring>
-      </property>
-     </widget>
      <widget class="QLabel" name="label_Mini_kenut">
       <property name="geometry">
        <rect>
-        <x>250</x>
-        <y>250</y>
+        <x>460</x>
+        <y>220</y>
         <width>32</width>
         <height>32</height>
        </rect>
@@ -4281,27 +3954,11 @@ QTabWidget::pane {
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QLabel" name="label_100">
-      <property name="geometry">
-       <rect>
-        <x>180</x>
-        <y>140</y>
-        <width>31</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Minis:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
      <widget class="QLabel" name="label_Skin_largos_longbow">
       <property name="geometry">
        <rect>
         <x>310</x>
-        <y>210</y>
+        <y>220</y>
         <width>32</width>
         <height>32</height>
        </rect>
@@ -4317,13 +3974,16 @@ QTabWidget::pane {
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>310</y>
-        <width>171</width>
+        <y>290</y>
+        <width>591</width>
         <height>20</height>
        </rect>
       </property>
       <property name="font">
        <font>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
         <underline>true</underline>
        </font>
       </property>
@@ -4331,30 +3991,14 @@ QTabWidget::pane {
        <string>Wing 7 - (probably around May)</string>
       </property>
       <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_89">
-      <property name="geometry">
-       <rect>
-        <x>180</x>
-        <y>250</y>
-        <width>31</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Minis:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
      <widget class="QLabel" name="label_Skin_dhuum_boots">
       <property name="geometry">
        <rect>
-        <x>520</x>
-        <y>100</y>
+        <x>340</x>
+        <y>140</y>
         <width>32</width>
         <height>32</height>
        </rect>
@@ -4370,7 +4014,7 @@ QTabWidget::pane {
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>20</y>
+        <y>22</y>
         <width>311</width>
         <height>21</height>
        </rect>
@@ -4386,7 +4030,7 @@ QTabWidget::pane {
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>-2</y>
+        <y>0</y>
         <width>281</width>
         <height>21</height>
        </rect>
@@ -4402,7 +4046,7 @@ QTabWidget::pane {
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>38</y>
+        <y>40</y>
         <width>311</width>
         <height>21</height>
        </rect>
@@ -4418,7 +4062,7 @@ QTabWidget::pane {
       <property name="geometry">
        <rect>
         <x>390</x>
-        <y>-2</y>
+        <y>0</y>
         <width>191</width>
         <height>21</height>
        </rect>
@@ -4541,7 +4185,7 @@ QTabWidget::pane {
       <property name="geometry">
        <rect>
         <x>420</x>
-        <y>190</y>
+        <y>180</y>
         <width>171</width>
         <height>20</height>
        </rect>
@@ -4560,7 +4204,7 @@ QTabWidget::pane {
       <property name="geometry">
        <rect>
         <x>410</x>
-        <y>300</y>
+        <y>290</y>
         <width>171</width>
         <height>20</height>
        </rect>
@@ -4575,373 +4219,161 @@ QTabWidget::pane {
        <cstring>linePermission_PvP</cstring>
       </property>
      </widget>
+     <widget class="QLabel" name="label_133">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>90</y>
+        <width>181</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Skins unlocked&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_131">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>80</y>
+        <width>181</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Bosses/Events&lt;br/&gt;Completed this week&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_132">
+      <property name="geometry">
+       <rect>
+        <x>430</x>
+        <y>90</y>
+        <width>151</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Minis unlocked&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_134">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>200</y>
+        <width>181</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Skins unlocked&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_135">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>190</y>
+        <width>181</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Bosses/Events&lt;br/&gt;Completed this week&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_136">
+      <property name="geometry">
+       <rect>
+        <x>430</x>
+        <y>200</y>
+        <width>151</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Minis unlocked&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="tab_achievements">
      <attribute name="title">
       <string>Achievements</string>
      </attribute>
-     <widget class="QLabel" name="label_58">
+     <widget class="QLabel" name="label_28">
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>100</y>
-        <width>91</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Samarog:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-      <property name="buddy">
-       <cstring>linePermission_Guilds</cstring>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="lineRaidboss_qadim_cm">
-      <property name="geometry">
-       <rect>
-        <x>300</x>
-        <y>120</y>
-        <width>71</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(150, 150, 150);</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="frame">
-       <bool>false</bool>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-      <property name="readOnly">
-       <bool>true</bool>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="lineRaidboss_keepconstruct_cm">
-      <property name="geometry">
-       <rect>
-        <x>110</x>
-        <y>40</y>
-        <width>71</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(150, 150, 150);</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="frame">
-       <bool>false</bool>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-      <property name="readOnly">
-       <bool>true</bool>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_57">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>120</y>
-        <width>91</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Deimos:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-      <property name="buddy">
-       <cstring>linePermission_Guilds</cstring>
-      </property>
-     </widget>
-     <widget class="Line" name="line_3">
-      <property name="geometry">
-       <rect>
-        <x>190</x>
-        <y>10</y>
-        <width>3</width>
-        <height>130</height>
-       </rect>
-      </property>
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_56">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>60</y>
-        <width>91</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Cairn:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-      <property name="buddy">
-       <cstring>linePermission_Guilds</cstring>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="lineRaidboss_samarog_cm">
-      <property name="geometry">
-       <rect>
-        <x>110</x>
-        <y>100</y>
-        <width>71</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(150, 150, 150);</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="frame">
-       <bool>false</bool>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-      <property name="readOnly">
-       <bool>true</bool>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_64">
-      <property name="geometry">
-       <rect>
-        <x>200</x>
-        <y>60</y>
-        <width>91</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Dhuum:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-      <property name="buddy">
-       <cstring>linePermission_PvP</cstring>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="lineRaidboss_twinlargos_cm">
-      <property name="geometry">
-       <rect>
-        <x>300</x>
-        <y>100</y>
-        <width>71</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(150, 150, 150);</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="frame">
-       <bool>false</bool>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-      <property name="readOnly">
-       <bool>true</bool>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="lineRaidboss_dhuum_cm">
-      <property name="geometry">
-       <rect>
-        <x>300</x>
-        <y>60</y>
-        <width>71</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(150, 150, 150);</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="frame">
-       <bool>false</bool>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-      <property name="readOnly">
-       <bool>true</bool>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_63">
-      <property name="geometry">
-       <rect>
-        <x>200</x>
-        <y>80</y>
-        <width>91</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>C. Amalgamated:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-      <property name="buddy">
-       <cstring>linePermission_PvP</cstring>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_60">
-      <property name="geometry">
-       <rect>
-        <x>60</x>
-        <y>160</y>
-        <width>261</width>
-        <height>61</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>SO FAR, ONLY CHALLENGE MODES ARE ADDED
- I WILL ADD THE OTHERS LATER
- THIS SECTION IS UNFINISHED</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_65">
-      <property name="geometry">
-       <rect>
-        <x>200</x>
-        <y>40</y>
-        <width>91</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Soulless Horror:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-      <property name="buddy">
-       <cstring>linePermission_PvP</cstring>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="lineRaidboss_cairn_cm">
-      <property name="geometry">
-       <rect>
-        <x>110</x>
-        <y>60</y>
-        <width>71</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(150, 150, 150);</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="frame">
-       <bool>false</bool>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-      <property name="readOnly">
-       <bool>true</bool>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_61">
-      <property name="geometry">
-       <rect>
-        <x>200</x>
-        <y>120</y>
-        <width>91</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Qadim:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-      <property name="buddy">
-       <cstring>linePermission_PvP</cstring>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_66">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>10</y>
-        <width>171</width>
+        <y>0</y>
+        <width>581</width>
         <height>20</height>
        </rect>
       </property>
       <property name="font">
        <font>
+        <pointsize>10</pointsize>
         <weight>75</weight>
         <bold>true</bold>
         <underline>true</underline>
        </font>
       </property>
       <property name="text">
-       <string>HEART OF THORNS</string>
+       <string>Wing 1 - Spirit Vale</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QLabel" name="label_55">
+     <widget class="QLabel" name="label_40">
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>80</y>
-        <width>91</width>
+        <y>260</y>
+        <width>581</width>
         <height>20</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+        <underline>true</underline>
+       </font>
+      </property>
       <property name="text">
-       <string>Mursaat:</string>
+       <string>Wing 4 - Bastion of the Penitent</string>
       </property>
       <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-      <property name="buddy">
-       <cstring>linePermission_Guilds</cstring>
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineRaidboss_mursaat_cm">
+     <widget class="QLineEdit" name="lineAchiev_w4_wardenwillsee">
       <property name="geometry">
        <rect>
-        <x>110</x>
-        <y>80</y>
-        <width>71</width>
+        <x>10</x>
+        <y>280</y>
+        <width>151</width>
         <height>20</height>
        </rect>
       </property>
@@ -4949,7 +4381,7 @@ QTabWidget::pane {
        <string notr="true">background-color: rgb(150, 150, 150);</string>
       </property>
       <property name="text">
-       <string/>
+       <string>The Warden Will See You Now </string>
       </property>
       <property name="frame">
        <bool>false</bool>
@@ -4961,10 +4393,1456 @@ QTabWidget::pane {
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineRaidboss_deimos_cm">
+     <widget class="QLineEdit" name="lineAchiev_w4_voiceofdecease">
       <property name="geometry">
        <rect>
-        <x>110</x>
+        <x>170</x>
+        <y>280</y>
+        <width>111</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>Voice of the Deceased</string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w4_realraidertyr">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>300</y>
+        <width>151</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>The Real Raiders of Tyria </string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_37">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>100</y>
+        <width>581</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+        <underline>true</underline>
+       </font>
+      </property>
+      <property name="text">
+       <string>Wing 2 - Salvation Pass</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_41">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>170</y>
+        <width>581</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+        <underline>true</underline>
+       </font>
+      </property>
+      <property name="text">
+       <string>Wing 3 - Stronghold of the Faithful</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_42">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>340</y>
+        <width>581</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+        <underline>true</underline>
+       </font>
+      </property>
+      <property name="text">
+       <string>Wing 5 - Hall of Chains</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_48">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>410</y>
+        <width>581</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+        <underline>true</underline>
+       </font>
+      </property>
+      <property name="text">
+       <string>Wing 6 - The Mythwright Gambit</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w1_beyondthevale">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>20</y>
+        <width>91</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>Beyond the Vale</string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w1_denied">
+      <property name="geometry">
+       <rect>
+        <x>460</x>
+        <y>40</y>
+        <width>51</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>Denied</string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w1_rgb">
+      <property name="geometry">
+       <rect>
+        <x>460</x>
+        <y>60</y>
+        <width>51</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>RGB</string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w1_lastcannon">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>80</y>
+        <width>111</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>Last Cannon </string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w1_fleethestorm">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>40</y>
+        <width>91</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>Flee the Storm</string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w1_spectralanomaly">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>80</y>
+        <width>151</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>Spectral Anomaly </string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w1_puttorest">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>40</y>
+        <width>61</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>Put to Rest</string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w1_piecingit">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>20</y>
+        <width>111</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>Piecing it Together</string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w1_keepthelights">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>40</y>
+        <width>111</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>Keep the Lights On </string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w1_quickmarch">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>80</y>
+        <width>91</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>Quick March </string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w1_myhero">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>60</y>
+        <width>61</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>My Hero! </string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w1_angermanage">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>40</y>
+        <width>151</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>Anger Management </string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w1_lootfinder">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>20</y>
+        <width>61</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>Loot Finder</string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w1_fireextinguish">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>60</y>
+        <width>151</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>Fire Extinguisher </string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w1_liftoff">
+      <property name="geometry">
+       <rect>
+        <x>460</x>
+        <y>20</y>
+        <width>51</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>Liftoff </string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w1_outranaghost">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>151</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>I Can Outrun A...Ghost </string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w1_backdraftd">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>60</y>
+        <width>111</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>Backdraft Dodger </string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w1_intothewoods">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>60</y>
+        <width>91</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>Into the Woods</string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w2_environmentally">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>120</y>
+        <width>151</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>Environmentally Friendly </string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w2_spmastery">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>140</y>
+        <width>151</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>Salvation Pass Mastery </string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w2_seimurwasw">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>120</y>
+        <width>111</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>Seimur Was Wrong </string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w2_spsadist">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>140</y>
+        <width>111</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>Salvation Pass Sadist </string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w2_thebigsleep">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>140</y>
+        <width>91</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>The Big Sleep </string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w2_slipperyslub">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>120</y>
+        <width>91</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>Slippery Slubling </string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w3_traversethetc">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>190</y>
+        <width>151</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>Traverse the Twisted Castle </string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w3_scourgeofwm">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>210</y>
+        <width>151</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>Scourge of the White Mantle </string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w3_outrunawarg">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>210</y>
+        <width>111</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>I Can Outrun A... Warg </string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w3_downdownd">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>190</y>
+        <width>111</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>Down, Down, Downed</string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w4_greetedaslib">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>300</y>
+        <width>111</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string> Greeted as Liberators </string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w4_harshsentence">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>300</y>
+        <width>91</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>Harsh Sentence </string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w4_breakingin">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>280</y>
+        <width>91</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>Breaking In </string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w4_jaded">
+      <property name="geometry">
+       <rect>
+        <x>520</x>
+        <y>300</y>
+        <width>71</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>Jaded </string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w4_attuned">
+      <property name="geometry">
+       <rect>
+        <x>520</x>
+        <y>280</y>
+        <width>71</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>Attuned </string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w3_minecontrol">
+      <property name="geometry">
+       <rect>
+        <x>520</x>
+        <y>190</y>
+        <width>71</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>Mine Control </string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w3_dismantled">
+      <property name="geometry">
+       <rect>
+        <x>520</x>
+        <y>210</y>
+        <width>71</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>Dismantled </string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w2_avengerofpact">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>140</y>
+        <width>121</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>Avenger of the Pact </string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w2_scatteredm">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>120</y>
+        <width>121</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>Scattered Memories </string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w4_freeatlast">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>320</y>
+        <width>91</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string> Free at Last </string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w3_loveisbunny">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>210</y>
+        <width>91</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>Love Is Bunny</string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w3_mildlyinsane">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>190</y>
+        <width>91</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>Mildly Insane </string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w3_siegethestrong">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>230</y>
+        <width>151</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>Siege the Stronghold </string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w3_evasivemane">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>190</y>
+        <width>121</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>Evasive Maneuver </string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w3_deconstructed">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>210</y>
+        <width>121</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>Deconstructed </string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w5_whatisdeathmay">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>360</y>
+        <width>151</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>What's Death May Never Die </string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w5_statuesoflimit">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>380</y>
+        <width>151</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>Statues of Limitation </string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w5_exileexecution">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>360</y>
+        <width>111</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>Exile Executioner </string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w5_theferrywoman">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>380</y>
+        <width>111</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>The Ferrywoman </string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w5_soreeyes">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>380</y>
+        <width>61</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>Sore Eyes </string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w5_icebreaker">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>360</y>
+        <width>61</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>Icebreaker </string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w5_deatheater">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>360</y>
+        <width>91</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>Death Eater </string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w5_necrodancer">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>380</y>
+        <width>91</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>Necro Dancer </string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w5_silencer">
+      <property name="geometry">
+       <rect>
+        <x>540</x>
+        <y>360</y>
+        <width>51</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>Silencer </string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w2_theshield">
+      <property name="geometry">
+       <rect>
+        <x>520</x>
         <y>120</y>
         <width>71</width>
         <height>20</height>
@@ -4974,7 +5852,7 @@ QTabWidget::pane {
        <string notr="true">background-color: rgb(150, 150, 150);</string>
       </property>
       <property name="text">
-       <string/>
+       <string>The Shield </string>
       </property>
       <property name="frame">
        <bool>false</bool>
@@ -4986,11 +5864,11 @@ QTabWidget::pane {
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineRaidboss_conjureda_cm">
+     <widget class="QLineEdit" name="lineAchiev_w1_whitenoise">
       <property name="geometry">
        <rect>
-        <x>300</x>
-        <y>80</y>
+        <x>520</x>
+        <y>40</y>
         <width>71</width>
         <height>20</height>
        </rect>
@@ -4999,7 +5877,7 @@ QTabWidget::pane {
        <string notr="true">background-color: rgb(150, 150, 150);</string>
       </property>
       <property name="text">
-       <string/>
+       <string>White Noise</string>
       </property>
       <property name="frame">
        <bool>false</bool>
@@ -5011,43 +5889,470 @@ QTabWidget::pane {
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QLabel" name="label_67">
+     <widget class="QLineEdit" name="lineAchiev_w1_closure">
       <property name="geometry">
        <rect>
-        <x>200</x>
-        <y>10</y>
+        <x>520</x>
+        <y>60</y>
+        <width>71</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>Closure</string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w1_undefeated">
+      <property name="geometry">
+       <rect>
+        <x>520</x>
+        <y>20</y>
+        <width>71</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>Undefeated </string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w4_solitaryconfi">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>280</y>
+        <width>121</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>Solitary Confinement </string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w4_justagame">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>300</y>
+        <width>121</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>It's Just a Game </string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w6_somedisassem">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>470</y>
+        <width>151</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>Some Disassembly Required </string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w6_manipulateman">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>450</y>
+        <width>151</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>Manipulate the Manipulator </string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w6_mythscholar">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>430</y>
+        <width>111</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>Mythwright Scholar </string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w6_heroesofforge">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>450</y>
+        <width>111</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>Heroes of the Forge </string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w5_deathsaver">
+      <property name="geometry">
+       <rect>
+        <x>460</x>
+        <y>380</y>
+        <width>71</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>Deathsaver </string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w5_souledout">
+      <property name="geometry">
+       <rect>
+        <x>460</x>
+        <y>360</y>
+        <width>71</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>Souled Out </string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w6_aquaassasins">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>430</y>
+        <width>101</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>Aquatic Assassins </string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w6_thunderfall">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>450</y>
+        <width>101</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>A Thunderous Fall </string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w6_takingturns">
+      <property name="geometry">
+       <rect>
+        <x>520</x>
+        <y>450</y>
+        <width>71</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>Taking Turns </string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w6_letsnotdothat">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>430</y>
+        <width>151</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>Let's Not Do That Again </string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w6_firedjinnextin">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>490</y>
+        <width>151</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string> The Fire Djinn Extinguished </string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w6_hardhats">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>470</y>
+        <width>221</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>Hard Hats Required beyond This Point</string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w6_dontgowater">
+      <property name="geometry">
+       <rect>
+        <x>400</x>
+        <y>470</y>
+        <width>111</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>Don't Go in the Water </string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w6_regularstour">
+      <property name="geometry">
+       <rect>
+        <x>400</x>
+        <y>450</y>
+        <width>111</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>Regulars on the Tour </string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w6_stackingswords">
+      <property name="geometry">
+       <rect>
+        <x>400</x>
+        <y>430</y>
         <width>191</width>
         <height>20</height>
        </rect>
       </property>
-      <property name="font">
-       <font>
-        <weight>75</weight>
-        <bold>true</bold>
-        <underline>true</underline>
-       </font>
-      </property>
-      <property name="text">
-       <string>PATH OF FIRE</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="lineRaidboss_desmina_cm">
-      <property name="geometry">
-       <rect>
-        <x>300</x>
-        <y>40</y>
-        <width>71</width>
-        <height>20</height>
-       </rect>
-      </property>
       <property name="styleSheet">
        <string notr="true">background-color: rgb(150, 150, 150);</string>
       </property>
       <property name="text">
-       <string/>
+       <string>Stacking Swords and Shields </string>
       </property>
       <property name="frame">
        <bool>false</bool>
@@ -5057,44 +6362,6 @@ QTabWidget::pane {
       </property>
       <property name="readOnly">
        <bool>true</bool>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_59">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>40</y>
-        <width>91</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Keep Construct:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-      <property name="buddy">
-       <cstring>linePermission_Builds</cstring>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_62">
-      <property name="geometry">
-       <rect>
-        <x>200</x>
-        <y>100</y>
-        <width>91</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Largos:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-      <property name="buddy">
-       <cstring>linePermission_PvP</cstring>
       </property>
      </widget>
     </widget>
@@ -5102,7 +6369,7 @@ QTabWidget::pane {
    <widget class="QCheckBox" name="checkAchievements">
     <property name="geometry">
      <rect>
-      <x>860</x>
+      <x>850</x>
       <y>0</y>
       <width>91</width>
       <height>20</height>
@@ -5118,9 +6385,9 @@ QTabWidget::pane {
    <widget class="QLabel" name="label_92">
     <property name="geometry">
      <rect>
-      <x>340</x>
+      <x>370</x>
       <y>0</y>
-      <width>231</width>
+      <width>211</width>
       <height>20</height>
      </rect>
     </property>
@@ -5131,7 +6398,7 @@ QTabWidget::pane {
      </font>
     </property>
     <property name="text">
-     <string>Sections to request from Anet servers:</string>
+     <string>Data to request from your API Key:</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>

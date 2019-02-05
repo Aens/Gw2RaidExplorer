@@ -1,0 +1,108 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>Images/Delete.png</file>
+        <file>Images/Main.ico</file>
+        <file>Images/Save.png</file>
+        <file>Images/Script.png</file>
+        <file>Images/Search.png</file>
+        <file>Images/Iconofolder.png</file>
+        <file>Images/Game.png</file>
+        <file>Images/Spanish.png</file>
+        <file>Images/English.png</file>
+        <file>Images/Browser.png</file>
+        <file>Images/Refresh.png</file>
+        <file>Images/Deutsch.png</file>
+        <file>Images/French.png</file>
+    </qresource>
+    <qresource prefix="/Minis">
+        <file>Images/minis/Mini Berg.png</file>
+        <file>Images/minis/Mini Blue Guardian.png</file>
+        <file>Images/minis/Mini Broken King.png</file>
+        <file>Images/minis/Mini Cairn the Indomitable.png</file>
+        <file>Images/minis/Mini Desmina.png</file>
+        <file>Images/minis/Mini Dhuum.png</file>
+        <file>Images/minis/Mini Eye of Janthir.png</file>
+        <file>Images/minis/Mini Gorseval the Multifarious.png</file>
+        <file>Images/minis/Mini Green Guardian.png</file>
+        <file>Images/minis/Mini Karde.png</file>
+        <file>Images/minis/Mini Keep Construct.png</file>
+        <file>Images/minis/Mini Kenut.png</file>
+        <file>Images/minis/Mini Kernan.png</file>
+        <file>Images/minis/Mini Knuckles.png</file>
+        <file>Images/minis/Mini Matthias Abomination.png</file>
+        <file>Images/minis/Mini McLeod the Silent.png</file>
+        <file>Images/minis/Mini Mursaat Overseer.png</file>
+        <file>Images/minis/Mini Narella.png</file>
+        <file>Images/minis/Mini Nikare.png</file>
+        <file>Images/minis/Mini Qadim.png</file>
+        <file>Images/minis/Mini Ragged White Mantle Figurehead.png</file>
+        <file>Images/minis/Mini Red Guardian.png</file>
+        <file>Images/minis/Mini Samarog.png</file>
+        <file>Images/minis/Mini Slothasor.png</file>
+        <file>Images/minis/Mini Slubling.png</file>
+        <file>Images/minis/Mini Vale Guardian.png</file>
+        <file>Images/minis/Mini White Mantle Figurehead.png</file>
+        <file>Images/minis/Mini Xera.png</file>
+        <file>Images/minis/Mini Zane.png</file>
+        <file>Images/minis/Mini Zommoros.png</file>
+    </qresource>
+    <qresource prefix="/skins">
+        <file>Images/skins/Arbiter Greatbow.png</file>
+        <file>Images/skins/Assaulter's Sparking Dagger.png</file>
+        <file>Images/skins/Assaulter's Sparking Vanquisher.png</file>
+        <file>Images/skins/Assaulter's Spirit Branch.png</file>
+        <file>Images/skins/Assaulter's Spirit Ward.png</file>
+        <file>Images/skins/Axe of the Unseen.png</file>
+        <file>Images/skins/Burden.png</file>
+        <file>Images/skins/Conjured Amalgamate's Greatblade.png</file>
+        <file>Images/skins/Conjured Amalgamate's Shield.png</file>
+        <file>Images/skins/Final Death.png</file>
+        <file>Images/skins/Flesh and Sinew.png</file>
+        <file>Images/skins/Gloves of Dhuum.png</file>
+        <file>Images/skins/Gloves of the Obedient.png</file>
+        <file>Images/skins/Indomitable Gladius.png</file>
+        <file>Images/skins/Indomitable Pistol.png</file>
+        <file>Images/skins/Keep Construct Torch.png</file>
+        <file>Images/skins/Largos' Greatbow.png</file>
+        <file>Images/skins/Largos' Swiftblade.png</file>
+        <file>Images/skins/Oblivion.png</file>
+        <file>Images/skins/Pauldrons of Dhuum.png</file>
+        <file>Images/skins/Prisoner's Treasured Bough.png</file>
+        <file>Images/skins/Qadim's Flamebelcher.png</file>
+        <file>Images/skins/Qadim's War Gavel.png</file>
+        <file>Images/skins/Sabetha's Rifle.png</file>
+        <file>Images/skins/Sabetha's Scorcher.png</file>
+        <file>Images/skins/Skullcap of Dhuum.png</file>
+        <file>Images/skins/Sledge of the Red Witch.png</file>
+        <file>Images/skins/Slippers of Dhuum.png</file>
+        <file>Images/skins/Slothasor Effigy.png</file>
+        <file>Images/skins/Sloth-Hunting Hammer.png</file>
+        <file>Images/skins/Spire of Samarog.png</file>
+        <file>Images/skins/Staff of Matthias.png</file>
+        <file>Images/skins/The Ender of All.png</file>
+        <file>Images/skins/The Gavel.png</file>
+        <file>Images/skins/The Virge.png</file>
+        <file>Images/skins/The Voice in the Void.png</file>
+        <file>Images/skins/Touch of Dhuum.png</file>
+        <file>Images/skins/Watchkeeper Trophy Bow.png</file>
+        <file>Images/skins/Watchkeeper Trophy Warhorn.png</file>
+        <file>Images/skins/White Mantle Axe.png</file>
+        <file>Images/skins/White Mantle Bugle.png</file>
+        <file>Images/skins/White Mantle Bulwark.png</file>
+        <file>Images/skins/White Mantle Censer.png</file>
+        <file>Images/skins/White Mantle Gavel.png</file>
+        <file>Images/skins/White Mantle Gladius.png</file>
+        <file>Images/skins/White Mantle Greatbow.png</file>
+        <file>Images/skins/White Mantle Icon.png</file>
+        <file>Images/skins/White Mantle Pistol.png</file>
+        <file>Images/skins/White Mantle Rifle.png</file>
+        <file>Images/skins/White Mantle Rod.png</file>
+        <file>Images/skins/White Mantle Seax.png</file>
+        <file>Images/skins/White Mantle Short Bow.png</file>
+        <file>Images/skins/White Mantle Sledge.png</file>
+        <file>Images/skins/White Mantle Spire.png</file>
+        <file>Images/skins/White Mantle Sunderer.png</file>
+        <file>Images/skins/Xera's Mask.png</file>
+        <file>Images/skins/Xera's Scepter.png</file>
+    </qresource>
+</RCC>

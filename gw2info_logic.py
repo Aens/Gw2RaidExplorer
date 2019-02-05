@@ -8,7 +8,9 @@ import psutil
 import subprocess
 from os import environ
 from pathlib import Path
-from PySide2 import QtWidgets
+from PySide2.QtWidgets import (QApplication, QComboBox, QDialog, QFileDialog,
+                               QGraphicsColorizeEffect, QGroupBox, QLabel, QMainWindow, QMessageBox,
+                               QPlainTextEdit, QPushButton, QStackedWidget, QTabWidget, QTextEdit)
 from PySide2.QtGui import QIcon, QColor
 from PySide2.QtCore import Qt, QEvent, QPoint, QSize, QSettings
 from gw2info_ui import Ui_MainWindow
@@ -23,7 +25,7 @@ INI_OPTIONS = QSettings("options.ini", QSettings.IniFormat)
 ##################### MAIN WINDOW ######################
 ########################################################
 
-class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
+class MainForm(QMainWindow, Ui_MainWindow):
     """Main window of the program."""
 
     def __init__(self, parent=None):
@@ -32,7 +34,7 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
         Connect the events to their triggers.
         Set proper colors to their items.
         And fire up initial functions."""
-        QtWidgets.QMainWindow.__init__(self, parent)
+        QMainWindow.__init__(self, parent)
         self.setupUi(self)
         self.setWindowIcon(QIcon(":/images/Images/Main.ico"))
         self.setWindowTitle("Gw2 API Raid Explorer {0}".format(PROGRAM_AUTHOR))
@@ -41,34 +43,34 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
         self.move(INI_OPTIONS.value("menu_position", QPoint(350, 250)))
         self.lineInstallationFolder.setText((INI_OPTIONS.value("installation_folder", "")))
         # Left side Buttons
-        self.botonThemeLight.clicked.connect(lambda: self.initialize_colors("light"))
-        self.botonThemeDark.clicked.connect(lambda: self.initialize_colors("dark"))
-        self.botonThemeDefault.clicked.connect(lambda: self.initialize_colors("default"))
-        self.botonLanguage_english.clicked.connect(lambda: self.initialize_language("en"))
-        self.botonLanguage_spanish.clicked.connect(lambda: self.initialize_language("es"))
-        self.botonLanguage_french.clicked.connect(lambda: self.initialize_language("fr"))
-        self.botonLanguage_deutsch.clicked.connect(lambda: self.initialize_language("de"))
-        self.botonWebsite_Anet.clicked.connect(self.open_web_anet)
-        self.botonLoad.clicked.connect(self.load_api)
-        self.botonAddAPI.clicked.connect(self.open_window_add)
-        self.botonDeleteAPI.clicked.connect(self.delete_api)
-        self.botonDonate.clicked.connect(self.open_web_donate)
+        self.buttonThemeLight.clicked.connect(lambda: self.initialize_colors("light"))
+        self.buttonThemeDark.clicked.connect(lambda: self.initialize_colors("dark"))
+        self.buttonThemeDefault.clicked.connect(lambda: self.initialize_colors("default"))
+        self.buttonLanguage_english.clicked.connect(lambda: self.initialize_language("en"))
+        self.buttonLanguage_spanish.clicked.connect(lambda: self.initialize_language("es"))
+        self.buttonLanguage_french.clicked.connect(lambda: self.initialize_language("fr"))
+        self.buttonLanguage_deutsch.clicked.connect(lambda: self.initialize_language("de"))
+        self.buttonWebsite_Anet.clicked.connect(self.open_web_anet)
+        self.buttonLoad.clicked.connect(self.load_api)
+        self.buttonAddAPI.clicked.connect(self.open_window_add)
+        self.buttonDeleteAPI.clicked.connect(self.delete_api)
+        self.buttonDonate.clicked.connect(self.open_web_donate)
         # Right side buttons
-        self.botonFindfolder.clicked.connect(self.set_installation_folder)
-        self.botonArcDps.clicked.connect(self.update_arcdps)
-        self.botonArcDps_mechanics.clicked.connect(self.update_arcdps_mechanics)
-        self.botonWebsite_arcdps.clicked.connect(self.open_web_arcdps)
-        self.botonWebsite_arcdpsmechanics.clicked.connect(self.open_web_arcdpsmechanics)
-        self.botonLaunchgame.clicked.connect(self.launch_game)
-        self.botonClosegame.clicked.connect(self.close_game)
-        self.botonWebsite_dulfy.clicked.connect(self.open_web_dulfy)
-        self.botonWebsite_builds.clicked.connect(self.open_web_builds)
-        self.botonWebsite_builds_alternative.clicked.connect(self.open_web_builds_alternative)
-        self.botonWebsite_dpsreport.clicked.connect(self.open_web_dpsreport)
-        self.botonWebsite_killproof.clicked.connect(self.open_web_killproof)
-        self.botonWebsite_raidar.clicked.connect(self.open_web_raidar)
-        self.botonWebsite_gw2raidexplorer.clicked.connect(self.open_web_gw2raidexplorer)
-        self.botonDebugger.clicked.connect(self.debugger)
+        self.buttonFindfolder.clicked.connect(self.set_installation_folder)
+        self.buttonArcDps.clicked.connect(self.update_arcdps)
+        self.buttonArcDps_mechanics.clicked.connect(self.update_arcdps_mechanics)
+        self.buttonWebsite_arcdps.clicked.connect(self.open_web_arcdps)
+        self.buttonWebsite_arcdpsmechanics.clicked.connect(self.open_web_arcdpsmechanics)
+        self.buttonLaunchgame.clicked.connect(self.launch_game)
+        self.buttonClosegame.clicked.connect(self.close_game)
+        self.buttonWebsite_dulfy.clicked.connect(self.open_web_dulfy)
+        self.buttonWebsite_builds.clicked.connect(self.open_web_builds)
+        self.buttonWebsite_builds_alternative.clicked.connect(self.open_web_builds_alternative)
+        self.buttonWebsite_dpsreport.clicked.connect(self.open_web_dpsreport)
+        self.buttonWebsite_killproof.clicked.connect(self.open_web_killproof)
+        self.buttonWebsite_raidar.clicked.connect(self.open_web_raidar)
+        self.buttonWebsite_gw2raidexplorer.clicked.connect(self.open_web_gw2raidexplorer)
+        self.buttonDebugger.clicked.connect(self.debugger)
         # Events
         self.comboSelectAPI.installEventFilter(self)
         self.comboSelectAPI.activated.connect(self.load_combo_stuff)
@@ -327,14 +329,14 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
         for item in widget.children():
             item_type = item.metaObject().className()
             # SPECIALS: Set background to it and then re-iterate on these items
-            if item_type == "QWidget" or isinstance(item, QtWidgets.QDialog):
+            if item_type == "QWidget" or isinstance(item, QDialog):
                 widget.setStyleSheet(colors['backgroundcolor'])
                 self.set_colors(item, colors)
             # SPECIALS: Set style to it and then re-iterate on these items
-            elif isinstance(item, QtWidgets.QGroupBox):
+            elif isinstance(item, QGroupBox):
                 item.setStyleSheet(colors['groupstyle'])
                 self.set_colors(item, colors)
-            elif isinstance(item, QtWidgets.QTabWidget) or isinstance(item, QtWidgets.QStackedWidget):
+            elif isinstance(item, QTabWidget) or isinstance(item, QStackedWidget):
                 item.setStyleSheet(colors['tabstyle'])
                 self.set_colors(item, colors)
             # OTHER: Stand-alone widgets
@@ -343,15 +345,15 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
                     item.setStyleSheet(colors['inputcolorreadonly'])
                 else:
                     item.setStyleSheet(colors['inputcolor'])
-            elif isinstance(item, QtWidgets.QPlainTextEdit):
+            elif isinstance(item, QPlainTextEdit):
                 item.setStyleSheet(colors['inputcolor'])
-            elif isinstance(item, QtWidgets.QTextEdit):
+            elif isinstance(item, QTextEdit):
                 item.setStyleSheet(colors['inputcolor'])
-            elif isinstance(item, QtWidgets.QLabel):
+            elif isinstance(item, QLabel):
                 item.setStyleSheet(colors['labelcolor'])
-            elif isinstance(item, QtWidgets.QPushButton):
+            elif isinstance(item, QPushButton):
                 item.setStyleSheet(colors['buttoncolor'])
-            elif isinstance(item, QtWidgets.QComboBox):
+            elif isinstance(item, QComboBox):
                 item.setStyleSheet(colors['dropdowncolor'])
             else:
                 # print(item_type) # TBD Used to debug
@@ -519,7 +521,7 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def set_installation_folder(self):
         """Set the installation folder"""
-        folderpath = QtWidgets.QFileDialog.getExistingDirectory()
+        folderpath = QFileDialog.getExistingDirectory()
         if not folderpath == "":
             self.lineInstallationFolder.setText(folderpath)
             INI_OPTIONS.setValue("installation_folder", folderpath)
@@ -1170,11 +1172,11 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
         # Set the UI
         for mini in raid_minis:
             if mini['flag'] == 1:
-                yes_style = QtWidgets.QGraphicsColorizeEffect(self)
+                yes_style = QGraphicsColorizeEffect(self)
                 yes_style.setColor(QColor(0, 150, 0))
                 mini['uiitem'].setGraphicsEffect(yes_style)
             else:
-                no_style = QtWidgets.QGraphicsColorizeEffect(self)
+                no_style = QGraphicsColorizeEffect(self)
                 no_style.setColor(QColor(150, 0, 0))
                 mini['uiitem'].setGraphicsEffect(no_style)
 
@@ -1279,11 +1281,11 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
         # Set the UI
         for skin in raid_skins:
             if skin['flag'] == 1:
-                yes_style = QtWidgets.QGraphicsColorizeEffect(self)
+                yes_style = QGraphicsColorizeEffect(self)
                 yes_style.setColor(QColor(0, 150, 0))
                 skin['uiitem'].setGraphicsEffect(yes_style)
             else:
-                no_style = QtWidgets.QGraphicsColorizeEffect(self)
+                no_style = QGraphicsColorizeEffect(self)
                 no_style.setColor(QColor(150, 0, 0))
                 skin['uiitem'].setGraphicsEffect(no_style)
 
@@ -1320,17 +1322,17 @@ class MainForm(QtWidgets.QMainWindow, Ui_MainWindow):
 #########################################################
 
 
-class AddNewApi(QtWidgets.QDialog, Ui_Dialog):
+class AddNewApi(QDialog, Ui_Dialog):
     """Class for the Add New Api window"""
 
     def __init__(self, parent=None):
         """Set initial status"""
-        QtWidgets.QDialog.__init__(self, parent)
+        QDialog.__init__(self, parent)
         self.setupUi(self)
         self.setWindowIcon(QIcon(":/images/Images/Main.ico"))
         self.setFixedSize(QSize(595, 100))
         self.move(INI_OPTIONS.value("add_position", QPoint(360, 325)))
-        self.botonSave.clicked.connect(self.save_new_api)
+        self.buttonSave.clicked.connect(self.save_new_api)
 
     def save_new_api(self):
         """Validate the data. Get old keys. Add the new one. Store them."""
@@ -1364,16 +1366,16 @@ class AddNewApi(QtWidgets.QDialog, Ui_Dialog):
 
 def popup_delete():
     """Generate a popup that requests if you are really sure that you want to delete a record."""
-    msgbox = QtWidgets.QMessageBox()
+    msgbox = QMessageBox()
     msgbox.setWindowTitle("Security check.")
-    msgbox.setIcon(QtWidgets.QMessageBox.Warning)
+    msgbox.setIcon(QMessageBox.Warning)
     msgbox.setText("Are you sure that you want to delete that key?")
-    botonyes = QtWidgets.QPushButton("Yes")
-    msgbox.addButton(botonyes, QtWidgets.QMessageBox.YesRole)
-    botonno = QtWidgets.QPushButton("No")
-    msgbox.addButton(botonno, QtWidgets.QMessageBox.NoRole)
+    buttonyes = QPushButton("Yes")
+    msgbox.addButton(buttonyes, QMessageBox.YesRole)
+    buttonno = QPushButton("No")
+    msgbox.addButton(buttonno, QMessageBox.NoRole)
     msgbox.exec_()
-    if msgbox.clickedButton() == botonno:
+    if msgbox.clickedButton() == buttonno:
         return False
     else:
         return True
@@ -1383,8 +1385,8 @@ def popup_delete():
 ######################################################
 
 
-if __name__ == '__main__':
-    app = QtWidgets.QApplication(sys.argv)
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
     # Make sure you scale for high DPI
     environ["QT_AUTO_SCREEN_SCALE_FACTOR"] = "1"
     app.setAttribute(Qt.AA_EnableHighDpiScaling)

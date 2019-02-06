@@ -13,6 +13,7 @@
         <file>Images/Refresh.png</file>
         <file>Images/Deutsch.png</file>
         <file>Images/French.png</file>
+        <file>Images/Titleicon.png</file>
     </qresource>
     <qresource prefix="/Minis">
         <file>Images/minis/Mini Berg.png</file>

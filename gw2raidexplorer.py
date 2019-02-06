@@ -1,3 +1,12 @@
+#!/usr/bin/env python
+"""This project aims to cover 2 basic things:
+1: Self-taughing myself how to code and improve in Python and Qt.
+2: Learning how Git works.
+
+That said, the goal is to make a Guild Wars 2 Raid API manager to check for information
+and embbed everything a Raider might ever need in Guild Wars 2 (short: GW2)
+"""
+
 import json
 import urllib.request
 import urllib.parse
@@ -16,8 +25,8 @@ from PySide2.QtCore import Qt, QEvent, QPoint, QSize, QSettings
 from ui.gw2info_ui import Ui_MainWindow
 from ui.add_ui import Ui_Dialog
 
-PROGRAM_VERSION = "0100"
-PROGRAM_AUTHOR = "(Made by Elrey.5472) - https://github.com/Aens"
+__version__ = "0100"
+__author__ = "(Made by Elrey.5472) - https://github.com/Aens"
 INI_OPTIONS = QSettings("options.ini", QSettings.IniFormat)
 
 
@@ -37,7 +46,7 @@ class MainForm(QMainWindow, Ui_MainWindow):
         QMainWindow.__init__(self, parent)
         self.setupUi(self)
         self.setWindowIcon(QIcon(":/images/Images/Main.ico"))
-        self.setWindowTitle("Gw2 API Raid Explorer {0}".format(PROGRAM_AUTHOR))
+        self.setWindowTitle("Gw2 API Raid Explorer {0}".format(__author__))
         # Initial window size/pos last saved. Use default values for first time
         self.setFixedSize(QSize(970, 600))
         self.move(INI_OPTIONS.value("menu_position", QPoint(350, 250)))
@@ -172,7 +181,7 @@ class MainForm(QMainWindow, Ui_MainWindow):
             self.change_statusbar("ready", "Everything seems fine. Program ready.")
             # Check if we are in the last version
             online_version = self.check_online_version()
-            if int(PROGRAM_VERSION) < int(online_version):
+            if int(__version__) < int(online_version):
                 self.change_statusbar("special", "There is a new version availible, you may want to download it.")
 
     @staticmethod

@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 """This project aims to cover 2 basic things:
 1: Self-taughing myself how to code and improve in Python and Qt.
 2: Learning how Git works.

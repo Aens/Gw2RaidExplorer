@@ -310,7 +310,7 @@ class MainForm(QMainWindow, Ui_MainWindow):
         for widget in app.topLevelWidgets():
             if widget.isWindow():
                 self.set_colors(widget, colors)
-        self.style_background = colors['backgroundcolor'] # For the statusbar
+        self.style_background = colors['backgroundcolor']  # For the statusbar
         self.style_lineedits = colors['inputcolorreadonly']  # For the reset of YES/NO fields
         self.load_permissions()
         self.change_statusbar("ready", "New theme loaded.")

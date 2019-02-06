@@ -3335,6 +3335,116 @@ QTabWidget::pane {
        <cstring>linePermission_PvP</cstring>
       </property>
      </widget>
+     <zorder>lineRaidboss_mursaat</zorder>
+     <zorder>label_Skin_mursaat_longbow</zorder>
+     <zorder>label_Skin_xera_axe</zorder>
+     <zorder>label_Skin_xera_back</zorder>
+     <zorder>label_Skin_deimos_back</zorder>
+     <zorder>label_Skin_matthias_greatsword</zorder>
+     <zorder>lineRaidboss_matthias</zorder>
+     <zorder>line_9</zorder>
+     <zorder>label_Mini_valeguardian</zorder>
+     <zorder>label_27</zorder>
+     <zorder>lineRaidboss_xera</zorder>
+     <zorder>label_82</zorder>
+     <zorder>label_Skin_gorse_staff</zorder>
+     <zorder>label_116</zorder>
+     <zorder>lineRaidboss_glenna</zorder>
+     <zorder>lineRaidboss_valeguardian</zorder>
+     <zorder>lineCurrency_Magnetiteshards</zorder>
+     <zorder>label_Skin_vg_greatsword</zorder>
+     <zorder>lineRaidboss_trio</zorder>
+     <zorder>label_72</zorder>
+     <zorder>line_8</zorder>
+     <zorder>lineCurrency_Legend_insights</zorder>
+     <zorder>lineRaidboss_slothasor</zorder>
+     <zorder>label_71</zorder>
+     <zorder>label_Skin_matthias_staff</zorder>
+     <zorder>label_Skin_kc_torch</zorder>
+     <zorder>label_Mini_greenguardian</zorder>
+     <zorder>label_Skin_kc_scepter</zorder>
+     <zorder>label_Skin_deimos_staff</zorder>
+     <zorder>label_Skin_samarog_shortbow</zorder>
+     <zorder>label_Skin_cairn_sword</zorder>
+     <zorder>lineRaidboss_twistedcastle</zorder>
+     <zorder>label_Skin_sab_rifle</zorder>
+     <zorder>line_7</zorder>
+     <zorder>label_31</zorder>
+     <zorder>label_115</zorder>
+     <zorder>label_Skin_deimos_mace</zorder>
+     <zorder>label_Skin_xera_sword</zorder>
+     <zorder>lineRaidboss_gorseval</zorder>
+     <zorder>label_35</zorder>
+     <zorder>lineRaidboss_deimos</zorder>
+     <zorder>label_Skin_matthias_pistol</zorder>
+     <zorder>label_Skin_xera_scepter</zorder>
+     <zorder>label_Mini_blueguardian</zorder>
+     <zorder>label_Skin_matthias_warhorn</zorder>
+     <zorder>label_Skin_kc_focus</zorder>
+     <zorder>label_Mini_kernan</zorder>
+     <zorder>label_Skin_matthias_shortbow</zorder>
+     <zorder>label_Skin_matthias_torch</zorder>
+     <zorder>label_Skin_matthias_longbow</zorder>
+     <zorder>lineRaidboss_keepconstruct</zorder>
+     <zorder>label_Skin_xera_staff</zorder>
+     <zorder>label_Skin_sab_back</zorder>
+     <zorder>label_Mini_xera</zorder>
+     <zorder>label_Mini_knuckles</zorder>
+     <zorder>line_10</zorder>
+     <zorder>label_34</zorder>
+     <zorder>label_Skin_matthias_mace</zorder>
+     <zorder>lineRaidboss_spiritwoods</zorder>
+     <zorder>label_44</zorder>
+     <zorder>label_Skin_kc_hammer</zorder>
+     <zorder>label_Skin_deimos_hammer</zorder>
+     <zorder>label_Skin_gorse_shield</zorder>
+     <zorder>label_Skin_samarog_axe</zorder>
+     <zorder>label_Skin_matthias_shield</zorder>
+     <zorder>label_Mini_keepconstruct</zorder>
+     <zorder>label_Skin_samarog_staff</zorder>
+     <zorder>label_Mini_mcleod</zorder>
+     <zorder>label_Skin_deimos_gloves</zorder>
+     <zorder>label_Skin_samarog_warhorn</zorder>
+     <zorder>label_Mini_gorseval</zorder>
+     <zorder>label_Skin_sloth_focus</zorder>
+     <zorder>label_Skin_sloth_hammer</zorder>
+     <zorder>label_Mini_redguardian</zorder>
+     <zorder>label_Skin_xera_dagger</zorder>
+     <zorder>label_Mini_karde</zorder>
+     <zorder>label_Skin_cairn_pistol</zorder>
+     <zorder>lineRaidboss_sabetha</zorder>
+     <zorder>label_Skin_vg_dagger</zorder>
+     <zorder>label_Skin_xera_rifle</zorder>
+     <zorder>label_Mini_samarog</zorder>
+     <zorder>label_Mini_ragged_whitemantle</zorder>
+     <zorder>label_Mini_whitemantle</zorder>
+     <zorder>label_Mini_cairn</zorder>
+     <zorder>label_Mini_mursaat</zorder>
+     <zorder>label_Mini_eyeofjanthir</zorder>
+     <zorder>label_119</zorder>
+     <zorder>label_120</zorder>
+     <zorder>label_121</zorder>
+     <zorder>label_124</zorder>
+     <zorder>label_123</zorder>
+     <zorder>label_122</zorder>
+     <zorder>label_127</zorder>
+     <zorder>label_125</zorder>
+     <zorder>label_126</zorder>
+     <zorder>label_130</zorder>
+     <zorder>label_129</zorder>
+     <zorder>label_128</zorder>
+     <zorder>label_Mini_zane</zorder>
+     <zorder>label_Mini_berg</zorder>
+     <zorder>label_Mini_matthias</zorder>
+     <zorder>label_Mini_narella</zorder>
+     <zorder>label_Mini_slothasor</zorder>
+     <zorder>label_Mini_slubling</zorder>
+     <zorder>label_83</zorder>
+     <zorder>label_84</zorder>
+     <zorder>label_85</zorder>
+     <zorder>label_86</zorder>
+     <zorder>lineRaidboss_samarog</zorder>
+     <zorder>lineRaidboss_cairn</zorder>
     </widget>
     <widget class="QWidget" name="tab_bosses_pof">
      <attribute name="title">
@@ -4315,6 +4425,60 @@ QTabWidget::pane {
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
+     <zorder>label_Mini_dhuum</zorder>
+     <zorder>label_Mini_brokenking</zorder>
+     <zorder>line_5</zorder>
+     <zorder>label_Skin_qadim_pistol</zorder>
+     <zorder>label_Skin_conjured_shield</zorder>
+     <zorder>label_Mini_zommoros</zorder>
+     <zorder>label_Skin_desmina_hammer</zorder>
+     <zorder>label_Skin_dhuum_gloves</zorder>
+     <zorder>label_Skin_dhuum_helm</zorder>
+     <zorder>lineRaidboss_dhuum</zorder>
+     <zorder>label_Skin_statues_dagger</zorder>
+     <zorder>line_11</zorder>
+     <zorder>label_Mini_qadim</zorder>
+     <zorder>label_Mini_nikare</zorder>
+     <zorder>label_Skin_qadim_mace</zorder>
+     <zorder>label_Skin_dhuum_shoulders</zorder>
+     <zorder>label_Skin_dhuum_staff</zorder>
+     <zorder>label_Skin_river_sword</zorder>
+     <zorder>label_39</zorder>
+     <zorder>line_4</zorder>
+     <zorder>lineRaidboss_qadim</zorder>
+     <zorder>label_Skin_conjured_greatsword</zorder>
+     <zorder>label_Mini_desmina</zorder>
+     <zorder>label_Skin_river_shield</zorder>
+     <zorder>label_Skin_statues_greatsword</zorder>
+     <zorder>label_Skin_desmina_axe</zorder>
+     <zorder>lineRaidboss_conjureda</zorder>
+     <zorder>lineRaidboss_twinlargos</zorder>
+     <zorder>label_47</zorder>
+     <zorder>label_Skin_largos_sword</zorder>
+     <zorder>lineRaidboss_statues</zorder>
+     <zorder>label_Mini_kenut</zorder>
+     <zorder>label_Skin_largos_longbow</zorder>
+     <zorder>label_68</zorder>
+     <zorder>label_Skin_dhuum_boots</zorder>
+     <zorder>label_74</zorder>
+     <zorder>label_118</zorder>
+     <zorder>label_73</zorder>
+     <zorder>label_117</zorder>
+     <zorder>lineCurrency_Legend_divinations</zorder>
+     <zorder>lineCurrency_Gaetingcrystals</zorder>
+     <zorder>label_45</zorder>
+     <zorder>label_81</zorder>
+     <zorder>label_87</zorder>
+     <zorder>label_88</zorder>
+     <zorder>label_91</zorder>
+     <zorder>label_133</zorder>
+     <zorder>label_131</zorder>
+     <zorder>label_132</zorder>
+     <zorder>label_134</zorder>
+     <zorder>label_135</zorder>
+     <zorder>label_136</zorder>
+     <zorder>lineRaidboss_desmina</zorder>
+     <zorder>lineRaidboss_riverofsouls</zorder>
     </widget>
     <widget class="QWidget" name="tab_achievements">
      <attribute name="title">
@@ -4372,7 +4536,7 @@ QTabWidget::pane {
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>280</y>
+        <y>320</y>
         <width>151</width>
         <height>20</height>
        </rect>
@@ -4398,7 +4562,7 @@ QTabWidget::pane {
        <rect>
         <x>170</x>
         <y>280</y>
-        <width>111</width>
+        <width>131</width>
         <height>20</height>
        </rect>
       </property>
@@ -4422,7 +4586,7 @@ QTabWidget::pane {
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>300</y>
+        <y>280</y>
         <width>151</width>
         <height>20</height>
        </rect>
@@ -4437,7 +4601,7 @@ QTabWidget::pane {
        <bool>false</bool>
       </property>
       <property name="alignment">
-       <set>Qt::AlignCenter</set>
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
       </property>
       <property name="readOnly">
        <bool>true</bool>
@@ -4764,31 +4928,6 @@ QTabWidget::pane {
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineAchiev_w1_quickmarch">
-      <property name="geometry">
-       <rect>
-        <x>290</x>
-        <y>80</y>
-        <width>91</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(150, 150, 150);</string>
-      </property>
-      <property name="text">
-       <string>Quick March </string>
-      </property>
-      <property name="frame">
-       <bool>false</bool>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-      <property name="readOnly">
-       <bool>true</bool>
-      </property>
-     </widget>
      <widget class="QLineEdit" name="lineAchiev_w1_myhero">
       <property name="geometry">
        <rect>
@@ -5067,7 +5206,7 @@ QTabWidget::pane {
      <widget class="QLineEdit" name="lineAchiev_w2_spsadist">
       <property name="geometry">
        <rect>
-        <x>170</x>
+        <x>290</x>
         <y>140</y>
         <width>111</width>
         <height>20</height>
@@ -5089,37 +5228,12 @@ QTabWidget::pane {
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineAchiev_w2_thebigsleep">
-      <property name="geometry">
-       <rect>
-        <x>290</x>
-        <y>140</y>
-        <width>91</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(150, 150, 150);</string>
-      </property>
-      <property name="text">
-       <string>The Big Sleep </string>
-      </property>
-      <property name="frame">
-       <bool>false</bool>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-      <property name="readOnly">
-       <bool>true</bool>
-      </property>
-     </widget>
      <widget class="QLineEdit" name="lineAchiev_w2_slipperyslub">
       <property name="geometry">
        <rect>
         <x>290</x>
         <y>120</y>
-        <width>91</width>
+        <width>111</width>
         <height>20</height>
        </rect>
       </property>
@@ -5133,7 +5247,7 @@ QTabWidget::pane {
        <bool>false</bool>
       </property>
       <property name="alignment">
-       <set>Qt::AlignCenter</set>
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
       </property>
       <property name="readOnly">
        <bool>true</bool>
@@ -5242,9 +5356,9 @@ QTabWidget::pane {
      <widget class="QLineEdit" name="lineAchiev_w4_greetedaslib">
       <property name="geometry">
        <rect>
-        <x>170</x>
+        <x>10</x>
         <y>300</y>
-        <width>111</width>
+        <width>151</width>
         <height>20</height>
        </rect>
       </property>
@@ -5267,9 +5381,9 @@ QTabWidget::pane {
      <widget class="QLineEdit" name="lineAchiev_w4_harshsentence">
       <property name="geometry">
        <rect>
-        <x>290</x>
-        <y>300</y>
-        <width>91</width>
+        <x>410</x>
+        <y>280</y>
+        <width>101</width>
         <height>20</height>
        </rect>
       </property>
@@ -5292,7 +5406,7 @@ QTabWidget::pane {
      <widget class="QLineEdit" name="lineAchiev_w4_breakingin">
       <property name="geometry">
        <rect>
-        <x>290</x>
+        <x>310</x>
         <y>280</y>
         <width>91</width>
         <height>20</height>
@@ -5317,9 +5431,9 @@ QTabWidget::pane {
      <widget class="QLineEdit" name="lineAchiev_w4_jaded">
       <property name="geometry">
        <rect>
-        <x>520</x>
+        <x>310</x>
         <y>300</y>
-        <width>71</width>
+        <width>91</width>
         <height>20</height>
        </rect>
       </property>
@@ -5358,7 +5472,7 @@ QTabWidget::pane {
        <bool>false</bool>
       </property>
       <property name="alignment">
-       <set>Qt::AlignCenter</set>
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
       </property>
       <property name="readOnly">
        <bool>true</bool>
@@ -5417,9 +5531,9 @@ QTabWidget::pane {
      <widget class="QLineEdit" name="lineAchiev_w2_avengerofpact">
       <property name="geometry">
        <rect>
-        <x>390</x>
+        <x>410</x>
         <y>140</y>
-        <width>121</width>
+        <width>111</width>
         <height>20</height>
        </rect>
       </property>
@@ -5442,9 +5556,9 @@ QTabWidget::pane {
      <widget class="QLineEdit" name="lineAchiev_w2_scatteredm">
       <property name="geometry">
        <rect>
-        <x>390</x>
+        <x>410</x>
         <y>120</y>
-        <width>121</width>
+        <width>111</width>
         <height>20</height>
        </rect>
       </property>
@@ -5467,9 +5581,9 @@ QTabWidget::pane {
      <widget class="QLineEdit" name="lineAchiev_w4_freeatlast">
       <property name="geometry">
        <rect>
-        <x>290</x>
-        <y>320</y>
-        <width>91</width>
+        <x>520</x>
+        <y>300</y>
+        <width>71</width>
         <height>20</height>
        </rect>
       </property>
@@ -5669,7 +5783,7 @@ QTabWidget::pane {
        <rect>
         <x>170</x>
         <y>360</y>
-        <width>111</width>
+        <width>101</width>
         <height>20</height>
        </rect>
       </property>
@@ -5694,7 +5808,7 @@ QTabWidget::pane {
        <rect>
         <x>170</x>
         <y>380</y>
-        <width>111</width>
+        <width>101</width>
         <height>20</height>
        </rect>
       </property>
@@ -5717,7 +5831,7 @@ QTabWidget::pane {
      <widget class="QLineEdit" name="lineAchiev_w5_soreeyes">
       <property name="geometry">
        <rect>
-        <x>390</x>
+        <x>370</x>
         <y>380</y>
         <width>61</width>
         <height>20</height>
@@ -5742,7 +5856,7 @@ QTabWidget::pane {
      <widget class="QLineEdit" name="lineAchiev_w5_icebreaker">
       <property name="geometry">
        <rect>
-        <x>390</x>
+        <x>370</x>
         <y>360</y>
         <width>61</width>
         <height>20</height>
@@ -5767,9 +5881,9 @@ QTabWidget::pane {
      <widget class="QLineEdit" name="lineAchiev_w5_deatheater">
       <property name="geometry">
        <rect>
-        <x>290</x>
+        <x>280</x>
         <y>360</y>
-        <width>91</width>
+        <width>81</width>
         <height>20</height>
        </rect>
       </property>
@@ -5792,9 +5906,9 @@ QTabWidget::pane {
      <widget class="QLineEdit" name="lineAchiev_w5_necrodancer">
       <property name="geometry">
        <rect>
-        <x>290</x>
+        <x>280</x>
         <y>380</y>
-        <width>91</width>
+        <width>81</width>
         <height>20</height>
        </rect>
       </property>
@@ -5817,9 +5931,9 @@ QTabWidget::pane {
      <widget class="QLineEdit" name="lineAchiev_w5_silencer">
       <property name="geometry">
        <rect>
-        <x>540</x>
+        <x>520</x>
         <y>360</y>
-        <width>51</width>
+        <width>71</width>
         <height>20</height>
        </rect>
       </property>
@@ -5833,7 +5947,7 @@ QTabWidget::pane {
        <bool>false</bool>
       </property>
       <property name="alignment">
-       <set>Qt::AlignCenter</set>
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
       </property>
       <property name="readOnly">
        <bool>true</bool>
@@ -5842,9 +5956,9 @@ QTabWidget::pane {
      <widget class="QLineEdit" name="lineAchiev_w2_theshield">
       <property name="geometry">
        <rect>
-        <x>520</x>
+        <x>530</x>
         <y>120</y>
-        <width>71</width>
+        <width>61</width>
         <height>20</height>
        </rect>
       </property>
@@ -5917,9 +6031,9 @@ QTabWidget::pane {
      <widget class="QLineEdit" name="lineAchiev_w1_undefeated">
       <property name="geometry">
        <rect>
-        <x>520</x>
-        <y>20</y>
-        <width>71</width>
+        <x>290</x>
+        <y>80</y>
+        <width>91</width>
         <height>20</height>
        </rect>
       </property>
@@ -5933,7 +6047,7 @@ QTabWidget::pane {
        <bool>false</bool>
       </property>
       <property name="alignment">
-       <set>Qt::AlignCenter</set>
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
       </property>
       <property name="readOnly">
        <bool>true</bool>
@@ -5942,9 +6056,9 @@ QTabWidget::pane {
      <widget class="QLineEdit" name="lineAchiev_w4_solitaryconfi">
       <property name="geometry">
        <rect>
-        <x>390</x>
-        <y>280</y>
-        <width>121</width>
+        <x>170</x>
+        <y>300</y>
+        <width>131</width>
         <height>20</height>
        </rect>
       </property>
@@ -5967,9 +6081,9 @@ QTabWidget::pane {
      <widget class="QLineEdit" name="lineAchiev_w4_justagame">
       <property name="geometry">
        <rect>
-        <x>390</x>
+        <x>410</x>
         <y>300</y>
-        <width>121</width>
+        <width>101</width>
         <height>20</height>
        </rect>
       </property>
@@ -5994,7 +6108,7 @@ QTabWidget::pane {
        <rect>
         <x>10</x>
         <y>470</y>
-        <width>151</width>
+        <width>161</width>
         <height>20</height>
        </rect>
       </property>
@@ -6019,7 +6133,7 @@ QTabWidget::pane {
        <rect>
         <x>10</x>
         <y>450</y>
-        <width>151</width>
+        <width>161</width>
         <height>20</height>
        </rect>
       </property>
@@ -6042,9 +6156,9 @@ QTabWidget::pane {
      <widget class="QLineEdit" name="lineAchiev_w6_mythscholar">
       <property name="geometry">
        <rect>
-        <x>170</x>
-        <y>430</y>
-        <width>111</width>
+        <x>180</x>
+        <y>450</y>
+        <width>131</width>
         <height>20</height>
        </rect>
       </property>
@@ -6064,35 +6178,10 @@ QTabWidget::pane {
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineAchiev_w6_heroesofforge">
-      <property name="geometry">
-       <rect>
-        <x>170</x>
-        <y>450</y>
-        <width>111</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(150, 150, 150);</string>
-      </property>
-      <property name="text">
-       <string>Heroes of the Forge </string>
-      </property>
-      <property name="frame">
-       <bool>false</bool>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-      <property name="readOnly">
-       <bool>true</bool>
-      </property>
-     </widget>
      <widget class="QLineEdit" name="lineAchiev_w5_deathsaver">
       <property name="geometry">
        <rect>
-        <x>460</x>
+        <x>440</x>
         <y>380</y>
         <width>71</width>
         <height>20</height>
@@ -6117,7 +6206,7 @@ QTabWidget::pane {
      <widget class="QLineEdit" name="lineAchiev_w5_souledout">
       <property name="geometry">
        <rect>
-        <x>460</x>
+        <x>440</x>
         <y>360</y>
         <width>71</width>
         <height>20</height>
@@ -6139,87 +6228,12 @@ QTabWidget::pane {
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineAchiev_w6_aquaassasins">
-      <property name="geometry">
-       <rect>
-        <x>290</x>
-        <y>430</y>
-        <width>101</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(150, 150, 150);</string>
-      </property>
-      <property name="text">
-       <string>Aquatic Assassins </string>
-      </property>
-      <property name="frame">
-       <bool>false</bool>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-      <property name="readOnly">
-       <bool>true</bool>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="lineAchiev_w6_thunderfall">
-      <property name="geometry">
-       <rect>
-        <x>290</x>
-        <y>450</y>
-        <width>101</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(150, 150, 150);</string>
-      </property>
-      <property name="text">
-       <string>A Thunderous Fall </string>
-      </property>
-      <property name="frame">
-       <bool>false</bool>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-      <property name="readOnly">
-       <bool>true</bool>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="lineAchiev_w6_takingturns">
-      <property name="geometry">
-       <rect>
-        <x>520</x>
-        <y>450</y>
-        <width>71</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(150, 150, 150);</string>
-      </property>
-      <property name="text">
-       <string>Taking Turns </string>
-      </property>
-      <property name="frame">
-       <bool>false</bool>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-      <property name="readOnly">
-       <bool>true</bool>
-      </property>
-     </widget>
      <widget class="QLineEdit" name="lineAchiev_w6_letsnotdothat">
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>430</y>
-        <width>151</width>
+        <y>490</y>
+        <width>161</width>
         <height>20</height>
        </rect>
       </property>
@@ -6239,37 +6253,12 @@ QTabWidget::pane {
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineAchiev_w6_firedjinnextin">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>490</y>
-        <width>151</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(150, 150, 150);</string>
-      </property>
-      <property name="text">
-       <string> The Fire Djinn Extinguished </string>
-      </property>
-      <property name="frame">
-       <bool>false</bool>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-      <property name="readOnly">
-       <bool>true</bool>
-      </property>
-     </widget>
      <widget class="QLineEdit" name="lineAchiev_w6_hardhats">
       <property name="geometry">
        <rect>
-        <x>170</x>
+        <x>320</x>
         <y>470</y>
-        <width>221</width>
+        <width>191</width>
         <height>20</height>
        </rect>
       </property>
@@ -6292,9 +6281,9 @@ QTabWidget::pane {
      <widget class="QLineEdit" name="lineAchiev_w6_dontgowater">
       <property name="geometry">
        <rect>
-        <x>400</x>
+        <x>180</x>
         <y>470</y>
-        <width>111</width>
+        <width>131</width>
         <height>20</height>
        </rect>
       </property>
@@ -6314,10 +6303,188 @@ QTabWidget::pane {
        <bool>true</bool>
       </property>
      </widget>
+     <widget class="QLabel" name="label_Titleicon_3">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>120</y>
+        <width>20</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="../rc/resources.qrc">:/images/Images/Titleicon.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_Titleicon_5">
+      <property name="geometry">
+       <rect>
+        <x>520</x>
+        <y>360</y>
+        <width>20</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="../rc/resources.qrc">:/images/Images/Titleicon.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_Titleicon_6">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>80</y>
+        <width>20</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="../rc/resources.qrc">:/images/Images/Titleicon.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_Titleicon_8">
+      <property name="geometry">
+       <rect>
+        <x>520</x>
+        <y>280</y>
+        <width>20</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="../rc/resources.qrc">:/images/Images/Titleicon.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_Titleicon_2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>300</y>
+        <width>20</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="../rc/resources.qrc">:/images/Images/Titleicon.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_Titleicon">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>280</y>
+        <width>20</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="../rc/resources.qrc">:/images/Images/Titleicon.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w6_firedjinnextin">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>430</y>
+        <width>161</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string> The Fire Djinn Extinguished </string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_Titleicon_4">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>430</y>
+        <width>20</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="../rc/resources.qrc">:/images/Images/Titleicon.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
      <widget class="QLineEdit" name="lineAchiev_w6_regularstour">
       <property name="geometry">
        <rect>
-        <x>400</x>
+        <x>180</x>
+        <y>430</y>
+        <width>131</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>Regulars on the Tour </string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_Titleicon_7">
+      <property name="geometry">
+       <rect>
+        <x>180</x>
+        <y>430</y>
+        <width>20</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="../rc/resources.qrc">:/images/Images/Titleicon.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w6_heroesofforge">
+      <property name="geometry">
+       <rect>
+        <x>320</x>
         <y>450</y>
         <width>111</width>
         <height>20</height>
@@ -6327,7 +6494,57 @@ QTabWidget::pane {
        <string notr="true">background-color: rgb(150, 150, 150);</string>
       </property>
       <property name="text">
-       <string>Regulars on the Tour </string>
+       <string>Heroes of the Forge </string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w6_aquaassasins">
+      <property name="geometry">
+       <rect>
+        <x>180</x>
+        <y>490</y>
+        <width>131</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>Aquatic Assassins </string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w6_thunderfall">
+      <property name="geometry">
+       <rect>
+        <x>320</x>
+        <y>430</y>
+        <width>111</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>A Thunderous Fall </string>
       </property>
       <property name="frame">
        <bool>false</bool>
@@ -6342,9 +6559,9 @@ QTabWidget::pane {
      <widget class="QLineEdit" name="lineAchiev_w6_stackingswords">
       <property name="geometry">
        <rect>
-        <x>400</x>
+        <x>440</x>
         <y>430</y>
-        <width>191</width>
+        <width>151</width>
         <height>20</height>
        </rect>
       </property>
@@ -6364,6 +6581,171 @@ QTabWidget::pane {
        <bool>true</bool>
       </property>
      </widget>
+     <widget class="QLineEdit" name="lineAchiev_w6_takingturns">
+      <property name="geometry">
+       <rect>
+        <x>440</x>
+        <y>450</y>
+        <width>71</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>Taking Turns </string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w2_thebigsleep">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>140</y>
+        <width>111</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>The Big Sleep </string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineAchiev_w1_quickmarch">
+      <property name="geometry">
+       <rect>
+        <x>520</x>
+        <y>20</y>
+        <width>71</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>Quick March </string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <zorder>lineAchiev_w4_realraidertyr</zorder>
+     <zorder>lineAchiev_w6_regularstour</zorder>
+     <zorder>lineAchiev_w1_undefeated</zorder>
+     <zorder>lineAchiev_w4_attuned</zorder>
+     <zorder>lineAchiev_w2_slipperyslub</zorder>
+     <zorder>lineAchiev_w4_greetedaslib</zorder>
+     <zorder>lineAchiev_w6_firedjinnextin</zorder>
+     <zorder>lineAchiev_w5_silencer</zorder>
+     <zorder>label_28</zorder>
+     <zorder>label_40</zorder>
+     <zorder>lineAchiev_w4_wardenwillsee</zorder>
+     <zorder>lineAchiev_w4_voiceofdecease</zorder>
+     <zorder>label_37</zorder>
+     <zorder>label_41</zorder>
+     <zorder>label_42</zorder>
+     <zorder>label_48</zorder>
+     <zorder>lineAchiev_w1_beyondthevale</zorder>
+     <zorder>lineAchiev_w1_denied</zorder>
+     <zorder>lineAchiev_w1_rgb</zorder>
+     <zorder>lineAchiev_w1_lastcannon</zorder>
+     <zorder>lineAchiev_w1_fleethestorm</zorder>
+     <zorder>lineAchiev_w1_spectralanomaly</zorder>
+     <zorder>lineAchiev_w1_puttorest</zorder>
+     <zorder>lineAchiev_w1_piecingit</zorder>
+     <zorder>lineAchiev_w1_keepthelights</zorder>
+     <zorder>lineAchiev_w1_myhero</zorder>
+     <zorder>lineAchiev_w1_angermanage</zorder>
+     <zorder>lineAchiev_w1_lootfinder</zorder>
+     <zorder>lineAchiev_w1_fireextinguish</zorder>
+     <zorder>lineAchiev_w1_liftoff</zorder>
+     <zorder>lineAchiev_w1_outranaghost</zorder>
+     <zorder>lineAchiev_w1_backdraftd</zorder>
+     <zorder>lineAchiev_w1_intothewoods</zorder>
+     <zorder>lineAchiev_w2_environmentally</zorder>
+     <zorder>lineAchiev_w2_spmastery</zorder>
+     <zorder>lineAchiev_w2_seimurwasw</zorder>
+     <zorder>lineAchiev_w2_spsadist</zorder>
+     <zorder>lineAchiev_w3_traversethetc</zorder>
+     <zorder>lineAchiev_w3_scourgeofwm</zorder>
+     <zorder>lineAchiev_w3_outrunawarg</zorder>
+     <zorder>lineAchiev_w3_downdownd</zorder>
+     <zorder>lineAchiev_w4_harshsentence</zorder>
+     <zorder>lineAchiev_w4_breakingin</zorder>
+     <zorder>lineAchiev_w4_jaded</zorder>
+     <zorder>lineAchiev_w3_minecontrol</zorder>
+     <zorder>lineAchiev_w3_dismantled</zorder>
+     <zorder>lineAchiev_w2_avengerofpact</zorder>
+     <zorder>lineAchiev_w2_scatteredm</zorder>
+     <zorder>lineAchiev_w4_freeatlast</zorder>
+     <zorder>lineAchiev_w3_loveisbunny</zorder>
+     <zorder>lineAchiev_w3_mildlyinsane</zorder>
+     <zorder>lineAchiev_w3_siegethestrong</zorder>
+     <zorder>lineAchiev_w3_evasivemane</zorder>
+     <zorder>lineAchiev_w3_deconstructed</zorder>
+     <zorder>lineAchiev_w5_whatisdeathmay</zorder>
+     <zorder>lineAchiev_w5_statuesoflimit</zorder>
+     <zorder>lineAchiev_w5_exileexecution</zorder>
+     <zorder>lineAchiev_w5_theferrywoman</zorder>
+     <zorder>lineAchiev_w5_soreeyes</zorder>
+     <zorder>lineAchiev_w5_icebreaker</zorder>
+     <zorder>lineAchiev_w5_deatheater</zorder>
+     <zorder>lineAchiev_w5_necrodancer</zorder>
+     <zorder>lineAchiev_w2_theshield</zorder>
+     <zorder>lineAchiev_w1_whitenoise</zorder>
+     <zorder>lineAchiev_w1_closure</zorder>
+     <zorder>lineAchiev_w4_solitaryconfi</zorder>
+     <zorder>lineAchiev_w4_justagame</zorder>
+     <zorder>lineAchiev_w6_somedisassem</zorder>
+     <zorder>lineAchiev_w6_manipulateman</zorder>
+     <zorder>lineAchiev_w6_mythscholar</zorder>
+     <zorder>lineAchiev_w5_deathsaver</zorder>
+     <zorder>lineAchiev_w5_souledout</zorder>
+     <zorder>lineAchiev_w6_letsnotdothat</zorder>
+     <zorder>lineAchiev_w6_hardhats</zorder>
+     <zorder>lineAchiev_w6_dontgowater</zorder>
+     <zorder>lineAchiev_w6_heroesofforge</zorder>
+     <zorder>lineAchiev_w6_aquaassasins</zorder>
+     <zorder>lineAchiev_w6_thunderfall</zorder>
+     <zorder>lineAchiev_w6_stackingswords</zorder>
+     <zorder>lineAchiev_w6_takingturns</zorder>
+     <zorder>lineAchiev_w2_thebigsleep</zorder>
+     <zorder>lineAchiev_w1_quickmarch</zorder>
+     <zorder>label_Titleicon_3</zorder>
+     <zorder>label_Titleicon</zorder>
+     <zorder>label_Titleicon_8</zorder>
+     <zorder>label_Titleicon_2</zorder>
+     <zorder>label_Titleicon_7</zorder>
+     <zorder>label_Titleicon_5</zorder>
+     <zorder>label_Titleicon_4</zorder>
+     <zorder>label_Titleicon_6</zorder>
     </widget>
    </widget>
    <widget class="QCheckBox" name="checkAchievements">
@@ -6453,7 +6835,7 @@ QTabWidget::pane {
  </tabstops>
  <resources>
   <include location="../rc/resources.qrc"/>
-  <include location="resources.qrc"/>
+  <include location="../rc/resources.qrc"/>
  </resources>
  <connections/>
 </ui>

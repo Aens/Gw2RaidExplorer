@@ -23,14 +23,14 @@ It's safe to delete/replace everything else.
 * Fixed: Trying to download files for arcdps would crash the program under specific circunstances.
 * New: Added a donate button for nice people that wants to support me.
 * New: Achievements section (Visually, still can be improved, but at least data load/programming part is done).
+* New: Added which achievements gives a Title.
 
 #### Things To Be Done (TBD) in 1.0 before we can release it:
 * Redesign: The "you can download a new version" message must be replaced by a prompt to directly download new versions so you don't have to enter the website anymore (you still need to install it, though). Omaha seems expensive.
 * Fixed: Start Guild Wars 2 on a new thread to not stall the main thread.
 * Fixed: Blurry on high DPI scales.
 * Fixed: Currency earned "this week" might be imposible. https://en-forum.guildwars2.com/discussion/67421/week-magnetite-shards-gaeting-crystals#latest
-* New: Languages section.
-* New: Titles section.
+* New: Languages.
 
 ### Version 0.9
 * Fixed: Added right icon to the windows.

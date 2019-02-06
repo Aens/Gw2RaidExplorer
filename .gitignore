@@ -1,5 +1,6 @@
 __pycache__
 rc/Images
+rc/__pycache__
 *.pyc
 *.bak
 *.bat

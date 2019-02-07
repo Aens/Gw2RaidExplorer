@@ -36,9 +36,9 @@ and reset would always set it gray instead of theme.
 * New: Added an icon for those achievements that award a Title.
 
 #### Things To Be Done (TBD) in 1.0 before we can release it:
-* Fixed: Blurry on high DPI scales (To be confirmed).
-* Fixed: Currency earned "this week" might be imposible. https://en-forum.guildwars2.com/discussion/67421/week-magnetite-shards-gaeting-crystals#latest
-* New: Languages.
+* Investigating: Blurry on high DPI scales (To be confirmed).
+* Investigating: Currency earned "this week" might be imposible. https://en-forum.guildwars2.com/discussion/67421/week-magnetite-shards-gaeting-crystals#latest
+* Needs research: Languages.
 
 ### Version 0.9
 * Fixed: Added right icon to the windows.

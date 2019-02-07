@@ -29,13 +29,13 @@ repository to check if you have the latest version.
 * Fixed: Asigning colors would iterate over the wrong widgets 
 and reset would always set it gray instead of theme.
 * Fixed: Trying to download files for arcdps would crash the program under specific circunstances.
+* Fixed: Start Guild Wars 2 on a new thread to not stall the main thread.
 * New: Added a donate button for nice people that wants to support me.
 * New: Achievements section 
 (Visually, still can be improved, but at least data load/programming part is done).
 * New: Added an icon for those achievements that award a Title.
 
 #### Things To Be Done (TBD) in 1.0 before we can release it:
-* Fixed: Start Guild Wars 2 on a new thread to not stall the main thread.
 * Fixed: Blurry on high DPI scales (To be confirmed).
 * Fixed: Currency earned "this week" might be imposible. https://en-forum.guildwars2.com/discussion/67421/week-magnetite-shards-gaeting-crystals#latest
 * New: Languages.

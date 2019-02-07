@@ -10,7 +10,10 @@ You can download executable version
 * Optional: If you want to compile it yourself, make sure you are using Python 3.7.
 
 ## How to update?
-* Uninstall any existing installation of this program.
+* Your API keys are stored in a file named **options.ini file**. 
+The new version should read that file without issues as it's locally saved in your machine, 
+but just in case, consider to backup that file.
+* Then uninstall any existing installation of this program.
 * Finally download and install the new version.
 
 ## Bugs known and things TBD (To be done):

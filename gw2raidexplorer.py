@@ -27,7 +27,7 @@ from ui.gw2info_ui import Ui_MainWindow
 from ui.add_ui import Ui_Dialog
 import rc.resources_rc
 
-__version__ = "0100"
+__version__ = "1.0.0"
 __author__ = "(Made by Elrey.5472) - https://github.com/Aens"
 INI_OPTIONS = QSettings("options.ini", QSettings.IniFormat)
 
@@ -182,9 +182,7 @@ class MainForm(QMainWindow, Ui_MainWindow):
         else:
             self.change_statusbar("ready", "Everything seems fine. Program ready.")
             # Check if we are in the last version
-            online_version = self.check_online_version()
-            if int(__version__) < int(online_version):
-                self.change_statusbar("special", "There is a new version availible, you may want to download it.")
+            self.check_online_version()
 
     @staticmethod
     def load_checkboxes_status(checkbox):
@@ -367,13 +365,24 @@ class MainForm(QMainWindow, Ui_MainWindow):
         self.change_statusbar("special", "Languages are not programmed yet.")
         INI_OPTIONS.setValue("lang", lang)
 
-    @staticmethod
-    def check_online_version():
+    def check_online_version(self):
         """Check if we need an update."""
         version_file = "https://raw.githubusercontent.com/Aens/Gw2RaidExplorer/master/version.txt"
         address = urllib.parse.quote(version_file, safe='/:=', encoding="utf-8", errors="strict")
         address = urllib.request.urlopen(address).read().decode('utf8')
-        return address
+        data = json.loads(address)
+        online_version = int(data["version"].replace(".", ""))
+        offline_version = int(__version__.replace(".", ""))
+        if offline_version < online_version:
+            if popup_question(title="New update found.",
+                              message="There is a new version availible for this program: {0}"
+                                      "\nYou have the outdated version: {1}\n\n Do you want to Download the new one?"
+                                      "\n\nIMPORTANT: Before updating, backup your options.ini file, it's located "
+                                      "in this program folder and that's where your API keys and settings are stored."
+                                      .format(data["version"], __version__)):
+                webbrowser.open(data["release_url"])
+            else:
+                self.change_statusbar("special", "There is a new version, but you are not downloading it :(")
 
     #######################################################
     ################## BUTTONS and EVENTS #################
@@ -421,7 +430,7 @@ class MainForm(QMainWindow, Ui_MainWindow):
         """Delete the selected API from database"""
         self.change_statusbar("wait", "Deleting key...")
         if not self.comboSelectAPI.currentText() == "":
-            if popup_delete():
+            if popup_question(title="Security Check", message="Are you sure that you want to delete that key?"):
                 # get all keys
                 keys = self.get_stored_keys()
                 # delete right one
@@ -1366,12 +1375,12 @@ class AddNewApi(QDialog, Ui_Dialog):
 ###########################################
 
 
-def popup_delete():
+def popup_question(title, message):
     """Generate a popup that requests if you are really sure that you want to delete a record."""
     msgbox = QMessageBox()
-    msgbox.setWindowTitle("Security check.")
+    msgbox.setWindowTitle(title)
     msgbox.setIcon(QMessageBox.Warning)
-    msgbox.setText("Are you sure that you want to delete that key?")
+    msgbox.setText(message)
     buttonyes = QPushButton("Yes")
     msgbox.addButton(buttonyes, QMessageBox.YesRole)
     buttonno = QPushButton("No")

@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""This project aims to cover 2 basic things:
+""" This project aims to cover 2 basic things:
 1: Self-taughing myself how to code and improve in Python and Qt.
 2: Learning how Git works.
 
@@ -15,13 +15,13 @@ import webbrowser
 import hashlib
 import sys
 import psutil
-import subprocess
+from subprocess import Popen
 from os import environ
 from pathlib import Path
 from PySide2.QtWidgets import (QApplication, QComboBox, QDialog, QFileDialog,
                                QGraphicsColorizeEffect, QGroupBox, QLabel, QMainWindow, QMessageBox,
                                QPlainTextEdit, QPushButton, QStackedWidget, QTabWidget, QTextEdit)
-from PySide2.QtGui import QIcon, QColor, QCloseEvent
+from PySide2.QtGui import QIcon, QColor
 from PySide2.QtCore import Qt, QEvent, QPoint, QSize, QSettings
 from ui.gw2info_ui import Ui_MainWindow
 from ui.add_ui import Ui_Dialog
@@ -670,7 +670,7 @@ class MainForm(QMainWindow, Ui_MainWindow):
                               "{0}/gw2-64.exe".format(filepath), "{0}/gw2.exe".format(filepath)]
                 for file in game_paths:
                     if self.file_exists(file):
-                        subprocess.call(file + " -maploadinfo")
+                        Popen([file, "-maploadinfo"])
                         self.change_statusbar("ready", "Guild Wars 2 started.")
                         return
                 self.change_statusbar("error", "Executable file could not be found.")

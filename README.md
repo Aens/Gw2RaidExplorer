@@ -7,23 +7,24 @@ You can download executable version
 * Install it.
 * Execute the **Gw2RaidExplorer** file with a red skull icon.
 * Optional: Create a shortcut to desktop.
-
-## For developers
-If you want to compile it yourself, make sure you are using Python 3.7.
+* Optional: If you want to compile it yourself, make sure you are using Python 3.7.
 
 ## How to update?
 * First make sure to backup your **options.ini file**, that's where your API keys are stored.
 * Then uninstall any existing installation of this program.
 * Finally download and install the new version.
 
-#### Bugs known and things TBD (To be done):
+## Bugs known and things TBD (To be done):
 * Investigating: Blurry on high DPI scales (To be confirmed).
 * Investigating: Currency earned "this week" might be imposible. https://en-forum.guildwars2.com/discussion/67421/week-magnetite-shards-gaeting-crystals#latest
 * TBD: Language translations.
 
 # Changelog
 
-### Version 1.0
+### Version 1.0.1
+* Fixed: A bug at the "Add new key" window prevented the window to open.
+
+### Version 1.0.0
 * Redesign: The "you can download a new version" message has been 
 replaced by a prompt to directly download new versions, 
 so you don't have to enter the website anymore 

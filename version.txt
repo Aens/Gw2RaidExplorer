@@ -1,1 +1,1 @@
-{"version": "1.0.0", "release_url":"https://github.com/Aens/Gw2RaidExplorer/releases/download/v1.0.0/Gw2RaidExplorerSetup.exe"}
+{"version": "1.0.1", "release_url":"https://github.com/Aens/Gw2RaidExplorer/releases/download/v1.0.1/Gw2RaidExplorerSetup.exe"}

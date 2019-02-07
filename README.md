@@ -3,17 +3,23 @@ A tool to check raid-based stuff of Guild Wars 2.
 You can download executable version
 [here](https://github.com/Aens/Gw2RaidExplorer/releases).
 
-* Download the `.rar` file.
-* Extract it on any folder with any program (e.g. winrar, 7zip, etc)
+* Download the `.exe` file.
+* Install it.
 * Execute the **Gw2RaidExplorer** file with a red skull icon.
+* Optional: Create a shortcut to desktop.
 
 ## For developers
 If you want to compile it yourself, make sure you are using Python 3.7.
 
 ## How to update?
-If you need to update this program, make sure to backup your
-**options.ini file**, that's where your API keys are stored.
-It's safe to delete/replace everything else.
+* First make sure to backup your **options.ini file**, that's where your API keys are stored.
+* Then uninstall any existing installation of this program.
+* Finally download and install the new version.
+
+#### Bugs known and things TBD (To be done):
+* Investigating: Blurry on high DPI scales (To be confirmed).
+* Investigating: Currency earned "this week" might be imposible. https://en-forum.guildwars2.com/discussion/67421/week-magnetite-shards-gaeting-crystals#latest
+* TBD: Language translations.
 
 # Changelog
 
@@ -21,7 +27,7 @@ It's safe to delete/replace everything else.
 * Redesign: The "you can download a new version" message has been 
 replaced by a prompt to directly download new versions, 
 so you don't have to enter the website anymore 
-(you still need to install it replacing the old files, though).
+(you still need to uninstall the old version and install the new one, though).
 * Redesign: I didn't like how the sections were made. 
 It was confusing to know from which raid is a skin/mini. Now that's not an issue anymore.
 * Fixed: A bug that prevented the program to opening if it couldn't reach this 
@@ -34,11 +40,6 @@ and reset would always set it gray instead of theme.
 * New: Achievements section 
 (Visually, still can be improved, but at least data load/programming part is done).
 * New: Added an icon for those achievements that award a Title.
-
-#### Things To Be Done (TBD) in 1.0 before we can release it:
-* Investigating: Blurry on high DPI scales (To be confirmed).
-* Investigating: Currency earned "this week" might be imposible. https://en-forum.guildwars2.com/discussion/67421/week-magnetite-shards-gaeting-crystals#latest
-* Needs research: Languages.
 
 ### Version 0.9
 * Fixed: Added right icon to the windows.

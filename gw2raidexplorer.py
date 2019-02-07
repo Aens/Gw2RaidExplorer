@@ -21,7 +21,7 @@ from pathlib import Path
 from PySide2.QtWidgets import (QApplication, QComboBox, QDialog, QFileDialog,
                                QGraphicsColorizeEffect, QGroupBox, QLabel, QMainWindow, QMessageBox,
                                QPlainTextEdit, QPushButton, QStackedWidget, QTabWidget, QTextEdit)
-from PySide2.QtGui import QIcon, QColor
+from PySide2.QtGui import QIcon, QColor, QCloseEvent
 from PySide2.QtCore import Qt, QEvent, QPoint, QSize, QSettings
 from ui.gw2info_ui import Ui_MainWindow
 from ui.add_ui import Ui_Dialog
@@ -48,7 +48,7 @@ class MainForm(QMainWindow, Ui_MainWindow):
         QMainWindow.__init__(self, parent)
         self.setupUi(self)
         self.setWindowIcon(QIcon(":/images/Images/Main.ico"))
-        self.setWindowTitle("Gw2 API Raid Explorer {0}".format(__author__))
+        self.setWindowTitle("Gw2 API Raid Explorer {0} {0}".format(__version__, __author__))
         # Initial window size/pos last saved. Use default values for first time
         self.setFixedSize(QSize(970, 600))
         self.move(INI_OPTIONS.value("menu_position", QPoint(350, 250)))
@@ -176,13 +176,15 @@ class MainForm(QMainWindow, Ui_MainWindow):
             warning.append("There is no API keys yet, add one.")
         else:
             self.load_permissions()
+        # Check if we are in the last version
+        version = self.check_online_version()
+        if version is not None:
+            warning.append(version)
         # Check if there is warnings
         if len(warning) >= 1:
             self.change_statusbar("error", ",".join(warning))
         else:
             self.change_statusbar("ready", "Everything seems fine. Program ready.")
-            # Check if we are in the last version
-            self.check_online_version()
 
     @staticmethod
     def load_checkboxes_status(checkbox):
@@ -368,21 +370,26 @@ class MainForm(QMainWindow, Ui_MainWindow):
     def check_online_version(self):
         """Check if we need an update."""
         version_file = "https://raw.githubusercontent.com/Aens/Gw2RaidExplorer/master/version.txt"
-        address = urllib.parse.quote(version_file, safe='/:=', encoding="utf-8", errors="strict")
-        address = urllib.request.urlopen(address).read().decode('utf8')
-        data = json.loads(address)
-        online_version = int(data["version"].replace(".", ""))
-        offline_version = int(__version__.replace(".", ""))
-        if offline_version < online_version:
-            if popup_question(title="New update found.",
-                              message="There is a new version availible for this program: {0}"
-                                      "\nYou have the outdated version: {1}\n\n Do you want to Download the new one?"
-                                      "\n\nIMPORTANT: Before updating, backup your options.ini file, it's located "
-                                      "in this program folder and that's where your API keys and settings are stored."
-                                      .format(data["version"], __version__)):
-                webbrowser.open(data["release_url"])
-            else:
-                self.change_statusbar("special", "There is a new version, but you are not downloading it :(")
+        try:
+            address = urllib.parse.quote(version_file, safe='/:=', encoding="utf-8", errors="strict")
+            address = urllib.request.urlopen(address).read().decode('utf8')
+            data = json.loads(address)
+            online_version = int(data["version"].replace(".", ""))
+            offline_version = int(__version__.replace(".", ""))
+        except Exception as e:
+            return "I couldn't check if there is a new version availible: {0}".format(str(e))
+        else:
+            if offline_version < online_version:
+                if popup_question(
+                        title="New update found.",
+                        message="There is a new version availible for this program."
+                                "\n\nYou have the outdated version: {0}"
+                                "\nDo you want to Download the new one: {1}?"
+                                "\n\nIMPORTANT: Before updating, backup your options.ini file, it's located "
+                                "in this program folder and that's where your API keys and settings are stored."
+                                .format(__version__, data["version"])):
+                    webbrowser.open(data["release_url"])
+            return None
 
     #######################################################
     ################## BUTTONS and EVENTS #################

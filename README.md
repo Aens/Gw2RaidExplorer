@@ -24,6 +24,8 @@ so you don't have to enter the website anymore
 (you still need to install it replacing the old files, though).
 * Redesign: I didn't like how the sections were made. 
 It was confusing to know from which raid is a skin/mini. Now that's not an issue anymore.
+* Fixed: A bug that prevented the program to opening if it couldn't reach this 
+repository to check if you have the latest version.
 * Fixed: Asigning colors would iterate over the wrong widgets 
 and reset would always set it gray instead of theme.
 * Fixed: Trying to download files for arcdps would crash the program under specific circunstances.

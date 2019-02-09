@@ -26,7 +26,6 @@ from PySide2.QtGui import QIcon, QColor
 from PySide2.QtCore import Qt, QEvent, QPoint, QSize, QSettings
 from ui.gw2info_ui import Ui_MainWindow
 from ui.add_ui import Ui_Dialog
-import rc.resources_rc
 
 __version__ = "1.0.1"
 __author__ = "(Made by Elrey.5472) - https://github.com/Aens"

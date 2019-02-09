@@ -3,7 +3,7 @@
 # Form implementation generated from reading ui file 'gw2info.ui',
 # licensing of 'gw2info.ui' applies.
 #
-# Created: Sat Feb  9 05:13:30 2019
+# Created: Sat Feb  9 05:47:09 2019
 #      by: pyside2-uic  running on PySide2 5.12.0
 #
 # WARNING! All changes made in this file will be lost!
@@ -399,7 +399,7 @@ class Ui_MainWindow(object):
         self.checkCurrency.setAutoRepeatDelay(0)
         self.checkCurrency.setObjectName("checkCurrency")
         self.groupUnused = QtWidgets.QGroupBox(self.MainLayout)
-        self.groupUnused.setGeometry(QtCore.QRect(1020, 520, 161, 111))
+        self.groupUnused.setGeometry(QtCore.QRect(1010, 510, 161, 111))
         self.groupUnused.setStyleSheet("QGroupBox{\n"
 "border: 2px solid gray;\n"
 "border-radius: 5px;\n"
@@ -1987,7 +1987,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
         self.tabOptions.setCurrentIndex(0)
-        self.tabRaids.setCurrentIndex(1)
+        self.tabRaids.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
         MainWindow.setTabOrder(self.linePermission_Account, self.linePermission_Inventories)
         MainWindow.setTabOrder(self.linePermission_Inventories, self.linePermission_Characters)
@@ -2208,3 +2208,4 @@ class Ui_MainWindow(object):
         self.label_92.setText(QtWidgets.QApplication.translate("MainWindow", "Data to request from your API Key:", None, -1))
 
 from ui.custom_utils import ThemedLayout
+import rc.resources_rc

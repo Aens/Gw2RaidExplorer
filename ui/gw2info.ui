@@ -1324,8 +1324,8 @@ QTabWidget::pane {
    <widget class="QGroupBox" name="groupUnused">
     <property name="geometry">
      <rect>
-      <x>1020</x>
-      <y>520</y>
+      <x>1010</x>
+      <y>510</y>
       <width>161</width>
       <height>111</height>
      </rect>
@@ -1381,7 +1381,7 @@ QTabWidget::pane {
 }</string>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="ThemedLayout" name="tab_bosses_hot">
      <attribute name="title">

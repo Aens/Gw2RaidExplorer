@@ -27,7 +27,7 @@ from ui.gw2info_ui import Ui_MainWindow
 from ui.add_ui import Ui_Dialog
 import rc.resources_rc
 
-__version__ = "1.0.0"
+__version__ = "1.0.1"
 __author__ = "(Made by Elrey.5472) - https://github.com/Aens"
 INI_OPTIONS = QSettings("options.ini", QSettings.IniFormat)
 
@@ -909,6 +909,8 @@ class MainForm(QMainWindow, Ui_MainWindow):
                     and "characters" in self.api_permissions):
                 api_characters_names = self.api_open("characters", token=self.api_key)
                 api_characters = self.api_open("characters", ids=api_characters_names, token=self.api_key)
+                if type(api_characters) is dict:
+                    api_characters = [api_characters]
                 api_shared_inventory = self.api_open("account/inventory", token=self.api_key)
                 api_materials = self.api_open("account/materials", token=self.api_key)
                 api_bank = self.api_open("account/bank", token=self.api_key)
@@ -942,10 +944,12 @@ class MainForm(QMainWindow, Ui_MainWindow):
             for char in api_characters:
                 char_items = 0
                 # Equipped items
-                for equipped in char['equipment']:
-                    if equipped['id'] == item['id']:
-                        char_items += 1
-                        break
+                if "equipment" in char:
+                    for equipped in char['equipment']:
+                        if "id" in equipped:
+                            if equipped['id'] == item['id']:
+                                char_items += 1
+                                break
                 # Inventories
                 for bag in char['bags']:
                     if bag is not None:

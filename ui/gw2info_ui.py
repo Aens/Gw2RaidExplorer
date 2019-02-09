@@ -3,7 +3,7 @@
 # Form implementation generated from reading ui file 'gw2info.ui',
 # licensing of 'gw2info.ui' applies.
 #
-# Created: Wed Feb  6 13:33:51 2019
+# Created: Thu Feb  7 15:57:54 2019
 #      by: pyside2-uic  running on PySide2 5.12.0
 #
 # WARNING! All changes made in this file will be lost!
@@ -2205,4 +2205,3 @@ class Ui_MainWindow(object):
         self.tabRaids.setTabText(self.tabRaids.indexOf(self.tab_achievements), QtWidgets.QApplication.translate("MainWindow", "Achievements", None, -1))
         self.checkAchievements.setText(QtWidgets.QApplication.translate("MainWindow", "Achievements", None, -1))
         self.label_92.setText(QtWidgets.QApplication.translate("MainWindow", "Data to request from your API Key:", None, -1))
-

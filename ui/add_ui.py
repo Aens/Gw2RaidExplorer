@@ -3,7 +3,7 @@
 # Form implementation generated from reading ui file 'add.ui',
 # licensing of 'add.ui' applies.
 #
-# Created: Wed Feb  6 13:33:52 2019
+# Created: Thu Feb  7 15:57:55 2019
 #      by: pyside2-uic  running on PySide2 5.12.0
 #
 # WARNING! All changes made in this file will be lost!
@@ -32,14 +32,14 @@ class Ui_Dialog(object):
         self.label_2.setGeometry(QtCore.QRect(10, 50, 51, 16))
         self.label_2.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.label_2.setObjectName("label_2")
-        self.botonSave = QtWidgets.QPushButton(Dialog)
-        self.botonSave.setGeometry(QtCore.QRect(490, 50, 81, 31))
-        self.botonSave.setStyleSheet("background-color: rgb(170, 208, 169);")
+        self.buttonSave = QtWidgets.QPushButton(Dialog)
+        self.buttonSave.setGeometry(QtCore.QRect(490, 50, 81, 31))
+        self.buttonSave.setStyleSheet("background-color: rgb(170, 208, 169);")
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap("Images/Save.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.botonSave.setIcon(icon)
-        self.botonSave.setIconSize(QtCore.QSize(20, 20))
-        self.botonSave.setObjectName("botonSave")
+        self.buttonSave.setIcon(icon)
+        self.buttonSave.setIconSize(QtCore.QSize(20, 20))
+        self.buttonSave.setObjectName("buttonSave")
         self.labelInfo = QtWidgets.QLabel(Dialog)
         self.labelInfo.setGeometry(QtCore.QRect(190, 50, 291, 21))
         self.labelInfo.setStyleSheet("color: rgb(255, 0, 0);")
@@ -56,5 +56,5 @@ class Ui_Dialog(object):
         self.label.setText(QtWidgets.QApplication.translate("Dialog", "Key:", None, -1))
         self.lineName.setPlaceholderText(QtWidgets.QApplication.translate("Dialog", "My main account", None, -1))
         self.label_2.setText(QtWidgets.QApplication.translate("Dialog", "Save as:", None, -1))
-        self.botonSave.setText(QtWidgets.QApplication.translate("Dialog", "Save", None, -1))
+        self.buttonSave.setText(QtWidgets.QApplication.translate("Dialog", "Save", None, -1))
 

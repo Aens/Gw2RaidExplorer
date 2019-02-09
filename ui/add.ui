@@ -83,7 +83,7 @@
     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
    </property>
   </widget>
-  <widget class="QPushButton" name="botonSave">
+  <widget class="QPushButton" name="buttonSave">
    <property name="geometry">
     <rect>
      <x>490</x>

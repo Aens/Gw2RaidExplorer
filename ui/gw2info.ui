@@ -6,11 +6,14 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1672</width>
+    <width>1214</width>
     <height>682</height>
    </rect>
   </property>
-  <widget class="QWidget" name="centralwidget">
+  <widget class="QWidget" name="MainLayout">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
    <widget class="QLabel" name="label_32">
     <property name="geometry">
      <rect>
@@ -242,7 +245,7 @@ QTabWidget::pane {
     <property name="currentIndex">
      <number>0</number>
     </property>
-    <widget class="QWidget" name="tab_api">
+    <widget class="ThemedLayout" name="tab_api">
      <attribute name="title">
       <string>API Manager</string>
      </attribute>
@@ -785,7 +788,7 @@ QTabWidget::pane {
       </property>
      </widget>
     </widget>
-    <widget class="QWidget" name="tab_plugins">
+    <widget class="ThemedLayout" name="tab_plugins">
      <attribute name="title">
       <string>Plugins and Websites</string>
      </attribute>
@@ -1321,7 +1324,7 @@ QTabWidget::pane {
    <widget class="QGroupBox" name="groupUnused">
     <property name="geometry">
      <rect>
-      <x>1090</x>
+      <x>1020</x>
       <y>520</y>
       <width>161</width>
       <height>111</height>
@@ -1378,9 +1381,9 @@ QTabWidget::pane {
 }</string>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
-    <widget class="QWidget" name="tab_bosses_hot">
+    <widget class="ThemedLayout" name="tab_bosses_hot">
      <attribute name="title">
       <string>HoT Raids</string>
      </attribute>
@@ -3446,7 +3449,7 @@ QTabWidget::pane {
      <zorder>lineRaidboss_samarog</zorder>
      <zorder>lineRaidboss_cairn</zorder>
     </widget>
-    <widget class="QWidget" name="tab_bosses_pof">
+    <widget class="ThemedLayout" name="tab_bosses_pof">
      <attribute name="title">
       <string>PoF Raids</string>
      </attribute>
@@ -4480,7 +4483,7 @@ QTabWidget::pane {
      <zorder>lineRaidboss_desmina</zorder>
      <zorder>lineRaidboss_riverofsouls</zorder>
     </widget>
-    <widget class="QWidget" name="tab_achievements">
+    <widget class="ThemedLayout" name="tab_achievements">
      <attribute name="title">
       <string>Achievements</string>
      </attribute>
@@ -6820,6 +6823,14 @@ QTabWidget::pane {
    </property>
   </widget>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>ThemedLayout</class>
+   <extends>QWidget</extends>
+   <header>ui.custom_utils.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <tabstops>
   <tabstop>linePermission_Account</tabstop>
   <tabstop>linePermission_Inventories</tabstop>
@@ -6834,7 +6845,6 @@ QTabWidget::pane {
   <tabstop>buttonLoad</tabstop>
  </tabstops>
  <resources>
-  <include location="../rc/resources.qrc"/>
   <include location="../rc/resources.qrc"/>
  </resources>
  <connections/>

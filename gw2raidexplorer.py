@@ -18,8 +18,9 @@ import psutil
 from subprocess import Popen
 from os import environ
 from pathlib import Path
-from PySide2.QtWidgets import (QApplication, QComboBox, QDialog, QFileDialog,
-                               QGraphicsColorizeEffect, QGroupBox, QLabel, QMainWindow, QMessageBox,
+from ui.custom_utils import ThemedLayout, msgbox_question
+from PySide2.QtWidgets import (QApplication, QComboBox, QDialog, QFileDialog, QLineEdit,
+                               QGraphicsColorizeEffect, QGroupBox, QLabel, QMainWindow,
                                QPlainTextEdit, QPushButton, QStackedWidget, QTabWidget, QTextEdit)
 from PySide2.QtGui import QIcon, QColor
 from PySide2.QtCore import Qt, QEvent, QPoint, QSize, QSettings
@@ -48,7 +49,7 @@ class MainForm(QMainWindow, Ui_MainWindow):
         QMainWindow.__init__(self, parent)
         self.setupUi(self)
         self.setWindowIcon(QIcon(":/images/Images/Main.ico"))
-        self.setWindowTitle("Gw2 API Raid Explorer {0} {0}".format(__version__, __author__))
+        self.setWindowTitle("Gw2 API Raid Explorer {0} {1}".format(__version__, __author__))
         # Initial window size/pos last saved. Use default values for first time
         self.setFixedSize(QSize(970, 600))
         self.move(INI_OPTIONS.value("menu_position", QPoint(350, 250)))
@@ -329,9 +330,11 @@ class MainForm(QMainWindow, Ui_MainWindow):
     def set_colors(self, widget, colors):
         """Paint the initial colors for the controls"""
         for item in widget.children():
-            item_type = item.metaObject().className()
+            item_objectname = item.objectName()
             # SPECIALS: Set background to it and then re-iterate on these items
-            if item_type == "QWidget" or isinstance(item, QDialog):
+            if (item_objectname == "MainLayout"
+                    or isinstance(item, ThemedLayout)
+                    or isinstance(item, QDialog)):
                 widget.setStyleSheet(colors['backgroundcolor'])
                 self.set_colors(item, colors)
             # SPECIALS: Set style to it and then re-iterate on these items
@@ -342,7 +345,7 @@ class MainForm(QMainWindow, Ui_MainWindow):
                 item.setStyleSheet(colors['tabstyle'])
                 self.set_colors(item, colors)
             # OTHER: Stand-alone widgets
-            elif item_type == "QLineEdit":
+            elif isinstance(item, QLineEdit):
                 if item.isReadOnly():
                     item.setStyleSheet(colors['inputcolorreadonly'])
                 else:
@@ -358,8 +361,6 @@ class MainForm(QMainWindow, Ui_MainWindow):
             elif isinstance(item, QComboBox):
                 item.setStyleSheet(colors['dropdowncolor'])
             else:
-                # print(item_type) # TBD Used to debug
-                # print(item.objectName())# TBD Used to debug
                 pass
 
     def initialize_language(self, lang):
@@ -367,7 +368,8 @@ class MainForm(QMainWindow, Ui_MainWindow):
         self.change_statusbar("special", "Languages are not programmed yet.")
         INI_OPTIONS.setValue("lang", lang)
 
-    def check_online_version(self):
+    @staticmethod
+    def check_online_version():
         """Check if we need an update."""
         version_file = "https://raw.githubusercontent.com/Aens/Gw2RaidExplorer/master/version.txt"
         try:
@@ -380,7 +382,7 @@ class MainForm(QMainWindow, Ui_MainWindow):
             return "I couldn't check if there is a new version availible: {0}".format(str(e))
         else:
             if offline_version < online_version:
-                if popup_question(
+                if msgbox_question(
                         title="New update found.",
                         message="There is a new version availible for this program."
                                 "\n\nYou have the outdated version: {0}"
@@ -437,7 +439,7 @@ class MainForm(QMainWindow, Ui_MainWindow):
         """Delete the selected API from database"""
         self.change_statusbar("wait", "Deleting key...")
         if not self.comboSelectAPI.currentText() == "":
-            if popup_question(title="Security Check", message="Are you sure that you want to delete that key?"):
+            if msgbox_question(title="Security Check", message="Are you sure that you want to delete that key?"):
                 # get all keys
                 keys = self.get_stored_keys()
                 # delete right one
@@ -1380,27 +1382,6 @@ class AddNewApi(QDialog, Ui_Dialog):
         """Write window position to config file"""
         INI_OPTIONS.setValue("add_position", self.pos())
         event.accept()
-
-###########################################
-################ QMESSAGEBOX ##############
-###########################################
-
-
-def popup_question(title, message):
-    """Generate a popup that requests if you are really sure that you want to delete a record."""
-    msgbox = QMessageBox()
-    msgbox.setWindowTitle(title)
-    msgbox.setIcon(QMessageBox.Warning)
-    msgbox.setText(message)
-    buttonyes = QPushButton("Yes")
-    msgbox.addButton(buttonyes, QMessageBox.YesRole)
-    buttonno = QPushButton("No")
-    msgbox.addButton(buttonno, QMessageBox.NoRole)
-    msgbox.exec_()
-    if msgbox.clickedButton() == buttonno:
-        return False
-    else:
-        return True
 
 ######################################################
 ##################### INITIALIZE #####################

@@ -27,14 +27,14 @@ from PySide2.QtCore import Qt, QEvent, QPoint, QSize, QSettings
 from ui.gw2info_ui import Ui_MainWindow
 from ui.add_ui import Ui_Dialog
 
-__version__ = "1.0.1"
+__version__ = "1.1.0"
 __author__ = "(Made by Elrey.5472) - https://github.com/Aens"
 INI_OPTIONS = QSettings("options.ini", QSettings.IniFormat)
 
 
-########################################################
-##################### MAIN WINDOW ######################
-########################################################
+###############
+# MAIN WINDOW #
+###############
 
 class MainForm(QMainWindow, Ui_MainWindow):
     """Main window of the program."""
@@ -100,9 +100,9 @@ class MainForm(QMainWindow, Ui_MainWindow):
         # Check if we are ready to work
         self.check_if_ready()
 
-    ################################################
-    ##################### BASICS ###################
-    ################################################
+    ##########
+    # BASICS #
+    ##########
 
     def closeEvent(self, event):
         """Write window position to config file"""
@@ -153,9 +153,9 @@ class MainForm(QMainWindow, Ui_MainWindow):
         address = urllib.request.urlopen(address).read().decode('utf8')
         return json.loads(address)
 
-    ###############################################
-    ################### ON LOAD ###################
-    ###############################################
+    ###########
+    # ON LOAD #
+    ###########
 
     def check_if_ready(self):
         """Make sure we are ready to work."""
@@ -392,9 +392,9 @@ class MainForm(QMainWindow, Ui_MainWindow):
                     webbrowser.open(data["release_url"])
             return None
 
-    #######################################################
-    ################## BUTTONS and EVENTS #################
-    #######################################################
+    ######################
+    # BUTTONS and EVENTS #
+    ######################
 
     def fill_combo_selectapi(self):
         """Fill the combo with all the APIs"""
@@ -534,13 +534,13 @@ class MainForm(QMainWindow, Ui_MainWindow):
                         "&no_note=0&cn=&curency_code=USD&bn=PP-DonationsBF:btn_donateCC_LG.gif:NonHosted")
         self.change_statusbar("ready", "Website to donate launched on your browser.")
 
-    #######################################################
-    ################## ARCDPS AND PLUGINS #################
-    #######################################################
+    ######################
+    # ARCDPS AND PLUGINS #
+    ######################
 
     def set_installation_folder(self):
         """Set the installation folder"""
-        folderpath = QFileDialog.getExistingDirectory()
+        folderpath = QFileDialog.getExistingDirectory(QFileDialog())
         if not folderpath == "":
             self.lineInstallationFolder.setText(folderpath)
             INI_OPTIONS.setValue("installation_folder", folderpath)
@@ -645,9 +645,9 @@ class MainForm(QMainWindow, Ui_MainWindow):
             except Exception as e:
                 self.change_statusbar("error", "Unexpected error: {0}".format(str(e)))
 
-    #######################################################
-    ################## GUILD WARS 2 #######################
-    #######################################################
+    ################
+    # GUILD WARS 2 #
+    ################
 
     @staticmethod
     def game_is_running():
@@ -686,9 +686,9 @@ class MainForm(QMainWindow, Ui_MainWindow):
             else:
                 self.change_statusbar("error", "Guild Wars 2 is not running.")
 
-    ###############################################################
-    ################### MAIN LOADING API CODE #####################
-    ###############################################################
+    #########################
+    # MAIN LOADING API CODE #
+    #########################
 
     def reset_everything(self):
         """Reset all fields"""
@@ -826,9 +826,9 @@ class MainForm(QMainWindow, Ui_MainWindow):
         new_style = ";".join(new_style)
         return new_style
 
-    #######################################################
-    ################### BOSSES SECTION ####################
-    #######################################################
+    ##################
+    # BOSSES SECTION #
+    ##################
 
     def load_bosses_section(self):
         """Load bosses section"""
@@ -869,6 +869,10 @@ class MainForm(QMainWindow, Ui_MainWindow):
                   {"name": "conjured_amalgamate", "flag": 0, "uiitem": self.lineRaidboss_conjureda},
                   {"name": "twin_largos", "flag": 0, "uiitem": self.lineRaidboss_twinlargos},
                   {"name": "qadim", "flag": 0, "uiitem": self.lineRaidboss_qadim},
+                  {"name": "gate", "flag": 0, "uiitem": self.lineRaidboss_gateofahdashim},
+                  {"name": "adina", "flag": 0, "uiitem": self.lineRaidboss_adina},
+                  {"name": "sabir", "flag": 0, "uiitem": self.lineRaidboss_sabir},
+                  {"name": "qadim_the_peerless", "flag": 0, "uiitem": self.lineRaidboss_qadim2},
                   ]
         bosses_killed = self.api_open("account", ids=["raids"], token=api_key)
         for i in bosses:
@@ -894,13 +898,14 @@ class MainForm(QMainWindow, Ui_MainWindow):
             self.lineRaidboss_mursaat, self.lineRaidboss_samarog, self.lineRaidboss_deimos,
             self.lineRaidboss_desmina, self.lineRaidboss_riverofsouls, self.lineRaidboss_statues,
             self.lineRaidboss_dhuum, self.lineRaidboss_conjureda, self.lineRaidboss_twinlargos,
-            self.lineRaidboss_qadim)
+            self.lineRaidboss_qadim, self.lineRaidboss_gateofahdashim, self.lineRaidboss_adina,
+            self.lineRaidboss_sabir, self.lineRaidboss_qadim2)
         for i in raids_fields:
             i.setStyleSheet(reset_style)
 
-    #######################################################
-    ################### CURRENCY SECTION ##################
-    #######################################################
+    ####################
+    # CURRENCY SECTION #
+    ####################
 
     def load_currency_section(self):
         """Load currency section"""
@@ -990,9 +995,9 @@ class MainForm(QMainWindow, Ui_MainWindow):
             i.clear()
             i.setStyleSheet(reset_style)
 
-    #######################################################
-    ################ ACHIEVEMENTS SECTION #################
-    #######################################################
+    ########################
+    # ACHIEVEMENTS SECTION #
+    ########################
 
     def load_achievements_section(self):
         """Load achievements section"""
@@ -1137,9 +1142,9 @@ class MainForm(QMainWindow, Ui_MainWindow):
         for i in achievements_fields:
             i.setStyleSheet(reset_style)
 
-    ####################################################
-    ################### MINIS SECTION ##################
-    ####################################################
+    #################
+    # MINIS SECTION #
+    #################
 
     def load_minis_section(self):
         """Load minis section"""
@@ -1185,7 +1190,10 @@ class MainForm(QMainWindow, Ui_MainWindow):
                       {"id": 722, "flag": 0, "uiitem": self.label_Mini_zommoros},
                       {"id": 721, "flag": 0, "uiitem": self.label_Mini_kenut},
                       {"id": 725, "flag": 0, "uiitem": self.label_Mini_nikare},
-                      {"id": 723, "flag": 0, "uiitem": self.label_Mini_qadim}]
+                      {"id": 723, "flag": 0, "uiitem": self.label_Mini_qadim},
+                      {"id": 763, "flag": 0, "uiitem": self.label_Mini_keyofahdashim},
+                      {"id": 765, "flag": 0, "uiitem": self.label_Mini_djinnlamp},
+                      {"id": 764, "flag": 0, "uiitem": self.label_Mini_qadim2}]
         # Flag the ones done
         for your_mini in api_minis:
             for mini in raid_minis:
@@ -1215,13 +1223,14 @@ class MainForm(QMainWindow, Ui_MainWindow):
                         self.label_Mini_mursaat, self.label_Mini_eyeofjanthir, self.label_Mini_samarog,
                         self.label_Mini_whitemantle, self.label_Mini_ragged_whitemantle, self.label_Mini_desmina,
                         self.label_Mini_brokenking, self.label_Mini_dhuum, self.label_Mini_zommoros,
-                        self.label_Mini_kenut, self.label_Mini_nikare, self.label_Mini_qadim)
+                        self.label_Mini_kenut, self.label_Mini_nikare, self.label_Mini_qadim,
+                        self.label_Mini_keyofahdashim, self.label_Mini_djinnlamp, self.label_Mini_qadim2)
         for i in minis_fields:
             i.setGraphicsEffect(None)
 
-    ####################################################
-    ################### SKINS SECTION ##################
-    ####################################################
+    #################
+    # SKINS SECTION #
+    #################
 
     def load_skins_section(self):
         """Load skins section"""
@@ -1294,7 +1303,13 @@ class MainForm(QMainWindow, Ui_MainWindow):
                       {"id": 8337, "flag": 0, "uiitem": self.label_Skin_largos_sword},
                       {"id": 8363, "flag": 0, "uiitem": self.label_Skin_largos_longbow},
                       {"id": 8344, "flag": 0, "uiitem": self.label_Skin_qadim_mace},
-                      {"id": 8409, "flag": 0, "uiitem": self.label_Skin_qadim_pistol}]
+                      {"id": 8409, "flag": 0, "uiitem": self.label_Skin_qadim_pistol},
+                      {"id": 8800, "flag": 0, "uiitem": self.label_Skin_sabir_scepter},
+                      {"id": 8802, "flag": 0, "uiitem": self.label_Skin_sabir_warhorn},
+                      {"id": 8783, "flag": 0, "uiitem": self.label_Skin_adina_focus},
+                      {"id": 8803, "flag": 0, "uiitem": self.label_Skin_adina_rifle},
+                      {"id": 8793, "flag": 0, "uiitem": self.label_Skin_qadim_longbow},
+                      {"id": 8797, "flag": 0, "uiitem": self.label_Skin_qadim_torch}]
         # Flag the ones done
         for your_skin in api_skins:
             for skin in raid_skins:
@@ -1336,13 +1351,15 @@ class MainForm(QMainWindow, Ui_MainWindow):
                         self.label_Skin_dhuum_shoulders, self.label_Skin_dhuum_gloves, self.label_Skin_dhuum_boots,
                         self.label_Skin_conjured_shield, self.label_Skin_conjured_greatsword,
                         self.label_Skin_largos_sword, self.label_Skin_largos_longbow, self.label_Skin_qadim_mace,
-                        self.label_Skin_qadim_pistol)
+                        self.label_Skin_qadim_pistol, self.label_Skin_sabir_scepter, self.label_Skin_sabir_warhorn,
+                        self.label_Skin_adina_rifle, self.label_Skin_adina_focus, self.label_Skin_qadim_longbow,
+                        self.label_Skin_qadim_torch)
         for i in skins_fields:
             i.setGraphicsEffect(None)
 
-#########################################################
-################### WINDOW ADD API ######################
-#########################################################
+##################
+# WINDOW ADD API #
+##################
 
 
 class AddNewApi(QDialog, Ui_Dialog):
@@ -1382,9 +1399,9 @@ class AddNewApi(QDialog, Ui_Dialog):
         INI_OPTIONS.setValue("add_position", self.pos())
         event.accept()
 
-######################################################
-##################### INITIALIZE #####################
-######################################################
+##############
+# INITIALIZE #
+##############
 
 
 if __name__ == "__main__":

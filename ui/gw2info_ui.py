@@ -3,8 +3,8 @@
 # Form implementation generated from reading ui file 'gw2info.ui',
 # licensing of 'gw2info.ui' applies.
 #
-# Created: Sat Jun 15 16:48:57 2019
-#      by: pyside2-uic  running on PySide2 5.12.3
+# Created: Wed Dec 11 15:14:14 2019
+#      by: pyside2-uic  running on PySide2 5.13.2
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -318,7 +318,7 @@ class Ui_MainWindow(object):
         self.buttonWebsite_raidar.setIconSize(QtCore.QSize(20, 20))
         self.buttonWebsite_raidar.setObjectName("buttonWebsite_raidar")
         self.label_53 = QtWidgets.QLabel(self.tab_plugins)
-        self.label_53.setGeometry(QtCore.QRect(10, 140, 301, 41))
+        self.label_53.setGeometry(QtCore.QRect(10, 110, 301, 71))
         self.label_53.setTextFormat(QtCore.Qt.RichText)
         self.label_53.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
         self.label_53.setWordWrap(True)
@@ -328,12 +328,6 @@ class Ui_MainWindow(object):
         self.buttonWebsite_arcdps.setStyleSheet("background-color: rgb(170, 208, 169);")
         self.buttonWebsite_arcdps.setIconSize(QtCore.QSize(20, 20))
         self.buttonWebsite_arcdps.setObjectName("buttonWebsite_arcdps")
-        self.buttonArcDps_mechanics = QtWidgets.QPushButton(self.tab_plugins)
-        self.buttonArcDps_mechanics.setGeometry(QtCore.QRect(10, 110, 301, 31))
-        self.buttonArcDps_mechanics.setStyleSheet("background-color: rgb(170, 208, 169);")
-        self.buttonArcDps_mechanics.setIcon(icon10)
-        self.buttonArcDps_mechanics.setIconSize(QtCore.QSize(20, 20))
-        self.buttonArcDps_mechanics.setObjectName("buttonArcDps_mechanics")
         self.buttonWebsite_killproof = QtWidgets.QPushButton(self.tab_plugins)
         self.buttonWebsite_killproof.setGeometry(QtCore.QRect(10, 370, 141, 31))
         self.buttonWebsite_killproof.setStyleSheet("background-color: rgb(170, 208, 169);")
@@ -372,7 +366,7 @@ class Ui_MainWindow(object):
         self.label_114.setAlignment(QtCore.Qt.AlignCenter)
         self.label_114.setObjectName("label_114")
         self.label_70 = QtWidgets.QLabel(self.tab_plugins)
-        self.label_70.setGeometry(QtCore.QRect(10, 180, 301, 31))
+        self.label_70.setGeometry(QtCore.QRect(10, 170, 301, 31))
         self.label_70.setTextFormat(QtCore.Qt.RichText)
         self.label_70.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
         self.label_70.setWordWrap(True)
@@ -2082,7 +2076,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
         self.tabOptions.setCurrentIndex(0)
-        self.tabRaids.setCurrentIndex(0)
+        self.tabRaids.setCurrentIndex(2)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
         MainWindow.setTabOrder(self.linePermission_Account, self.linePermission_Inventories)
         MainWindow.setTabOrder(self.linePermission_Inventories, self.linePermission_Characters)
@@ -2130,12 +2124,11 @@ class Ui_MainWindow(object):
         self.buttonLaunchgame.setText(QtWidgets.QApplication.translate("MainWindow", "Launch Guild Wars 2", None, -1))
         self.buttonWebsite_arcdpsmechanics.setText(QtWidgets.QApplication.translate("MainWindow", "ArcDps Mechanics", None, -1))
         self.buttonWebsite_builds_alternative.setText(QtWidgets.QApplication.translate("MainWindow", "Metabattle Raid Builds", None, -1))
-        self.buttonArcDps.setText(QtWidgets.QApplication.translate("MainWindow", "Install or Update ArcDps + Build Templates", None, -1))
+        self.buttonArcDps.setText(QtWidgets.QApplication.translate("MainWindow", "Install or Update ArcDps", None, -1))
         self.buttonWebsite_gw2raidexplorer.setText(QtWidgets.QApplication.translate("MainWindow", "Github/Aens/Gw2RaidExplorer (this program)", None, -1))
         self.buttonWebsite_raidar.setText(QtWidgets.QApplication.translate("MainWindow", "GW2Raidar", None, -1))
         self.label_53.setText(QtWidgets.QApplication.translate("MainWindow", "<html><head/><body><p><span style=\" font-weight:600;\">Note: </span>This program assumes your arcdps is named <span style=\" font-weight:600;\">d3d9.dll</span>. If you are using another plugin/hook/chainload that took that name, <span style=\" font-weight:600;\">DON\'T</span> update arcDPS using his program.</p></body></html>", None, -1))
         self.buttonWebsite_arcdps.setText(QtWidgets.QApplication.translate("MainWindow", "ArcDps", None, -1))
-        self.buttonArcDps_mechanics.setText(QtWidgets.QApplication.translate("MainWindow", "Install or Update ArcDps Mechanics Addon", None, -1))
         self.buttonWebsite_killproof.setText(QtWidgets.QApplication.translate("MainWindow", "Public KillProofs", None, -1))
         self.buttonWebsite_dpsreport.setText(QtWidgets.QApplication.translate("MainWindow", "DPS.Report", None, -1))
         self.label_46.setText(QtWidgets.QApplication.translate("MainWindow", "Guild Wars 2 Installation Folder", None, -1))

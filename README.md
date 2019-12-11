@@ -3,6 +3,8 @@ A tool to check raid-based stuff of Guild Wars 2.
 You can download executable version
 [here](https://github.com/Aens/Gw2RaidExplorer/releases).
 
+![Image](https://github.com/Aens/Gw2RaidExplorer/blob/master/preview.png)
+
 * Download the `.exe` file.
 * Install it.
 * Execute the **Gw2RaidExplorer** file with a red skull icon.

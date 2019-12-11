@@ -69,7 +69,6 @@ class MainForm(QMainWindow, Ui_MainWindow):
         # Right side buttons
         self.buttonFindfolder.clicked.connect(self.set_installation_folder)
         self.buttonArcDps.clicked.connect(self.update_arcdps)
-        self.buttonArcDps_mechanics.clicked.connect(self.update_arcdps_mechanics)
         self.buttonWebsite_arcdps.clicked.connect(self.open_web_arcdps)
         self.buttonWebsite_arcdpsmechanics.clicked.connect(self.open_web_arcdpsmechanics)
         self.buttonLaunchgame.clicked.connect(self.launch_game)
@@ -582,9 +581,7 @@ class MainForm(QMainWindow, Ui_MainWindow):
             # Files
             bin_folder = self.lineInstallationFolder.text() + "/bin64"
             local_file = '{0}/d3d9.dll'.format(bin_folder)
-            local_file_bt = '{0}/d3d9_arcdps_buildtemplates.dll'.format(bin_folder)
             online_file = "https://www.deltaconnected.com/arcdps/x64/d3d9.dll"
-            online_file_bt = "https://www.deltaconnected.com/arcdps/x64/buildtemplates/d3d9_arcdps_buildtemplates.dll"
             online_file_md5 = "https://www.deltaconnected.com/arcdps/x64/d3d9.dll.md5sum"
             # Check if exists
             try:
@@ -601,47 +598,12 @@ class MainForm(QMainWindow, Ui_MainWindow):
                         # Download files and replace them
                         self.change_statusbar("wait", "ArcDps is being updated...")
                         urllib.request.urlretrieve(online_file, local_file)
-                        urllib.request.urlretrieve(online_file_bt, local_file_bt)
                         self.change_statusbar("ready", "YES, there was a new version. ArcDps has been updated.")
                 else:
                     # Download files
                     self.change_statusbar("wait", "ArcDps is not installed, downloading...")
                     urllib.request.urlretrieve(online_file, local_file)
-                    urllib.request.urlretrieve(online_file_bt, local_file_bt)
                     self.change_statusbar("ready", "YES, there was a new version. ArcDps has been Installed.")
-            except Exception as e:
-                self.change_statusbar("error", "Unexpected error: {0}".format(str(e)))
-
-    def update_arcdps_mechanics(self):
-        """Install or update ArcDps Mechanics plugin."""
-        if self.check_folder_is_right():
-            self.change_statusbar("wait", "Verifying hash file of ArcDps Mechanics Addon...")
-            # Files
-            bin_folder = self.lineInstallationFolder.text() + "/bin64"
-            local_file = '{0}/d3d9_arcdps_mechanics.dll'.format(bin_folder)
-            online_file = "http://martionlabs.com/wp-content/uploads/d3d9_arcdps_mechanics.dll"
-            online_file_md5 = "http://martionlabs.com/wp-content/uploads/d3d9_arcdps_mechanics.dll.md5sum"
-            # Check if exists
-            try:
-                if self.file_exists(local_file):
-                    # Get both md5
-                    local_file_md5 = self.get_hash_of_file(local_file)
-                    address = urllib.parse.quote(online_file_md5, safe='/:=', encoding="utf-8", errors="strict")
-                    address = urllib.request.urlopen(address).read().decode('utf8')
-                    online_md5 = address[:32]
-                    # Compare online md5 with local md5
-                    if online_md5 == local_file_md5:
-                        self.change_statusbar("ready", "ArcDps Mechanics Addon was already updated.")
-                    else:
-                        # Download files and replace them
-                        self.change_statusbar("wait", "ArcDps Mechanics Addon is being updated...")
-                        urllib.request.urlretrieve(online_file, local_file)
-                        self.change_statusbar("ready", "ArcDps Mechanics Addon has been updated.")
-                else:
-                    # Download files
-                    self.change_statusbar("wait", "ArcDps Mechanics Addon is not installed, downloading...")
-                    urllib.request.urlretrieve(online_file, local_file)
-                    self.change_statusbar("ready", "ArcDps Mechanics Addon has been Installed.")
             except Exception as e:
                 self.change_statusbar("error", "Unexpected error: {0}".format(str(e)))
 
@@ -1405,11 +1367,11 @@ class AddNewApi(QDialog, Ui_Dialog):
 
 
 if __name__ == "__main__":
-    app = QApplication(sys.argv)
     # Make sure you scale for high DPI
-    environ["QT_AUTO_SCREEN_SCALE_FACTOR"] = "1"
-    app.setAttribute(Qt.AA_EnableHighDpiScaling)
-    app.setAttribute(Qt.AA_UseHighDpiPixmaps)
+    QApplication.setAttribute(Qt.AA_EnableHighDpiScaling)
+    QApplication.setAttribute(Qt.AA_UseHighDpiPixmaps)
+    # Launch the app
+    app = QApplication(sys.argv)
     # Launch the window
     window = MainForm()
     window.show()

@@ -975,7 +975,7 @@ QTabWidget::pane {
        <string notr="true">background-color: rgb(170, 208, 169);</string>
       </property>
       <property name="text">
-       <string>Install or Update ArcDps + Build Templates</string>
+       <string>Install or Update ArcDps</string>
       </property>
       <property name="icon">
        <iconset resource="../rc/resources.qrc">
@@ -1036,9 +1036,9 @@ QTabWidget::pane {
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>140</y>
+        <y>110</y>
         <width>301</width>
-        <height>41</height>
+        <height>71</height>
        </rect>
       </property>
       <property name="text">
@@ -1068,32 +1068,6 @@ QTabWidget::pane {
       </property>
       <property name="text">
        <string>ArcDps</string>
-      </property>
-      <property name="iconSize">
-       <size>
-        <width>20</width>
-        <height>20</height>
-       </size>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="buttonArcDps_mechanics">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>110</y>
-        <width>301</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(170, 208, 169);</string>
-      </property>
-      <property name="text">
-       <string>Install or Update ArcDps Mechanics Addon</string>
-      </property>
-      <property name="icon">
-       <iconset resource="../rc/resources.qrc">
-        <normaloff>:/images/Images/Script.png</normaloff>:/images/Images/Script.png</iconset>
       </property>
       <property name="iconSize">
        <size>
@@ -1225,7 +1199,7 @@ QTabWidget::pane {
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>180</y>
+        <y>170</y>
         <width>301</width>
         <height>31</height>
        </rect>
@@ -1381,7 +1355,7 @@ QTabWidget::pane {
 }</string>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>2</number>
     </property>
     <widget class="ThemedLayout" name="tab_bosses_hot">
      <attribute name="title">
@@ -4101,7 +4075,7 @@ QTabWidget::pane {
        </font>
       </property>
       <property name="text">
-       <string>Wing 7 - (probably around May)</string>
+       <string>Wing 7 - The Key Of Ahdashim</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -4323,7 +4297,7 @@ QTabWidget::pane {
        </rect>
       </property>
       <property name="text">
-       <string>Released on: Anet's Own Pace</string>
+       <string>Released on: June 11, 2019</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -4428,6 +4402,298 @@ QTabWidget::pane {
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
+     <widget class="QLineEdit" name="lineRaidboss_adina">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>360</y>
+        <width>91</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>Adina</string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineRaidboss_gateofahdashim">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>330</y>
+        <width>91</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>The Gate</string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineRaidboss_sabir">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>330</y>
+        <width>91</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>Sabir</string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_137">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>300</y>
+        <width>181</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Bosses/Events&lt;br/&gt;Completed this week&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineRaidboss_qadim2">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>360</y>
+        <width>91</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(150, 150, 150);</string>
+      </property>
+      <property name="text">
+       <string>Qadim</string>
+      </property>
+      <property name="frame">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_Mini_djinnlamp">
+      <property name="geometry">
+       <rect>
+        <x>460</x>
+        <y>330</y>
+        <width>32</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="../rc/resources.qrc">:/Minis/Images/minis/Mini Djinn Lamp.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_Mini_qadim2">
+      <property name="geometry">
+       <rect>
+        <x>490</x>
+        <y>330</y>
+        <width>32</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="../rc/resources.qrc">:/Minis/Images/minis/Mini Qadim2.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_Mini_keyofahdashim">
+      <property name="geometry">
+       <rect>
+        <x>430</x>
+        <y>330</y>
+        <width>32</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="../rc/resources.qrc">:/Minis/Images/minis/Mini Key of Ahdashim.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_138">
+      <property name="geometry">
+       <rect>
+        <x>430</x>
+        <y>310</y>
+        <width>151</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Minis unlocked&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_Skin_sabir_scepter">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>330</y>
+        <width>32</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="../rc/resources.qrc">:/skins/Images/skins/Sabir Scepter.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_Skin_qadim_torch">
+      <property name="geometry">
+       <rect>
+        <x>370</x>
+        <y>330</y>
+        <width>32</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="../rc/resources.qrc">:/skins/Images/skins/Qadim Torch.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_Skin_adina_rifle">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>330</y>
+        <width>32</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="../rc/resources.qrc">:/skins/Images/skins/Adina rifle.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_Skin_qadim_longbow">
+      <property name="geometry">
+       <rect>
+        <x>340</x>
+        <y>330</y>
+        <width>32</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="../rc/resources.qrc">:/skins/Images/skins/Qadim Longbow.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_139">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>310</y>
+        <width>181</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Skins unlocked&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_Skin_sabir_warhorn">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>330</y>
+        <width>32</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="../rc/resources.qrc">:/skins/Images/skins/Sabir Warhorn.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_Skin_adina_focus">
+      <property name="geometry">
+       <rect>
+        <x>280</x>
+        <y>330</y>
+        <width>32</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="../rc/resources.qrc">:/skins/Images/skins/Adina Focus.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
      <zorder>label_Mini_dhuum</zorder>
      <zorder>label_Mini_brokenking</zorder>
      <zorder>line_5</zorder>
@@ -4482,6 +4748,22 @@ QTabWidget::pane {
      <zorder>label_136</zorder>
      <zorder>lineRaidboss_desmina</zorder>
      <zorder>lineRaidboss_riverofsouls</zorder>
+     <zorder>lineRaidboss_adina</zorder>
+     <zorder>lineRaidboss_gateofahdashim</zorder>
+     <zorder>lineRaidboss_sabir</zorder>
+     <zorder>label_137</zorder>
+     <zorder>lineRaidboss_qadim2</zorder>
+     <zorder>label_Mini_djinnlamp</zorder>
+     <zorder>label_Mini_qadim2</zorder>
+     <zorder>label_Mini_keyofahdashim</zorder>
+     <zorder>label_138</zorder>
+     <zorder>label_Skin_sabir_scepter</zorder>
+     <zorder>label_Skin_qadim_torch</zorder>
+     <zorder>label_Skin_adina_rifle</zorder>
+     <zorder>label_Skin_qadim_longbow</zorder>
+     <zorder>label_139</zorder>
+     <zorder>label_Skin_sabir_warhorn</zorder>
+     <zorder>label_Skin_adina_focus</zorder>
     </widget>
     <widget class="ThemedLayout" name="tab_achievements">
      <attribute name="title">
@@ -6659,6 +6941,30 @@ QTabWidget::pane {
        <bool>true</bool>
       </property>
      </widget>
+     <widget class="QLabel" name="label_75">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>490</y>
+        <width>281</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+        <underline>true</underline>
+       </font>
+      </property>
+      <property name="text">
+       <string>Wing 7 - The Key Of Ahdashim... To Be Done</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
      <zorder>lineAchiev_w4_realraidertyr</zorder>
      <zorder>lineAchiev_w6_regularstour</zorder>
      <zorder>lineAchiev_w1_undefeated</zorder>
@@ -6749,6 +7055,7 @@ QTabWidget::pane {
      <zorder>label_Titleicon_5</zorder>
      <zorder>label_Titleicon_4</zorder>
      <zorder>label_Titleicon_6</zorder>
+     <zorder>label_75</zorder>
     </widget>
    </widget>
    <widget class="QCheckBox" name="checkAchievements">

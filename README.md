@@ -17,11 +17,14 @@ but just in case, consider to backup that file.
 * Finally download and install the new version.
 
 ## Bugs known and things TBD (To be done):
-* Investigating: Issues of Font Sizes in high DPI scales (No idea how to fix yet).
 * Investigating: Currency earned "this week" might be imposible. https://en-forum.guildwars2.com/discussion/67421/week-magnetite-shards-gaeting-crystals#latest
 * TBD: Language translations.
 
 # Changelog
+
+### Version 1.1.0
+* Removed: ArcDps BuildTemplates and ArcDps Mechanics because they're no longer supported projects.
+* Added: Wing 7 bosses and skins.
 
 ### Version 1.0.2
 * Fixed: If you only had one character, currency failed.
